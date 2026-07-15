@@ -1,0 +1,25 @@
+To sekcja to opis jak załadować tabele i dane do bazy danych. Osobiście używam połączenia Windows 11 + Docker i podtym były testowane poniższe komendy. Wątpie, by użycie dockera pod Linuxem było istotnie inne, ale jeśli coś nie będzie działać to dajcie znać. Jeśli nie używacie dockera, to nie powinno być to istotnie trudniejsze, musicie wczytać odpowiednie pliki sql do posgresa (na przykładach będę używał psql, tak jak było to robione na Inżynieri Danych na TCS-e).
+
+
+Postawienie dockera: (Musisz być w katalogu w którym znajduję się plik docker-compose.yml, obecnie ./database)
+docker compose up
+
+Żyby postawić bazę danych:
+(Windows + PowerShell):
+cmd /c "docker exec -i ksi_opinion_base psql -U ksi_opinion_base -d ksi_opinion_base < create.sql"
+(Linux):
+sudo docker exec -i ksi_opinion_base psql -U ksi_opinion_base < create.sql
+(Bez Dockera):
+psql < create.sql
+
+
+Żeby wyczyścić bazę danych:
+(Windows + PowerShell):
+cmd /c "docker exec -i ksi_opinion_base psql -U ksi_opinion_base -d ksi_opinion_base < clear.sql"
+(Linux):
+sudo docker exec -i ksi_opinion_base psql -U ksi_opinion_base < clear.sql
+(Bez Dockera):
+psql < clear.sql
+
+Zeby dostać się do miejsca, gdzie można wykonywać zapytania na bazie danych:
+docker exec -it ksi_opinion_base psql -U ksi_opinion_base -d ksi_opinion_base
