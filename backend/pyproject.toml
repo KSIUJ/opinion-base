@@ -1,0 +1,18 @@
+[project]
+name = "opinion-base-backend"
+version = "0.1.0"
+description = "Backend for faculty elective subjects opinions base"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "psycopg[binary]",
+    "python-dotenv",
+    "sqlalchemy",
+]
+
+[tool.fastapi]
+entrypoint = "main:app"
+
+[tool.uv]
+package = false

@@ -1,0 +1,2 @@
+Bez konteneryzacji uruchamia sie skryptem run.sh
+Porty są w backend/.env i tam wystarczy je zmieniać.
