@@ -218,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+#FRONTEND ignored files
+notes/TODO.txt
+notes/GIT_UZYWANIE.txt
