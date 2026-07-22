@@ -8,7 +8,7 @@ export default function Home() {
       <main className = "app-center">
         <Image
           className = "dark:invert"
-          src = "/images/ksiLogo.png"
+          src = "/images/ksiLogo_transparent.png"
           alt = "ksi logo"
           width = {300}
           height = {300}
@@ -31,7 +31,7 @@ export default function Home() {
         <br />
 
         <div className = "login-button">
-          <Link href = "/pages/kierunki">
+          <Link href = "/kierunki">
             Zaloguj
           </Link>
         </div>
