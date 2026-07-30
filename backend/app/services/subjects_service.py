@@ -2,21 +2,67 @@ from sqlalchemy.orm import Session
 
 from app.models import Subject
 from app.repositories.subjects_repository import SubjectsRepository
-from app.schemas.subjects import SubjectOut
+from app.schemas.subjects import SubjectOut, SubjectOutBasic
+from app.schemas.small import DepartmentOut, SemesterOut, LecturerRoleOut
+from app.schemas.active_subjects import ActiveSubjectFromSubjectOut
 
 
 class SubjectsService:
+    'TODO: add lecturers'
     @staticmethod
     def _serialize_subject(subject: Subject) -> SubjectOut:
         return SubjectOut(
             subject_id=subject.id,
             subject_name=subject.name,
-            lecturer_id=subject.lecturer_rel.id,
-            lecturer_name=subject.lecturer_rel.name,
-            lecturer_surname=subject.lecturer_rel.surname,
-            opinions_count=len(subject.opinions),
-            opinions=[opinion.content for opinion in subject.opinions],
+            department=DepartmentOut(
+                id=subject.department.id,
+                name=subject.department.name,
+                ),
+            semester=SemesterOut(
+                id=subject.semester.id,
+                name=subject.semester.name,
+                is_winter=subject.semester.is_winter,
+                ),
+            is_obligatory=subject.is_obligatory,
+            opinions_count=len(subject.opinion_relations),
+
+            opinions=[relation.opinion.content for relation in subject.opinion_relations],
+            groups_count=len(subject.group_relations),
+            groups=[relation.subject_group.name for relation in subject.group_relations],
+        
+            lecturers_info=[ActiveSubjectFromSubjectOut(
+                lecturer_name=activeSubject.lecturer.name,
+                lecturer_surname=activeSubject.lecturer.surname,
+                role=LecturerRoleOut(
+                   id=activeSubject.role.id,
+                   name=activeSubject.role.name,
+                )
+            ) for activeSubject in subject.active_subjects],
+
         )
+
+    @staticmethod
+    def _serialize_subject_basic(subject: Subject) -> SubjectOutBasic:
+        return SubjectOutBasic(
+            subject_id=subject.id,
+            subject_name=subject.name,
+            department=DepartmentOut(
+                id=subject.department.id,
+                name=subject.department.name,
+                ),
+            semester=SemesterOut(
+                id=subject.semester.id,
+                name=subject.semester.name,
+                is_winter=subject.semester.is_winter,
+                ),
+            is_obligatory=subject.is_obligatory,
+            opinions_count=len(subject.opinion_relations),
+        )
+
+    @staticmethod
+    def list_subjects_all(db: Session) -> list[SubjectOutBasic]:
+        subjects = SubjectsRepository.list_subjects_all(db=db)
+        return [SubjectsService._serialize_subject_basic(subject) for subject in subjects]
 
     @staticmethod
     def list_subjects(
@@ -28,6 +74,7 @@ class SubjectsService:
         lecturer_surname: str | None = None,
         min_opinions: int | None = None,
     ) -> list[SubjectOut]:
+
         subjects = SubjectsRepository.list_subjects(
             db=db,
             subject_id=subject_id,
@@ -35,11 +82,7 @@ class SubjectsService:
             lecturer_id=lecturer_id,
             lecturer_name=lecturer_name,
             lecturer_surname=lecturer_surname,
+            min_opinions=min_opinions,
         )
 
-        response = [SubjectsService._serialize_subject(subject) for subject in subjects]
-        if min_opinions is not None:
-            response = [
-                subject for subject in response if subject.opinions_count >= min_opinions
-            ]
-        return response
+        return [SubjectsService._serialize_subject(subject) for subject in subjects]

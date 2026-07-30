@@ -1,0 +1,626 @@
+{
+  "14441": [
+    "WMI.IM.LALG-SM",
+    "WMI.IM-IDG-SM",
+    "WMI-DM.SEM.GR.l"
+  ],
+  "58334": [
+    "WMI.II-A2-1SI",
+    "WMI.II-A2-1SO",
+    "WMI.II-MESwMZF-MS"
+  ],
+  "327951": [
+    "WMI-DM.SEM.TUD.l"
+  ],
+  "205546": [
+    "WMI.II-AM1b-1MK",
+    "WMI.II-SMO-S"
+  ],
+  "28": [],
+  "58763": [
+    "WMI.II-RPS-O",
+    "WMI.II-PF2-IO",
+    "WMI.II-ZMD-2SOMK"
+  ],
+  "14421": [
+    "WMI-DM.SEM.GAL.l",
+    "WMI.SDSP-CAV"
+  ],
+  "51427": [
+    "WMI-DM.SEM.AZRE.l"
+  ],
+  "193853": [
+    "WMI.II-A2-1SO"
+  ],
+  "51433": [
+    "WMI.II-AM2b-2MK",
+    "WMI.IM-IZMN-SM",
+    "WMI-DM.SEM.MTA.l",
+    "WMI.SDSP-SCFT.I"
+  ],
+  "212279": [
+    "WMI.II-SO-OL"
+  ],
+  "139516": [
+    "WMI.SDSP-LGCG",
+    "WMI-DM.SEM.GA.l"
+  ],
+  "14740": [],
+  "111705": [],
+  "212835": [
+    "WMI.IM-WA-OL.1\"T\"",
+    "WMI.SDSP-RT"
+  ],
+  "170330": [
+    "WMI.IM.ETL-SM"
+  ],
+  "58111": [
+    "WMI.TCS.OK.S"
+  ],
+  "57436": [
+    "WMI.TCS.MP.OL"
+  ],
+  "51411": [
+    "WMI.IM-RRCT-OL.3\"T\"",
+    "WZ.KLK-AMAT"
+  ],
+  "51375": [
+    "WMI.IM-A1-OL.2o",
+    "WMI.IM-AM4-OL.2",
+    "WMI.IM-WA-OL.1"
+  ],
+  "51406": [
+    "WMI.IM-ALG2-OL.1\"T\"",
+    "WMI.IM-AG-SM",
+    "WMI-DM.SEM.GAL.l"
+  ],
+  "51384": [
+    "WMI.IM-TOP1-OL.1",
+    "WMI.IM-DM-OM.1l.n",
+    "WMI.IM-SN-OM.n",
+    "WMI-DM.SEM.HM.l"
+  ],
+  "14286": [
+    "WCh-ML-O101B-19"
+  ],
+  "128": [
+    "WMI.II-EaMC++P-S"
+  ],
+  "51430": [
+    "WMI.IM-AM4-OL.2",
+    "WZ.KLK-AMAT",
+    "WZ.IEZ-EFBUd/I2/MZ",
+    "WZ.IEZ-FBUz/I2/MZ"
+  ],
+  "51396": [
+    "WMI.IM-WA-OL.1",
+    "WMI.IM-G2-OM.2n"
+  ],
+  "14742": [
+    "WFAIS.IF-M002.2"
+  ],
+  "14741": [
+    "WMI.IM-AM2-OL.1\"T\"",
+    "WMI-DM.SEM.AZ.l",
+    "WMI-DM.SEM.AZRE.l"
+  ],
+  "8224": [
+    "WMI.II-KI-S",
+    "WMI.II-PP-M"
+  ],
+  "51366": [
+    "WMI.IM-WKM-SM",
+    "WMI.IM-INF-OL.1"
+  ],
+  "58410": [
+    "WMI.IM-AM4-OL.2\"T\"",
+    "WMI-DM.SEM.GA.l",
+    "WMI.SDSP-APIT"
+  ],
+  "51386": [
+    "WMI.IM-AM2-OL.1\"T\"",
+    "WMI.SDSP.IM-KONW1",
+    "WMI.SDSP.IM-KONW2",
+    "WMI-DM.SEM.AZ.l"
+  ],
+  "609": [
+    "WMI.TCS.A.S",
+    "WMI.TCS.AATL.S",
+    "WMI.TCS.IA.S"
+  ],
+  "14433": [
+    "WMI.IM-ALG2-OL.1",
+    "WMI.IM-ALG2-OL.1\"T\"",
+    "WZ.KLK-AMAT"
+  ],
+  "114223": [],
+  "211133": [
+    "WMI.TCS.MD.OL"
+  ],
+  "14744": [
+    "WMI.II-RPS-K",
+    "WMI.II-RRZP-S",
+    "WMI.II-DO-MK",
+    "WMI.II-DUD-MK"
+  ],
+  "375343": [],
+  "290403": [],
+  "297036": [],
+  "14555": [
+    "WMI.TCS.MPUM.S",
+    "WMI.TCS.ID.OL",
+    "WMI.TCS.MO.OL"
+  ],
+  "51420": [
+    "WMI.II-AL2-1MK",
+    "WMI.II.PdWWW-S",
+    "WZ.KLK-LOG2"
+  ],
+  "286009": [
+    "WMI.IM-PU-OL"
+  ],
+  "621": [
+    "WMI.TCS.IO.OL",
+    "WMI.TCS.PJP.S",
+    "WMI.TCS.PN.OL"
+  ],
+  "283423": [
+    "WMI.II-IO-OL",
+    "WMI.II-ORKiPO-2SO",
+    "WMI.II-IO-2SI"
+  ],
+  "14308": [],
+  "51421": [],
+  "128764": [
+    "WBT-BINF4.6",
+    "WMI.II-MP-OL",
+    "WMI.II-MP-OL-SI"
+  ],
+  "45": [
+    "WMI.II-RRCI-MK"
+  ],
+  "175809": [
+    "WMI.IM-STA2-OL.3s",
+    "WMI.IM.IBSDA-SM"
+  ],
+  "282954": [
+    "WMI.IM-PFFP-SM",
+    "WMI-DM.SEM.GPB.l"
+  ],
+  "357084": [],
+  "619": [],
+  "58211": [
+    "WMI-DM.SEM.ALG.l",
+    "WMI.IM-PROS-OL.3"
+  ],
+  "51355": [
+    "WMI.II-EaMC++P-S",
+    "WMI.II-MN-OL"
+  ],
+  "51361": [
+    "WMI.IM-PROS-OL.3",
+    "WMI.IM-SDP-OM.l",
+    "WMI.IM-SWS-OM.fsl",
+    "WMI-DM.SEM.MFZ.l",
+    "WMI.IM-PF2-OM"
+  ],
+  "79649": [],
+  "51369": [
+    "WMI-DM.SEM.AZRE.l"
+  ],
+  "51402": [
+    "WMI.IM-AM2-OL.1"
+  ],
+  "33": [
+    "WMI.II-P2-OL",
+    "WMI.II-P2-OL-SI"
+  ],
+  "97767": [
+    "WMI.IM-STA2-OL.3s",
+    "WMI.IM.ZMSR-SM",
+    "WZ.IEZ-EKd/II1/Rp",
+    "WBT-BINF2-2.6",
+    "WMI.TCS.SA.S"
+  ],
+  "14572": [
+    "WMI.TCS.AM2.OL",
+    "WMI-DM.SEM.AZ.l"
+  ],
+  "51358": [
+    "WMI.TCS.POB.OL",
+    "WMI.TCS.WBN2.OM"
+  ],
+  "58252": [],
+  "180303": [
+    "WMI.II-AM1b-1MK",
+    "WMI.II-EaMC++P-S",
+    "WMI.II-P2-MK",
+    "WMI.II-JTUD-S"
+  ],
+  "353966": [
+    "WMI.II-PSI-S"
+  ],
+  "341609": [
+    "WMI.IM.AC-SM"
+  ],
+  "127304": [
+    "WBNZ-722-2",
+    "WCh-CL-O101B-19",
+    "WMI.IM-WA-OL.1",
+    "WCh-ML-O101B-19",
+    "WCh-ZRL-O101B-19"
+  ],
+  "72500": [
+    "WMI.SDSP-KONW1-IT",
+    "WMI.SDSP-KONW2-IT"
+  ],
+  "122000": [],
+  "51378": [
+    "WMI.IM-AM2-OL.1",
+    "WMI.IM-RRZ-OL.2",
+    "WMI.IM-TOP1-OL.1\"T\"",
+    "WMI-DM.SEM.T.l"
+  ],
+  "358629": [
+    "WMI.TCS.PRA.S"
+  ],
+  "58179": [
+    "WMI.IM.IET-SM",
+    "WMI-DM.SEM.TUD.l",
+    "WMI.IM.EDS-SM"
+  ],
+  "51403": [
+    "WMI.IM-PROS-OL.3",
+    "WMI-DM.SEM.GPB.l",
+    "WMI-DM.SEM.MTA.l"
+  ],
+  "14349": [
+    "WMI.IM-AM4-OL.2",
+    "WMI.IM-AM2-OL.1\"T\""
+  ],
+  "36552": [
+    "WBT-BINF2.1",
+    "WFAIS.IF-M002.2",
+    "WMI.IM-TUT2-OL.1"
+  ],
+  "112282": [
+    "WMI.IM-RRZ-OL.2",
+    "WBT-BFMK2.7"
+  ],
+  "172423": [
+    "WMI.II-MOB-S",
+    "WMI.II-IT-IN-S",
+    "WMI.II-IOZ-S"
+  ],
+  "58674": [
+    "WMI.TCS.COM.S",
+    "WMI.TCS.IT.S",
+    "WMI.TCS.MD.OL",
+    "WMI.TCS.WBN2.OM"
+  ],
+  "51397": [
+    "WMI.TCS.SA.S",
+    "WMI.II-RPS-O",
+    "WMI.II-RPS-SI",
+    "WMI.II-SIDiO-S",
+    "WMI.II.URwGSN2-S",
+    "WMI.II-MOwUM-2SI"
+  ],
+  "631": [],
+  "49": [
+    "WMI.II-MOB-S",
+    "WMI.II-PZ2-3L",
+    "WMI.II-MSL-S",
+    "WMI.II-SB-S",
+    "WMI.II-SKO-S"
+  ],
+  "174": [],
+  "14363": [
+    "WMI.II-BM-S",
+    "WBT-BINF2-1.9",
+    "WMI.II-PJN-S",
+    "WMI.II-CVaPR-S"
+  ],
+  "129233": [
+    "WMI-DM.SEM.TL.l",
+    "WCh-ML-O101B-19",
+    "WMI.IM-WA-OL.1",
+    "WBT-BFMK2.7"
+  ],
+  "51": [
+    "WMI.II-P-MK",
+    "WMI.II-OZ-S"
+  ],
+  "20": [
+    "WMI.II-PF2-IO",
+    "WMI.II-SO-OL",
+    "WMI.II-KOG-S"
+  ],
+  "82033": [
+    "WMI.II.PdWWW-S"
+  ],
+  "54": [
+    "WMI.II-KOS-S",
+    "WMI.II-AM1-OL",
+    "WMI.DI.SEM-RRC",
+    "WMI.II-MO-O"
+  ],
+  "51392": [
+    "WFAIS.IF-M002.2"
+  ],
+  "14": [
+    "WMI.II-SMO-S",
+    "WMI.SDSP-CCTDATD",
+    "WMI.II-AM1b-1MK"
+  ],
+  "51373": [
+    "WMI.IM-TOP1-OL.1\"T\"",
+    "WMI-DM.SEM.T.l"
+  ],
+  "51364": [
+    "WMI.IM-AM2-OL.1",
+    "WMI.IM-TOP1-OL.1",
+    "WMI.IM-RRCT-OL.3\"T\"",
+    "WMI.IM-AF-OM.1fns"
+  ],
+  "34660": [
+    "WMI.IM-EK-OL.3e",
+    "WMI.IM-INF-OL.1",
+    "WMI.IM-MBML-OM"
+  ],
+  "189255": [
+    "WMI.IM-EDF-SM.fs"
+  ],
+  "51404": [
+    "WMI.IM-PROS-OL.3",
+    "WMI-DM.SEM.TOS.l",
+    "WMI.IM-SWS-OM.fsl"
+  ],
+  "129384": [
+    "WMI.IM-PROS-OL.3",
+    "WMI.IM-WA-OL.1\"T\"",
+    "WMI.IM-ALG2-OL.1\"T\"",
+    "WMI.IM-AG-SM"
+  ],
+  "51381": [
+    "WMI.IM-AF-OM.1fns",
+    "WMI.IM-TOP1-OL.1",
+    "WMI-DM.SEM.GPB.l"
+  ],
+  "299767": [
+    "WMI.IM-TUT2-OL.1",
+    "WMI.SDSP-ITV"
+  ],
+  "634": [
+    "WMI.TCS.ASD2.OL",
+    "WMI.TCS.PP2.OL",
+    "WMI.TCS.AGE.S"
+  ],
+  "51409": [
+    "WMI.IM-INF-OL.1",
+    "WMI.IM-PROS-OL.3",
+    "WMI.IM-RRZ-OL.2",
+    "WMI.IM-RP2-OL.2",
+    "WMI.IM-TOP1-OL.1",
+    "WMI.IM-MM-OM.1s"
+  ],
+  "96510": [
+    "WMI.IM-ALG2-OL.1",
+    "WMI.IM-INF-OL.1"
+  ],
+  "51367": [
+    "WMI.IM-AM4-OL.2\"T\""
+  ],
+  "191109": [
+    "WMI.IM-ZASF-SM.f"
+  ],
+  "374441": [],
+  "178733": [
+    "WMI.IM-TOP1-OL.1\"T\"",
+    "WMI.IM-MBML-OM",
+    "WBT-BINF2-3.2"
+  ],
+  "22": [
+    "WMI.II-TS-S",
+    "WFAIS.SDSP-IT002.02"
+  ],
+  "130166": [],
+  "112651": [],
+  "35579": [],
+  "51363": [
+    "WMI-DM.SEM.ALG.l"
+  ],
+  "280453": [
+    "WMI.II-PZ2-3L"
+  ],
+  "220946": [
+    "WMI.II-AM2b-2MK",
+    "WMI.II-WdT-1MK"
+  ],
+  "127337": [
+    "WMI-DM.SEM.TRA.l",
+    "WMI.IM-ALG2-OL.1",
+    "WFAIS.IF-A201.2"
+  ],
+  "58054": [
+    "WMI.II-IO-OL",
+    "WMI.II-ORKiPO-2SO",
+    "WMI.II-SZIO-S",
+    "WMI.II-IO-2SI"
+  ],
+  "370391": [
+    "WMI.TCS.SNS.S",
+    "WMI.TCS.FKL.S"
+  ],
+  "18": [],
+  "196229": [
+    "WMI.II-PSI-S"
+  ],
+  "278780": [
+    "WMI.II-PSI-S"
+  ],
+  "11369": [
+    "WMI.II-P2-OL",
+    "WBT-BINF4.6",
+    "WMI.II-MP-OL-SI",
+    "WMI.II-P2-OL-SI"
+  ],
+  "238304": [
+    "WMI-DM.SEM.TL.l",
+    "WCh-CL-O101B-19",
+    "WFAIS.IF-A201.2"
+  ],
+  "14402": [
+    "WMI.IM-INF-OL.1"
+  ],
+  "51405": [
+    "WMI.IM-RP2-OL.2",
+    "WMI.IM-RP-OL.2\"T\"",
+    "WMI-DM.SEM.CIK.l"
+  ],
+  "14400": [
+    "WMI.SDSP-GM3DO.I",
+    "WMI.II.URwGSN2-S"
+  ],
+  "160681": [
+    "WMI-DM.SEM.AZRE.l"
+  ],
+  "34495": [
+    "WBT-BINF1.3",
+    "WMI.II-MP-MK"
+  ],
+  "95061": [],
+  "80265": [
+    "WFAIS.IF-A201.2",
+    "WFAIS.IF-M002.2"
+  ],
+  "51389": [
+    "WMI.IM.TM-SM"
+  ],
+  "23": [
+    "WMI.II-A2-1SI",
+    "WMI.II-AM1-OL",
+    "WMI.II-ASD-OL",
+    "WMI.II-SK-OL",
+    "WMI.II-IS-S"
+  ],
+  "222886": [],
+  "110749": [],
+  "34544": [
+    "WMI.IM-ALG2-OL.1",
+    "WFAIS.IF-A201.2"
+  ],
+  "51394": [
+    "WMI.IM-SEM.MAI.I",
+    "WMI.II-MPSZI1-SI",
+    "WMI.II-PSI-S",
+    "WMI.II-TS-S",
+    "WMI.II-PSI-2SI",
+    "WFAIS.SDSP-IT002.02"
+  ],
+  "16": [
+    "WMI.TCS.AGE.S",
+    "WMI.TCS.ASD2.OL",
+    "WMI.TCS.MP.OL"
+  ],
+  "267924": [
+    "WMI.II-IO-OL",
+    "WMI.II-IO-2SI",
+    "WMI.II-ASD-OL"
+  ],
+  "14405": [
+    "WMI.II-SMAI-S"
+  ],
+  "51359": [
+    "WMI.IM-WA-OL.1",
+    "WZ.KLK-AMAT"
+  ],
+  "34752": [
+    "WMI.IM-RRZ-OL.2",
+    "WMI.IM-RP2-OL.2"
+  ],
+  "19": [
+    "WMI.II-MLiOS-2SO",
+    "WMI.II-BDBD-S",
+    "WMI.II-SBDSQL-2SOI"
+  ],
+  "188810": [
+    "WMI.IM-AM4-OL.2\"T\""
+  ],
+  "51426": [
+    "WMI.II-A2-1SO",
+    "WMI.II-AM1-OL"
+  ],
+  "59040": [
+    "WMI-DM.SEM.TL.l"
+  ],
+  "222": [
+    "WMI.TCS.COM.S",
+    "WMI.TCS.IT.S",
+    "WMI.TCS.OD.S"
+  ],
+  "256470": [
+    "WMI-DM.SEM.ALG.l",
+    "WMI.SDSP-RT"
+  ],
+  "62": [
+    "WMI.II-SMO-S",
+    "WMI.II-DUD-MK",
+    "WMI.II-P2-MK"
+  ],
+  "58585": [
+    "WMI.IM-SEM.MAI.I",
+    "WMI-DM.SEM.AF.l"
+  ],
+  "14749": [
+    "WMI.IM-STA2-OL.3s",
+    "WMI.IM-MRK-SM",
+    "WMI.IM-PROS-OL.3",
+    "WMI-DM.SEM.MFZ.l",
+    "WMI.IM.AP-OM"
+  ],
+  "51385": [
+    "WMI.IM-AM2-OL.1",
+    "WMI.IM-AM4-OL.2",
+    "WFAIS.IF-M002.1",
+    "WFAIS.IF-A201.2",
+    "WMI.TCS.AM2.OL",
+    "WZ.IEZ-EKz/II1/RPraw"
+  ],
+  "17": [],
+  "51379": [
+    "WMI.IM-HM2-OM",
+    "WMI-DM.SEM.GR.l",
+    "WMI-DM.SEM.TRA.l",
+    "WMI.SDSP-OT",
+    "WMI.SDSP-GA"
+  ],
+  "51356": [
+    "WMI.II-DO-MK",
+    "WMI.II-P-MK",
+    "WMI.II-JTUD-S"
+  ],
+  "51415": [
+    "WMI-DM.SEM.TUD.l",
+    "WMI.IM-ALG2-OL.1",
+    "WMI.IM-AF-OM.1fns",
+    "WMI.IM-SDP-OM.l"
+  ],
+  "587": [],
+  "51360": [
+    "WMI-DM.SEM.AZ.l"
+  ],
+  "221818": [
+    "WMI.TCS.ALZO.S",
+    "WMI.TCS.MO.OL"
+  ],
+  "178": [
+    "WMI.II-PP-M",
+    "WMI.II-PP-MK",
+    "WMI.II-POiD-S"
+  ],
+  "589": [
+    "WMI.II-MN-OL",
+    "WMI.II-ZMD-2SOMK"
+  ]
+}
