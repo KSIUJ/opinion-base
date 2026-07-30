@@ -7,11 +7,15 @@ docker compose up
 Żyby postawić bazę danych:
 (Windows + PowerShell):
 cmd /c "docker exec -i ksi_opinion_base psql -U ksi_opinion_base -d ksi_opinion_base < create.sql"
+cmd /c "docker exec -i ksi_opinion_base psql -U ksi_opinion_base -d ksi_opinion_base < input.sql"
+
 (Linux):
 sudo docker exec -i ksi_opinion_base psql -U ksi_opinion_base < create.sql
+sudo docker exec -i ksi_opinion_base psql -U ksi_opinion_base < input.sql
+
 (Bez Dockera):
 psql < create.sql
-
+psql < input.sql
 
 Żeby wyczyścić bazę danych:
 (Windows + PowerShell):
@@ -20,6 +24,7 @@ cmd /c "docker exec -i ksi_opinion_base psql -U ksi_opinion_base -d ksi_opinion_
 sudo docker exec -i ksi_opinion_base psql -U ksi_opinion_base < clear.sql
 (Bez Dockera):
 psql < clear.sql
+
 
 Zeby dostać się do miejsca, gdzie można wykonywać zapytania na bazie danych:
 docker exec -it ksi_opinion_base psql -U ksi_opinion_base -d ksi_opinion_base
