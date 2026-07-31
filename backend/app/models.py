@@ -26,7 +26,6 @@ class Subject(Base):
     lecturer_rel: Mapped["Lecturer"] = relationship(back_populates="subjects")
     opinions: Mapped[list["Opinion"]] = relationship(back_populates="subject_rel")
 
-
 class Opinion(Base):
     __tablename__ = "opinions"
 
@@ -38,12 +37,3 @@ class Opinion(Base):
 
     subject_rel: Mapped["Subject"] = relationship(back_populates="opinions")
 
-class User(Base):
-    __tablename__ = "users"
-
-    id: Mapped[int] = mapped_column(Integer, primary_key=True)
-
-    name: Mapped[str] = mapped_column(String)
-    surname: Mapped[str] = mapped_column(String)
-
-    subjects: Mapped[list["Subject"]] = relationship(back_populates="lecturer_rel")
