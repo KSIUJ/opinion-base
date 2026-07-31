@@ -1,20 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm import Session
-
-from app.db import SessionLocal
+from app.dependencies.db import get_db
 from app.schemas.subjects import SubjectsResponse
 from app.services.subjects_service import SubjectsService
 
 router = APIRouter()
-
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 @router.get("/all", response_model=SubjectsResponse)
