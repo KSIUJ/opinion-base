@@ -1,14 +1,15 @@
 from sqlalchemy.orm import Session
 
-from app.models import Subject
-from app.repositories.subjects_repository import SubjectsRepository
-from app.schemas.subjects import SubjectOut
+from app.models import ActiveSubject
+from app.repositories.subjects_repository import ActiveSubjectsRepository
+from app.schemas.subjects import ActiveSubjectOut
+from app.schemas.subjects import ActiveSubjectOutBasic
 
 
-class SubjectsService:
+class ActiveSubjectsService:
     @staticmethod
-    def _serialize_subject(subject: Subject) -> SubjectOut:
-        return SubjectOut(
+    def _serialize_subject(subject: ActiveSubject) -> SubjectOut:
+        return ActiveSubjectOut(
             subject_id=subject.id,
             subject_name=subject.name,
             lecturer_id=subject.lecturer_rel.id,
@@ -19,6 +20,18 @@ class SubjectsService:
         )
 
     @staticmethod
+    def _serialize_subject_basic(subject: ActiveSubject) -> SubjectOutBasic:
+        return ActiveSubjectOut(
+            subject_id=subject.id,
+            subject_name=subject.name,
+        )
+
+    @staticmethod
+    def list_subjects_all(db: Session) -> list[ActiveSubjectOutBasic]:
+        subjects = ActiveSubjectsRepository.list_subjects_all(db=db)
+        return [ActiveSubjectsService._serialize_subject_basic(subject) for subject in subjects]
+
+    @staticmethod
     def list_subjects(
         db: Session,
         subject_id: int | None = None,
@@ -27,8 +40,9 @@ class SubjectsService:
         lecturer_name: str | None = None,
         lecturer_surname: str | None = None,
         min_opinions: int | None = None,
-    ) -> list[SubjectOut]:
-        subjects = SubjectsRepository.list_subjects(
+    ) -> list[ActiveSubjectOut]:
+
+        subjects = ActiveSubjectsRepository.list_subjects(
             db=db,
             subject_id=subject_id,
             subject_name=subject_name,
@@ -37,7 +51,7 @@ class SubjectsService:
             lecturer_surname=lecturer_surname,
         )
 
-        response = [SubjectsService._serialize_subject(subject) for subject in subjects]
+        response = [ActiveSubjectsService._serialize_subject(subject) for subject in subjects]
         if min_opinions is not None:
             response = [
                 subject for subject in response if subject.opinions_count >= min_opinions

@@ -1,18 +1,21 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm import Session
+
 from app.dependencies.db import get_db
 from app.schemas.subjects import SubjectsResponse
+from app.schemas.subjects import SubjectsResponseBasic
 from app.services.subjects_service import SubjectsService
 
 router = APIRouter()
 
 
-@router.get("/all", response_model=SubjectsResponse)
-def list_subjects_all(db: Session = Depends(get_db)) -> SubjectsResponse:
-    return list_subjects(db=db)
+@router.get("/", response_model=SubjectsResponseBasic)
+def list_subjects_all(db: Session = Depends(get_db)) -> SubjectsResponseBasic:
+    subjects = SubjectsService.list_subjects_all(db=db)
+    return SubjectResponseBasic(subjects=subjects)
 
-@router.get("", response_model=SubjectsResponse)
+@router.get("/search", response_model=SubjectsResponse)
 def list_subjects(
     subject_id: int | None = None,
     subject_name: str | None = None,
@@ -22,9 +25,10 @@ def list_subjects(
     min_opinions: int | None = None,
     db: Session = Depends(get_db),
 ) -> SubjectsResponse:
+
     if min_opinions is not None and min_opinions < 0:
         raise HTTPException(status_code=422, detail="min_opinions must be >= 0")
-
+    
     try:
         subjects = SubjectsService.list_subjects(
             db=db,

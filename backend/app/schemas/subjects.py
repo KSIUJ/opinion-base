@@ -1,15 +1,21 @@
 from pydantic import BaseModel
 
 
-class SubjectOut(BaseModel):
+class SubjectOutBasic(BaseModel):
     subject_id: int
     subject_name: str
-    lecturer_id: int
-    lecturer_name: str
-    lecturer_surname: str
+    department_id: int
+    semester_id: int
+    is_obligatory: bool
     opinions_count: int
+
+class SubjectsResponseBasic(BaseModel):
+    subjects: list[SubjectOutBasic]
+
+'TODO: zrobić to dobrze'
+class SubjectOut(SubjectOutBasic):
     opinions: list[str]
 
-
 class SubjectsResponse(BaseModel):
+    
     subjects: list[SubjectOut]
