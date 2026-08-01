@@ -8,19 +8,22 @@ from app.schemas.subjects import ActiveSubjectOutBasic
 
 class ActiveSubjectsService:
     @staticmethod
-    def _serialize_subject(subject: ActiveSubject) -> SubjectOut:
-        return ActiveSubjectOut(
-            subject_id=subject.id,
-            subject_name=subject.name,
-            lecturer_id=subject.lecturer_rel.id,
-            lecturer_name=subject.lecturer_rel.name,
-            lecturer_surname=subject.lecturer_rel.surname,
-            opinions_count=len(subject.opinions),
-            opinions=[opinion.content for opinion in subject.opinions],
+    def _serialize_subject_basic(subject: ActiveSubject) -> ActiveSubjectOutBasic:
+        return ActiveSubjectOutBasic(
+            id=subject.id,
+            lecturer_id=subject.lecturer_id,
+            role_id=subject.role_id,
+            subject_id=subject.subject_id,
+            time_id=subject.time_id
+
+            subject_name=subject.subject.name,
+            lecturer_id=subject.lecturer.id,
+            opinions_count=len(subject.subject.opinions),
+            opinions=[opinion.content for opinion in subject.subject.opinions],
         )
 
     @staticmethod
-    def _serialize_subject_basic(subject: ActiveSubject) -> SubjectOutBasic:
+    def _serialize_subject_basic(subject: ActiveSubject) -> ActiveSubjectOutBasic:
         return ActiveSubjectOut(
             subject_id=subject.id,
             subject_name=subject.name,

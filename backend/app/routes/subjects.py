@@ -10,10 +10,10 @@ from app.services.subjects_service import SubjectsService
 router = APIRouter()
 
 
-@router.get("/", response_model=SubjectsResponseBasic)
+@router.get("/all", response_model=SubjectsResponseBasic)
 def list_subjects_all(db: Session = Depends(get_db)) -> SubjectsResponseBasic:
     subjects = SubjectsService.list_subjects_all(db=db)
-    return SubjectResponseBasic(subjects=subjects)
+    return SubjectsResponseBasic(subjects=subjects)
 
 @router.get("/search", response_model=SubjectsResponse)
 def list_subjects(

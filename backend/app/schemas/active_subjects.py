@@ -9,4 +9,5 @@ class ActiveSubjectOutBasic(SubjectOutBasic):
     subject_id: int
     time_id: int
 
-
+class ActiveSubjectResponseBasic(BaseModel):
+    subjects: list[ActiveSubjectOutBasic]
