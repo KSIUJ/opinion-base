@@ -1,5 +1,16 @@
 from pydantic import BaseModel
 
+from app.schemas.small import LecturerRoleOut
+
+class LecturerOutBasic(BaseModel):
+    id: int
+    name: str
+    surname: str
+    department_id: int
+    role: LecturerRoleOut
+    active_subjects: list[ActiveSubjectOutBasic]
+
+
 
 class LecturerListItem(BaseModel):
     id: int

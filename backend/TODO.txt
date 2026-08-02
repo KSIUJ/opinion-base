@@ -1,1 +1,2 @@
-Zamienić korzystanie z tabeli subjects na korzystanie z tabeli active_subjects
+1) Przenieść treść endpointu subjects/all do endpointa subjects w przypadku gdy nic nie jest w filtrze 
+2) Pozmieniać logikę lecturers i utworzyć logikę opinii.

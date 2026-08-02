@@ -23,14 +23,28 @@ class SubjectsRepository:
 
 
     @staticmethod
+    def build_query() -> Select:
+        query = (select(Subject)
+                 .options(
+                     joininload(Subject.department),
+                     joininload(Subject.semester),
+                     selectinload(Subject.active_subjects),
+                     selectinload(Subject.group_relations),
+                     selectinload(Subject.opinion_relations),
+                 )
+                )
+                 
+
+
+    @staticmethod
     def filter_query(
         subject_id: int | None = None,
         subject_name: str | None = None,
         lecturer_id: int | None = None,
         lecturer_name: str | None = None,
         lecturer_surname: str | None = None,
+        query: Select
     ) -> Select:
-        query = build_query()
 
         if subject_id is not None:
             query = query.where(Subject.id == subject_id)
@@ -58,13 +72,13 @@ class SubjectsRepository:
         lecturer_name: str | None = None,
         lecturer_surname: str | None = None,
     ) -> list[Subject]:
-        query = (SubjectsRepository.build_query()
-                .filter_query(
+        query = SubjectsRepository.filter_query(
                     subject_id=subject_id,
                     subject_name=subject_name,
                     lecturer_id=lecturer_id,
                     lecturer_name=lecturer_name,
                     lecturer_surname=lecturer_surname,
+                    query=SubjectsRepository.build_query()
                     )
-                 )
+                 
         return db.execute(query).unique().scalars().all()
