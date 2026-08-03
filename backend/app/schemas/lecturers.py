@@ -1,14 +1,17 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
-from app.schemas.small import LecturerRoleOut
+from app.schemas.active_subjects import ActiveSubjectOutBasic
+from app.schemas.small import DepartmentOut, LecturerRoleOut
+
 
 class LecturerOutBasic(BaseModel):
     id: int
     name: str
     surname: str
-    department_id: int
-    role: LecturerRoleOut
-    active_subjects: list[ActiveSubjectOutBasic]
+    department_id: int | None = None
+    department: DepartmentOut | None = None
+    role: LecturerRoleOut | None = None
+    active_subjects: list[ActiveSubjectOutBasic] = Field(default_factory=list)
 
 
 
@@ -39,5 +42,5 @@ class LecturerOut(BaseModel):
     id: int
     name: str
     surname: str
-    subjects: list[SubjectSummary]
-    opinions: list[OpinionOut]
+    subjects: list[SubjectSummary] = Field(default_factory=list)
+    opinions: list[OpinionOut] = Field(default_factory=list)
