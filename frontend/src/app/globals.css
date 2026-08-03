@@ -36,6 +36,12 @@ body {
     font-size: 30px;
 }
 
+input[type = "text"] {
+    border: 3px solid #555;
+    border-radius: 5px;
+    width: 100%;
+}
+
 .login-button {
     position: relative;
     background-color: green;
