@@ -38,12 +38,12 @@ class SubjectsRepository:
 
     @staticmethod
     def filter_query(
+        query: Select,
         subject_id: int | None = None,
         subject_name: str | None = None,
         lecturer_id: int | None = None,
         lecturer_name: str | None = None,
         lecturer_surname: str | None = None,
-        query: Select
     ) -> Select:
 
         if subject_id is not None:
