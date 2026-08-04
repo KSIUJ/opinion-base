@@ -1,7 +1,7 @@
-from sqlalchemy import Select, select
-from sqlalchemy.orm import Session, selectinload
+from sqlalchemy import Select, and_, select
+from sqlalchemy.orm import Session, joinedload, selectinload
 
-from app.models import Lecturer, Subject
+from app.models import ActiveSubject, Lecturer, Subject
 
 
 class SubjectsRepository:
@@ -26,14 +26,14 @@ class SubjectsRepository:
     def build_query() -> Select:
         query = (select(Subject)
                  .options(
-                     joininload(Subject.department),
-                     joininload(Subject.semester),
+                     joinedload(Subject.department),
+                     joinedload(Subject.semester),
                      selectinload(Subject.active_subjects),
                      selectinload(Subject.group_relations),
                      selectinload(Subject.opinion_relations),
                  )
                 )
-                 
+        return query
 
 
     @staticmethod
@@ -51,14 +51,21 @@ class SubjectsRepository:
         if subject_name:
             query = query.where(Subject.name.ilike(f"%{subject_name}%"))
         if lecturer_id is not None:
-            query = query.where(Subject.lecturer == lecturer_id)
+            query = query.where(
+                Subject.active_subjects.any(ActiveSubject.lecturer_id == lecturer_id)
+            )
 
         if lecturer_name or lecturer_surname:
-            query = query.join(Subject.lecturer_rel)
+            lecturer_filters = []
             if lecturer_name:
-                query = query.where(Lecturer.name.ilike(f"%{lecturer_name}%"))
+                lecturer_filters.append(Lecturer.name.ilike(f"%{lecturer_name}%"))
             if lecturer_surname:
-                query = query.where(Lecturer.surname.ilike(f"%{lecturer_surname}%"))
+                lecturer_filters.append(Lecturer.surname.ilike(f"%{lecturer_surname}%"))
+            query = query.where(
+                Subject.active_subjects.any(
+                    ActiveSubject.lecturer.has(and_(*lecturer_filters))
+                )
+            )
 
         return query
 
