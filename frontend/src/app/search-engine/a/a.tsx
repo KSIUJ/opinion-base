@@ -12,3 +12,10 @@ export const subjects = [
         slug: "oh-no"
     }
 ];
+
+export const teachers = [
+    {
+        name: "Rafał Kawa",
+        slug: "rk"
+    }
+];
