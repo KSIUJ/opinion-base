@@ -6,6 +6,7 @@ import Search from './components/Search/Search';
 import { useState } from 'react';
 
 import { subjects } from "./a/a";
+import { teachers } from "./a/a";
 
 export default function Home() {
     const [searchValue, setSearchValue] = useState('');
@@ -16,6 +17,8 @@ export default function Home() {
         console.log(searchType, value);
         setSearchValue(value);
     };
+
+    const results = searchType === 'przedmioty' ? subjects : teachers;
 
     return (
         <main className = "flex min-h-screen flex-col items-center justify-between p-24">
@@ -59,13 +62,17 @@ export default function Home() {
                         Wyszukiwano:
                 </h2>
 
-                {subjects.map(subject => (
+                {results.map((item) => (
                     <Link
-                        key = {subject.slug}
-                        href = {`/search-engine/subject/${subject.slug}`}
+                        key = {item.slug}
+                        href = {
+                            searchType === 'przedmioty'
+                                ? `/search-engine/subject/${item.slug}`
+                                : `/search-engine/teacher/${item.slug}`
+                        }
                     >
                         <div>
-                            {subject.name}
+                            {item.name}
                         </div>
                     </Link>
                 ))}
