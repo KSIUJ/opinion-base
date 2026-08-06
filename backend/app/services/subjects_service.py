@@ -26,7 +26,9 @@ class SubjectsService:
             opinions_count=len(subject.opinion_relations),
 
             opinions=[relation.opinion.content for relation in subject.opinion_relations],
-            
+            groups_count=len(subject.group_relations),
+            groups=[relation.subject_group.name for relation in subject.group_relations],
+
         )
 
     @staticmethod

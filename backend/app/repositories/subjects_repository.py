@@ -1,7 +1,7 @@
 from sqlalchemy import Select, and_, select
 from sqlalchemy.orm import Session, joinedload, selectinload
 
-from app.models import ActiveSubject, Lecturer, Subject, SubjectOpinionRelation
+from app.models import ActiveSubject, Lecturer, Subject, SubjectOpinionRelation, SubjectSubjectGroupRelation
 
 
 class SubjectsRepository:
@@ -31,7 +31,8 @@ class SubjectsRepository:
                      joinedload(Subject.department),
                      joinedload(Subject.semester),
                      selectinload(Subject.active_subjects),
-                     selectinload(Subject.group_relations),
+                     selectinload(Subject.group_relations).
+                     joinedload(SubjectSubjectGroupRelation.subject_group),
                      selectinload(Subject.opinion_relations).
                      joinedload(SubjectOpinionRelation.opinion),
                  )

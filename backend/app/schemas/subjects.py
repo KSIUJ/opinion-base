@@ -21,7 +21,7 @@ class SubjectOut(SubjectOutBasic):
     opinions: list[str] = Field(default_factory=list)
     lecturers_info: list[ActiveSubjectOutBasic] = Field(default_factory=list)
     groups_count: int = 0
-    groups: list[int] = Field(default_factory=list)
+    groups: list[str] = Field(default_factory=list)
 
 
 class SubjectsResponse(BaseModel):
