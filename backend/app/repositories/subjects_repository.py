@@ -9,7 +9,9 @@ class SubjectsRepository:
     def build_query_basic() -> Select:
         query = (select(Subject)
                  .options(
-                        selectinload(Subject.active_subjects),
+                        joinedload(Subject.department),
+                        joinedload(Subject.semester),
+                        selectinload(Subject.opinion_relations),
                      )
                  )
         return query

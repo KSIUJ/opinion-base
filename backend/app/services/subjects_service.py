@@ -2,8 +2,8 @@ from sqlalchemy.orm import Session
 
 from app.models import Subject
 from app.repositories.subjects_repository import SubjectsRepository
-from app.schemas.subjects import SubjectOut
-from app.schemas.subjects import SubjectOutBasic
+from app.schemas.subjects import SubjectOut, SubjectOutBasic
+from app.schemas.small import DepartmentOut, SemesterOut
 
 
 class SubjectsService:
@@ -25,10 +25,17 @@ class SubjectsService:
         return SubjectOutBasic(
             subject_id=subject.id,
             subject_name=subject.name,
-            department_id=subject.department_id,
-            semester_id=subject.semester_id,
+            department=DepartmentOut(
+                id=subject.department.id,
+                name=subject.department.name,
+                ),
+            semester=SemesterOut(
+                id=subject.semester.id,
+                name=subject.semester.name,
+                is_winter=subject.semester.is_winter,
+                ),
             is_obligatory=subject.is_obligatory,
-            opinions_count=len(subject.opinion_relations)
+            opinions_count=len(subject.opinion_relations),
         )
 
     @staticmethod
