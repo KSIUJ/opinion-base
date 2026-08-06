@@ -17,7 +17,7 @@ class SubjectsService:
             semester_id=subject.semester_id,
             is_obligatory=subject.is_obligatory,
             opinions_count=len(subject.opinion_relations),
-            opinions=[opinion.content for opinion in subject.opinions],
+            opinions=[opinion.content for opinion in subject.opinion_relations],
         )
 
     @staticmethod

@@ -28,22 +28,7 @@ def list_subjects(
 
     if min_opinions is not None and min_opinions < 0:
         raise HTTPException(status_code=422, detail="min_opinions must be >= 0")
-'''
-    if not any(
-            value is not None
-            for value in [
-                subject_id,
-                subject_name,
-                lecturer_id,
-                lecturer_name,
-                lecturer_surname,
-                min_opinions,
-            ]
-    ):
-        return SubjectsResponse(subjects=SubjectsService.list_subjects_all(db=db))
-'''
 
-    
     try:
         subjects = SubjectsService.list_subjects(
             db=db,

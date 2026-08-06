@@ -12,7 +12,7 @@ class Settings:
     # Primary source: environment variables (or a single DATABASE_URL).
     db_user: str = os.getenv("DB_USER", "ksi_opinion_base")
     db_password: str = os.getenv("DB_PASSWORD", "ksi_opinion_base")
-    db_host: str = os.getenv("DB_HOST", "localhost")
+    db_host: str = os.getenv("DB_HOST", "posgres")
     db_port: str = os.getenv("DB_PORT", "5434")
     db_name: str = os.getenv("DB_NAME", "ksi_opinion_base")
     database_url: str | None = os.getenv("DATABASE_URL")
