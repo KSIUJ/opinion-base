@@ -13,11 +13,20 @@ class SubjectsService:
         return SubjectOut(
             subject_id=subject.id,
             subject_name=subject.name,
-            department_id=subject.department_id,
-            semester_id=subject.semester_id,
+            department=DepartmentOut(
+                id=subject.department.id,
+                name=subject.department.name,
+                ),
+            semester=SemesterOut(
+                id=subject.semester.id,
+                name=subject.semester.name,
+                is_winter=subject.semester.is_winter,
+                ),
             is_obligatory=subject.is_obligatory,
             opinions_count=len(subject.opinion_relations),
-            opinions=[opinion.content for opinion in subject.opinion_relations],
+
+            opinions=[relation.opinion.content for relation in subject.opinion_relations],
+            
         )
 
     @staticmethod
