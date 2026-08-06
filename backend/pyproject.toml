@@ -9,6 +9,7 @@ dependencies = [
     "psycopg[binary]",
     "python-dotenv",
     "sqlalchemy",
+    "requests-oauthlib>=2.0.0",
 ]
 
 [tool.fastapi]
