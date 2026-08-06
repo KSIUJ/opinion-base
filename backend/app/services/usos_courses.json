@@ -1,0 +1,1360 @@
+{
+  "WCh-ML-O101B-19": {
+    "id": "WCh-ML-O101B-19",
+    "name": {
+      "pl": "Matematyka II",
+      "en": "Mathematics II"
+    }
+  },
+  "WFAIS.IF-M002.2": {
+    "id": "WFAIS.IF-M002.2",
+    "name": {
+      "pl": "Analiza matematyczna II MT",
+      "en": "Mathematical Analysis II Full Course (FC)"
+    }
+  },
+  "WMI-DM.SEM.AZ.l": {
+    "id": "WMI-DM.SEM.AZ.l",
+    "name": {
+      "pl": "Seminarium: Analiza zespolona",
+      "en": "Complex Analysis: Seminar"
+    }
+  },
+  "WMI-DM.SEM.AZRE.l": {
+    "id": "WMI-DM.SEM.AZRE.l",
+    "name": {
+      "pl": "Seminarium: Analiza zespolona i równania eliptyczne",
+      "en": "Complex Analysis and Elliptic Equations: Seminar"
+    }
+  },
+  "WMI-DM.SEM.GA.l": {
+    "id": "WMI-DM.SEM.GA.l",
+    "name": {
+      "pl": "Seminarium: Geometria analityczna",
+      "en": "Analytic Geometry: Seminar"
+    }
+  },
+  "WMI-DM.SEM.GAL.l": {
+    "id": "WMI-DM.SEM.GAL.l",
+    "name": {
+      "pl": "Seminarium: Geometria algebraiczna",
+      "en": "Algebraic Geometry : Seminar"
+    }
+  },
+  "WMI-DM.SEM.GR.l": {
+    "id": "WMI-DM.SEM.GR.l",
+    "name": {
+      "pl": "Seminarium: Geometria różniczkowa",
+      "en": "Differential Geometry: Seminar"
+    }
+  },
+  "WMI-DM.SEM.HM.l": {
+    "id": "WMI-DM.SEM.HM.l",
+    "name": {
+      "pl": "Seminarium: Historia matematyki",
+      "en": "History of Mathematics: Seminar"
+    }
+  },
+  "WMI-DM.SEM.MTA.l": {
+    "id": "WMI-DM.SEM.MTA.l",
+    "name": {
+      "pl": "Seminarium: Metody teorii aproksymacji",
+      "en": "Methods of Approximation Theory: Seminar"
+    }
+  },
+  "WMI-DM.SEM.TUD.l": {
+    "id": "WMI-DM.SEM.TUD.l",
+    "name": {
+      "pl": "Seminarium: Teoria układów dynamicznych",
+      "en": "Theory of Dynamical Systems: Seminar"
+    }
+  },
+  "WMI.II-A2-1SI": {
+    "id": "WMI.II-A2-1SI",
+    "name": {
+      "pl": "Algebra 2",
+      "en": "Algebra 2"
+    }
+  },
+  "WMI.II-A2-1SO": {
+    "id": "WMI.II-A2-1SO",
+    "name": {
+      "pl": "Algebra 2",
+      "en": "Algebra 2"
+    }
+  },
+  "WMI.II-AM1b-1MK": {
+    "id": "WMI.II-AM1b-1MK",
+    "name": {
+      "pl": "Analiza matematyczna 1b",
+      "en": "Mathematical Analysis 1b"
+    }
+  },
+  "WMI.II-AM2b-2MK": {
+    "id": "WMI.II-AM2b-2MK",
+    "name": {
+      "pl": "Analiza matematyczna 2b",
+      "en": "Mathematical Analysis 2b"
+    }
+  },
+  "WMI.II-EaMC++P-S": {
+    "id": "WMI.II-EaMC++P-S",
+    "name": {
+      "pl": "Effective and modern C++ programming",
+      "en": "Effective and modern C++ programming"
+    }
+  },
+  "WMI.II-KI-S": {
+    "id": "WMI.II-KI-S",
+    "name": {
+      "pl": "Kodowanie informacji",
+      "en": "Information Coding"
+    }
+  },
+  "WMI.II-MESwMZF-MS": {
+    "id": "WMI.II-MESwMZF-MS",
+    "name": {
+      "pl": "Metoda elementów skończonych w modelowaniu zjawisk fizycznych",
+      "en": "Finite Element Method in Modeling Physical Phenomena"
+    }
+  },
+  "WMI.II-PF2-IO": {
+    "id": "WMI.II-PF2-IO",
+    "name": {
+      "pl": "Programowanie funkcyjne 2",
+      "en": "Functional Programming 2"
+    }
+  },
+  "WMI.II-PP-M": {
+    "id": "WMI.II-PP-M",
+    "name": {
+      "pl": "Projekt programistyczny",
+      "en": "Programming Project"
+    }
+  },
+  "WMI.II-RPS-O": {
+    "id": "WMI.II-RPS-O",
+    "name": {
+      "pl": "Rachunek prawdopodobieństwa i statystyka",
+      "en": "Probability and Statistics"
+    }
+  },
+  "WMI.II-SMO-S": {
+    "id": "WMI.II-SMO-S",
+    "name": {
+      "pl": "Matematyka obliczeniowa",
+      "en": "Computational Mathematics"
+    }
+  },
+  "WMI.II-SO-OL": {
+    "id": "WMI.II-SO-OL",
+    "name": {
+      "pl": "Systemy operacyjne",
+      "en": "Operating Systems"
+    }
+  },
+  "WMI.II-ZMD-2SOMK": {
+    "id": "WMI.II-ZMD-2SOMK",
+    "name": {
+      "pl": "Zaawansowana matematyka dyskretna",
+      "en": "Advanced Discrete Mathematics"
+    }
+  },
+  "WMI.IM-A1-OL.2o": {
+    "id": "WMI.IM-A1-OL.2o",
+    "name": {
+      "pl": "Algebra 1",
+      "en": "Algebra 1"
+    }
+  },
+  "WMI.IM-AG-SM": {
+    "id": "WMI.IM-AG-SM",
+    "name": {
+      "pl": "Algebraic Geometry",
+      "en": "Algebraic Geometry"
+    }
+  },
+  "WMI.IM-ALG2-OL.1\"T\"": {
+    "id": "WMI.IM-ALG2-OL.1\"T\"",
+    "name": {
+      "pl": "Algebra liniowa z geometrią 2\"T\"",
+      "en": "Linear Algebra and Geometry 2\"T\""
+    }
+  },
+  "WMI.IM-AM2-OL.1\"T\"": {
+    "id": "WMI.IM-AM2-OL.1\"T\"",
+    "name": {
+      "pl": "Analiza matematyczna 2 \"T\"",
+      "en": "Mathematical Analysis 2 \"T\""
+    }
+  },
+  "WMI.IM-AM4-OL.2": {
+    "id": "WMI.IM-AM4-OL.2",
+    "name": {
+      "pl": "Analiza matematyczna 4",
+      "en": "Mathematical Analysis 4"
+    }
+  },
+  "WMI.IM-DM-OM.1l.n": {
+    "id": "WMI.IM-DM-OM.1l.n",
+    "name": {
+      "pl": "Dydaktyka matematyki 1-L",
+      "en": "Teaching of Mathematics 1-L"
+    }
+  },
+  "WMI.IM-G2-OM.2n": {
+    "id": "WMI.IM-G2-OM.2n",
+    "name": {
+      "pl": "Geometria 2",
+      "en": "Geometry 2"
+    }
+  },
+  "WMI.IM-IDG-SM": {
+    "id": "WMI.IM-IDG-SM",
+    "name": {
+      "pl": "Introduction to Differential Geometry",
+      "en": "Introduction to Differential Geometry"
+    }
+  },
+  "WMI.IM-INF-OL.1": {
+    "id": "WMI.IM-INF-OL.1",
+    "name": {
+      "pl": "Informatyka",
+      "en": "Computer Science"
+    }
+  },
+  "WMI.IM-IZMN-SM": {
+    "id": "WMI.IM-IZMN-SM",
+    "name": {
+      "pl": "Interpolacja i jej zastosowania w metodach numerycznych",
+      "en": "Interpolation and Its Application to Numerical Methods"
+    }
+  },
+  "WMI.IM-RRCT-OL.3\"T\"": {
+    "id": "WMI.IM-RRCT-OL.3\"T\"",
+    "name": {
+      "pl": "Równania różniczkowe cząstkowe \"T\"",
+      "en": "Partial Differential Equations \"T\""
+    }
+  },
+  "WMI.IM-SN-OM.n": {
+    "id": "WMI.IM-SN-OM.n",
+    "name": {
+      "pl": "Seminarium nauczycielskie",
+      "en": "Teachers' training seminar"
+    }
+  },
+  "WMI.IM-TOP1-OL.1": {
+    "id": "WMI.IM-TOP1-OL.1",
+    "name": {
+      "pl": "Topologia 1",
+      "en": "Topology I"
+    }
+  },
+  "WMI.IM-WA-OL.1": {
+    "id": "WMI.IM-WA-OL.1",
+    "name": {
+      "pl": "Wstęp do algebry",
+      "en": "Introduction to Algebra"
+    }
+  },
+  "WMI.IM-WA-OL.1\"T\"": {
+    "id": "WMI.IM-WA-OL.1\"T\"",
+    "name": {
+      "pl": "Wstęp do algebry \"T\"",
+      "en": "Introduction to Algebra \"T\""
+    }
+  },
+  "WMI.IM-WKM-SM": {
+    "id": "WMI.IM-WKM-SM",
+    "name": {
+      "pl": "Wstęp do kryptografii matematycznej",
+      "en": "An Introduction to Mathematical Cryptography"
+    }
+  },
+  "WMI.IM.ETL-SM": {
+    "id": "WMI.IM.ETL-SM",
+    "name": {
+      "pl": "Elementy Teorii Liczb",
+      "en": "Elements of Number Theory"
+    }
+  },
+  "WMI.IM.LALG-SM": {
+    "id": "WMI.IM.LALG-SM",
+    "name": {
+      "pl": "Lie algebras and Lie groups",
+      "en": "Lie algebras and Lie groups"
+    }
+  },
+  "WMI.SDSP-CAV": {
+    "id": "WMI.SDSP-CAV",
+    "name": {
+      "pl": "Complex abelian varieties",
+      "en": "Complex abelian varieties"
+    }
+  },
+  "WMI.SDSP-LGCG": {
+    "id": "WMI.SDSP-LGCG",
+    "name": {
+      "pl": "Lipschitz geometry and classification of germs of real surfaces",
+      "en": "Lipschitz geometry and classification of germs of real surfaces"
+    }
+  },
+  "WMI.SDSP-RT": {
+    "id": "WMI.SDSP-RT",
+    "name": {
+      "pl": "Representation Theory",
+      "en": "Representation Theory"
+    }
+  },
+  "WMI.SDSP-SCFT.I": {
+    "id": "WMI.SDSP-SCFT.I",
+    "name": {
+      "pl": "Seminar Constructive Function Theory",
+      "en": "Seminar Constructive Function Theory"
+    }
+  },
+  "WMI.TCS.MP.OL": {
+    "id": "WMI.TCS.MP.OL",
+    "name": {
+      "pl": "Metody Programowania",
+      "en": "Programming Methods"
+    }
+  },
+  "WMI.TCS.OK.S": {
+    "id": "WMI.TCS.OK.S",
+    "name": {
+      "pl": "Optymalizacja Kombinatoryczna",
+      "en": "Combinatorial Optimization"
+    }
+  },
+  "WZ.IEZ-EFBUd/I2/MZ": {
+    "id": "WZ.IEZ-EFBUd/I2/MZ",
+    "name": {
+      "pl": "Matematyka zaawansowana",
+      "en": "Advanced mathematics"
+    }
+  },
+  "WZ.IEZ-FBUz/I2/MZ": {
+    "id": "WZ.IEZ-FBUz/I2/MZ",
+    "name": {
+      "pl": "Matematyka zaawansowana",
+      "en": "Advanced mathematics"
+    }
+  },
+  "WZ.KLK-AMAT": {
+    "id": "WZ.KLK-AMAT",
+    "name": {
+      "pl": "Analiza matematyczna i algebra liniowa",
+      "en": "Mathematical Analysis and Linear Algebra"
+    }
+  },
+  "WBT-BINF2-2.6": {
+    "id": "WBT-BINF2-2.6",
+    "name": {
+      "pl": "Analiza danych statystycznych w R",
+      "en": "Analysis of Statistical Data in R"
+    }
+  },
+  "WBT-BINF4.6": {
+    "id": "WBT-BINF4.6",
+    "name": {
+      "pl": "Metody programowania",
+      "en": "Programming Methods"
+    }
+  },
+  "WMI-DM.SEM.ALG.l": {
+    "id": "WMI-DM.SEM.ALG.l",
+    "name": {
+      "pl": "Seminarium: Algebra",
+      "en": "Algebra: Seminar"
+    }
+  },
+  "WMI-DM.SEM.GPB.l": {
+    "id": "WMI-DM.SEM.GPB.l",
+    "name": {
+      "pl": "Seminarium: Geometria przestrzeni Banacha",
+      "en": "Geometry of Banach Spaces: Seminar"
+    }
+  },
+  "WMI-DM.SEM.MFZ.l": {
+    "id": "WMI-DM.SEM.MFZ.l",
+    "name": {
+      "pl": "Seminarium: Matematyka finansowa i zastosowania",
+      "en": "Financial Mathematics and Applications: Seminar"
+    }
+  },
+  "WMI.II-AL2-1MK": {
+    "id": "WMI.II-AL2-1MK",
+    "name": {
+      "pl": "Algebra liniowa z geometrią 2",
+      "en": "Linear Algebra and Geometry 2"
+    }
+  },
+  "WMI.II-DO-MK": {
+    "id": "WMI.II-DO-MK",
+    "name": {
+      "pl": "Dynamika obliczeniowa",
+      "en": "Computational Dynamics"
+    }
+  },
+  "WMI.II-DUD-MK": {
+    "id": "WMI.II-DUD-MK",
+    "name": {
+      "pl": "Dyskretne układy dynamiczne",
+      "en": "Dicserete dynamical systems"
+    }
+  },
+  "WMI.II-IO-2SI": {
+    "id": "WMI.II-IO-2SI",
+    "name": {
+      "pl": "Inżynieria oprogramowania",
+      "en": "Software Engineering"
+    }
+  },
+  "WMI.II-IO-OL": {
+    "id": "WMI.II-IO-OL",
+    "name": {
+      "pl": "Inżynieria oprogramowania",
+      "en": "Software Engineering"
+    }
+  },
+  "WMI.II-MN-OL": {
+    "id": "WMI.II-MN-OL",
+    "name": {
+      "pl": "Metody numeryczne",
+      "en": "Numerical Methods"
+    }
+  },
+  "WMI.II-MP-OL": {
+    "id": "WMI.II-MP-OL",
+    "name": {
+      "pl": "Metody programowania",
+      "en": "Programming Methods"
+    }
+  },
+  "WMI.II-MP-OL-SI": {
+    "id": "WMI.II-MP-OL-SI",
+    "name": {
+      "pl": "Metody programowania",
+      "en": "Programming Methods"
+    }
+  },
+  "WMI.II-ORKiPO-2SO": {
+    "id": "WMI.II-ORKiPO-2SO",
+    "name": {
+      "pl": "Otwarte repozytoria kodu i pomiar oprogramowania",
+      "en": "Open software repositories and software measurement"
+    }
+  },
+  "WMI.II-P2-OL": {
+    "id": "WMI.II-P2-OL",
+    "name": {
+      "pl": "Programowanie 2",
+      "en": "Programming 2"
+    }
+  },
+  "WMI.II-P2-OL-SI": {
+    "id": "WMI.II-P2-OL-SI",
+    "name": {
+      "pl": "Programowanie 2",
+      "en": "Programming 2"
+    }
+  },
+  "WMI.II-RPS-K": {
+    "id": "WMI.II-RPS-K",
+    "name": {
+      "pl": "Rachunek prawdopodobieństwa i statystyka",
+      "en": "Probability and Statistics"
+    }
+  },
+  "WMI.II-RRCI-MK": {
+    "id": "WMI.II-RRCI-MK",
+    "name": {
+      "pl": "Równania różniczkowe cząstkowe I",
+      "en": "Partial Differential Equations I"
+    }
+  },
+  "WMI.II-RRZP-S": {
+    "id": "WMI.II-RRZP-S",
+    "name": {
+      "pl": "Seminarium Równania Różniczkowe i zagadnienia pokrewne",
+      "en": "Differential Equations and Related Issues Seminar"
+    }
+  },
+  "WMI.II.PdWWW-S": {
+    "id": "WMI.II.PdWWW-S",
+    "name": {
+      "pl": "Programowanie dla WWW",
+      "en": "Programming for the WWW"
+    }
+  },
+  "WMI.IM-ALG2-OL.1": {
+    "id": "WMI.IM-ALG2-OL.1",
+    "name": {
+      "pl": "Algebra liniowa z geometrią 2",
+      "en": "Linear Algebra and Geometry 2"
+    }
+  },
+  "WMI.IM-AM2-OL.1": {
+    "id": "WMI.IM-AM2-OL.1",
+    "name": {
+      "pl": "Analiza matematyczna 2",
+      "en": "Mathematical Analysis 2"
+    }
+  },
+  "WMI.IM-AM4-OL.2\"T\"": {
+    "id": "WMI.IM-AM4-OL.2\"T\"",
+    "name": {
+      "pl": "Analiza matematyczna 4 \"T\"",
+      "en": "Mathematical Analysis 4 \"T\""
+    }
+  },
+  "WMI.IM-PF2-OM": {
+    "id": "WMI.IM-PF2-OM",
+    "name": {
+      "pl": "Pracownia finansowa 2",
+      "en": "Financial Laboratory 2"
+    }
+  },
+  "WMI.IM-PFFP-SM": {
+    "id": "WMI.IM-PFFP-SM",
+    "name": {
+      "pl": "Python in Finance, Finance in Python",
+      "en": "Python in Finance, Finance in Python"
+    }
+  },
+  "WMI.IM-PROS-OL.3": {
+    "id": "WMI.IM-PROS-OL.3",
+    "name": {
+      "pl": "Proseminarium",
+      "en": "Introductory Seminar"
+    }
+  },
+  "WMI.IM-PU-OL": {
+    "id": "WMI.IM-PU-OL",
+    "name": {
+      "pl": "Programy użytkowe",
+      "en": "Mathematical and Statistical Software Laboratory"
+    }
+  },
+  "WMI.IM-SDP-OM.l": {
+    "id": "WMI.IM-SDP-OM.l",
+    "name": {
+      "pl": "Seminarium dyplomowe przeglądowe",
+      "en": "Broad range MSc seminar"
+    }
+  },
+  "WMI.IM-STA2-OL.3s": {
+    "id": "WMI.IM-STA2-OL.3s",
+    "name": {
+      "pl": "Statystyka 2",
+      "en": "Statistics 2"
+    }
+  },
+  "WMI.IM-SWS-OM.fsl": {
+    "id": "WMI.IM-SWS-OM.fsl",
+    "name": {
+      "pl": "Seminarium wstępne",
+      "en": "Seminar"
+    }
+  },
+  "WMI.IM.IBSDA-SM": {
+    "id": "WMI.IM.IBSDA-SM",
+    "name": {
+      "pl": "Introduction to Bayesian Statistics and Data Analysis",
+      "en": "Introduction to Bayesian Statistics and Data Analysis"
+    }
+  },
+  "WMI.IM.ZMSR-SM": {
+    "id": "WMI.IM.ZMSR-SM",
+    "name": {
+      "pl": "Zaawansowane modelowanie statystyczne z R",
+      "en": "Advanced statistical modeling with R"
+    }
+  },
+  "WMI.SDSP-APIT": {
+    "id": "WMI.SDSP-APIT",
+    "name": {
+      "pl": "Applications of Intersection Theory",
+      "en": "Applications of Intersection Theory"
+    }
+  },
+  "WMI.SDSP.IM-KONW1": {
+    "id": "WMI.SDSP.IM-KONW1",
+    "name": {
+      "pl": "Konwersatorium dla doktorantów I",
+      "en": "Doctoral School Seminar I"
+    }
+  },
+  "WMI.SDSP.IM-KONW2": {
+    "id": "WMI.SDSP.IM-KONW2",
+    "name": {
+      "pl": "Konwersatorium dla doktorantów II",
+      "en": "Doctoral School Seminar II"
+    }
+  },
+  "WMI.TCS.A.S": {
+    "id": "WMI.TCS.A.S",
+    "name": {
+      "pl": "Seminarium Algorytmika",
+      "en": "Algorithms Seminar"
+    }
+  },
+  "WMI.TCS.AATL.S": {
+    "id": "WMI.TCS.AATL.S",
+    "name": {
+      "pl": "Algorytmy Algebry i Teorii Liczb",
+      "en": "Algebraic and Number Theory Algorithms"
+    }
+  },
+  "WMI.TCS.AM2.OL": {
+    "id": "WMI.TCS.AM2.OL",
+    "name": {
+      "pl": "Analiza Matematyczna 2",
+      "en": "Calculus 2"
+    }
+  },
+  "WMI.TCS.IA.S": {
+    "id": "WMI.TCS.IA.S",
+    "name": {
+      "pl": "Implementacja Algorytmów",
+      "en": "Algorithm Implementation"
+    }
+  },
+  "WMI.TCS.ID.OL": {
+    "id": "WMI.TCS.ID.OL",
+    "name": {
+      "pl": "Inżynieria Danych",
+      "en": "Data Engineering"
+    }
+  },
+  "WMI.TCS.IO.OL": {
+    "id": "WMI.TCS.IO.OL",
+    "name": {
+      "pl": "Inżynieria Oprogramowania",
+      "en": "Software Engineering"
+    }
+  },
+  "WMI.TCS.MD.OL": {
+    "id": "WMI.TCS.MD.OL",
+    "name": {
+      "pl": "Matematyka Dyskretna",
+      "en": "Discrete Mathematics"
+    }
+  },
+  "WMI.TCS.MO.OL": {
+    "id": "WMI.TCS.MO.OL",
+    "name": {
+      "pl": "Modele Obliczeń",
+      "en": "Models of Computation"
+    }
+  },
+  "WMI.TCS.MPUM.S": {
+    "id": "WMI.TCS.MPUM.S",
+    "name": {
+      "pl": "Metody probabilistyczne w uczeniu maszynowym",
+      "en": "Probabilistic Methods for Machine Learning"
+    }
+  },
+  "WMI.TCS.PJP.S": {
+    "id": "WMI.TCS.PJP.S",
+    "name": {
+      "pl": "Paradygmaty Języków Programowania",
+      "en": "Paradigms of Programming Languages"
+    }
+  },
+  "WMI.TCS.PN.OL": {
+    "id": "WMI.TCS.PN.OL",
+    "name": {
+      "pl": "Programowanie Niskopoziomowe",
+      "en": "Low-Level Language Programming"
+    }
+  },
+  "WMI.TCS.POB.OL": {
+    "id": "WMI.TCS.POB.OL",
+    "name": {
+      "pl": "Programowanie Obiektowe",
+      "en": "Object-Oriented Programming"
+    }
+  },
+  "WMI.TCS.SA.S": {
+    "id": "WMI.TCS.SA.S",
+    "name": {
+      "pl": "Statystyka Analityczna",
+      "en": "Analytical Statistics"
+    }
+  },
+  "WZ.IEZ-EKd/II1/Rp": {
+    "id": "WZ.IEZ-EKd/II1/Rp",
+    "name": {
+      "pl": "Rachunek prawdopodobieństwa",
+      "en": "Calculus of probability"
+    }
+  },
+  "WZ.KLK-LOG2": {
+    "id": "WZ.KLK-LOG2",
+    "name": {
+      "pl": "Logika",
+      "en": "Logic"
+    }
+  },
+  "WBNZ-722-2": {
+    "id": "WBNZ-722-2",
+    "name": {
+      "pl": "Matematyka - zajęcia wyrównawcze",
+      "en": ""
+    }
+  },
+  "WBT-BFMK2.7": {
+    "id": "WBT-BFMK2.7",
+    "name": {
+      "pl": "Matematyka wyższa II",
+      "en": "Higher Mathematics II"
+    }
+  },
+  "WBT-BINF2-1.9": {
+    "id": "WBT-BINF2-1.9",
+    "name": {
+      "pl": "Przetwarzanie języka naturalnego",
+      "en": "Natural Language Processing"
+    }
+  },
+  "WBT-BINF2.1": {
+    "id": "WBT-BINF2.1",
+    "name": {
+      "pl": "Analiza matematyczna 1",
+      "en": "Mathematical Analysis 1"
+    }
+  },
+  "WCh-CL-O101B-19": {
+    "id": "WCh-CL-O101B-19",
+    "name": {
+      "pl": "Matematyka II",
+      "en": "Mathematics II"
+    }
+  },
+  "WCh-ZRL-O101B-19": {
+    "id": "WCh-ZRL-O101B-19",
+    "name": {
+      "pl": "Matematyka II",
+      "en": "Mathematics II"
+    }
+  },
+  "WMI-DM.SEM.T.l": {
+    "id": "WMI-DM.SEM.T.l",
+    "name": {
+      "pl": "Seminarium: Topologia",
+      "en": "Topology: Seminar"
+    }
+  },
+  "WMI-DM.SEM.TL.l": {
+    "id": "WMI-DM.SEM.TL.l",
+    "name": {
+      "pl": "Seminarium:Teoria liczb",
+      "en": "Theory of Numbers:Seminar"
+    }
+  },
+  "WMI-DM.SEM.TOS.l": {
+    "id": "WMI-DM.SEM.TOS.l",
+    "name": {
+      "pl": "Seminarium: Teoria osobliwości",
+      "en": "Singularity Theory: Seminar"
+    }
+  },
+  "WMI.DI.SEM-RRC": {
+    "id": "WMI.DI.SEM-RRC",
+    "name": {
+      "pl": "Równania Różniczkowe cząstkowe",
+      "en": "Partial Differential Equations"
+    }
+  },
+  "WMI.II-AM1-OL": {
+    "id": "WMI.II-AM1-OL",
+    "name": {
+      "pl": "Analiza matematyczna 1",
+      "en": "Mathematical Analysis 1"
+    }
+  },
+  "WMI.II-BM-S": {
+    "id": "WMI.II-BM-S",
+    "name": {
+      "pl": "Biometria",
+      "en": "Biometrics"
+    }
+  },
+  "WMI.II-CVaPR-S": {
+    "id": "WMI.II-CVaPR-S",
+    "name": {
+      "pl": "Computer Vision and Pattern Recognition",
+      "en": "Computer Vision and Pattern Recognition"
+    }
+  },
+  "WMI.II-IOZ-S": {
+    "id": "WMI.II-IOZ-S",
+    "name": {
+      "pl": "Inżynieria oprogramowania i zagadnienia pokrewne",
+      "en": "Software Engineering and Related Issues"
+    }
+  },
+  "WMI.II-IT-IN-S": {
+    "id": "WMI.II-IT-IN-S",
+    "name": {
+      "pl": "Zarządzanie projektami IT",
+      "en": "IT Project Management"
+    }
+  },
+  "WMI.II-JTUD-S": {
+    "id": "WMI.II-JTUD-S",
+    "name": {
+      "pl": "Jakościowa teoria układów dynamicznych z komputerem",
+      "en": "Geometric Theory of Dynamical Systems with Computer"
+    }
+  },
+  "WMI.II-KOG-S": {
+    "id": "WMI.II-KOG-S",
+    "name": {
+      "pl": "Seminarium Kognitywistyczne",
+      "en": "Cognitive Science Seminar"
+    }
+  },
+  "WMI.II-KOS-S": {
+    "id": "WMI.II-KOS-S",
+    "name": {
+      "pl": "Seminarium Katedry Teorii Optymalizacji i Sterowania",
+      "en": "Optimization and Control Seminar"
+    }
+  },
+  "WMI.II-MO-O": {
+    "id": "WMI.II-MO-O",
+    "name": {
+      "pl": "Metody optymalizacji",
+      "en": "Optimization Methods"
+    }
+  },
+  "WMI.II-MOB-S": {
+    "id": "WMI.II-MOB-S",
+    "name": {
+      "pl": "Modelowanie obiektowe",
+      "en": "Object Oriented Modeling"
+    }
+  },
+  "WMI.II-MOwUM-2SI": {
+    "id": "WMI.II-MOwUM-2SI",
+    "name": {
+      "pl": "Metody optymalizacji w uczeniu maszynowym",
+      "en": "Optimization methods in machine learning"
+    }
+  },
+  "WMI.II-MSL-S": {
+    "id": "WMI.II-MSL-S",
+    "name": {
+      "pl": "Modelowanie systemów liczących",
+      "en": "Modeling of Computer Systems"
+    }
+  },
+  "WMI.II-OZ-S": {
+    "id": "WMI.II-OZ-S",
+    "name": {
+      "pl": "Obliczalność i złożoność",
+      "en": "Computability and Complexity"
+    }
+  },
+  "WMI.II-P-MK": {
+    "id": "WMI.II-P-MK",
+    "name": {
+      "pl": "Proseminarium",
+      "en": "Introductory Seminar"
+    }
+  },
+  "WMI.II-P2-MK": {
+    "id": "WMI.II-P2-MK",
+    "name": {
+      "pl": "Programowanie 2",
+      "en": "Programming 2"
+    }
+  },
+  "WMI.II-PJN-S": {
+    "id": "WMI.II-PJN-S",
+    "name": {
+      "pl": "Przetwarzanie języka naturalnego",
+      "en": "Natural Language Processing"
+    }
+  },
+  "WMI.II-PSI-S": {
+    "id": "WMI.II-PSI-S",
+    "name": {
+      "pl": "Podstawy sztucznej inteligencji",
+      "en": "Foundations of AI"
+    }
+  },
+  "WMI.II-PZ2-3L": {
+    "id": "WMI.II-PZ2-3L",
+    "name": {
+      "pl": "Projekt zespołowy 2",
+      "en": "Team Project 2"
+    }
+  },
+  "WMI.II-RPS-SI": {
+    "id": "WMI.II-RPS-SI",
+    "name": {
+      "pl": "Rachunek prawdopodobieństwa i statystyka",
+      "en": "Probability and Statistics"
+    }
+  },
+  "WMI.II-SB-S": {
+    "id": "WMI.II-SB-S",
+    "name": {
+      "pl": "Statystyka bayesowska",
+      "en": "Bayesian statistics"
+    }
+  },
+  "WMI.II-SIDiO-S": {
+    "id": "WMI.II-SIDiO-S",
+    "name": {
+      "pl": "Inżynieria danych i oprogramowania",
+      "en": "Data and Software Engineering Seminar"
+    }
+  },
+  "WMI.II-SKO-S": {
+    "id": "WMI.II-SKO-S",
+    "name": {
+      "pl": "Sieci komputerowe",
+      "en": "Computer Networks Seminar"
+    }
+  },
+  "WMI.II.URwGSN2-S": {
+    "id": "WMI.II.URwGSN2-S",
+    "name": {
+      "pl": "Uczenie reprezentacji w głębokich sieciach neuronowych II",
+      "en": "Representation  learning in deep neural networks II"
+    }
+  },
+  "WMI.IM-AF-OM.1fns": {
+    "id": "WMI.IM-AF-OM.1fns",
+    "name": {
+      "pl": "Analiza funkcjonalna",
+      "en": "Functional Analysis"
+    }
+  },
+  "WMI.IM-EDF-SM.fs": {
+    "id": "WMI.IM-EDF-SM.fs",
+    "name": {
+      "pl": "Ekonometria dynamiczna i finansowa",
+      "en": "Dynamic and Financial Econometrics"
+    }
+  },
+  "WMI.IM-EK-OL.3e": {
+    "id": "WMI.IM-EK-OL.3e",
+    "name": {
+      "pl": "Ekonometria",
+      "en": "Econometrics"
+    }
+  },
+  "WMI.IM-MBML-OM": {
+    "id": "WMI.IM-MBML-OM",
+    "name": {
+      "pl": "Mathematical background of machine learning",
+      "en": "Mathematical background of machine learning"
+    }
+  },
+  "WMI.IM-RRZ-OL.2": {
+    "id": "WMI.IM-RRZ-OL.2",
+    "name": {
+      "pl": "Równania różniczkowe zwyczajne",
+      "en": "Ordinary Differential Equations"
+    }
+  },
+  "WMI.IM-TOP1-OL.1\"T\"": {
+    "id": "WMI.IM-TOP1-OL.1\"T\"",
+    "name": {
+      "pl": "Topologia 1 \"T\"",
+      "en": "Topology I \"T\""
+    }
+  },
+  "WMI.IM-TUT2-OL.1": {
+    "id": "WMI.IM-TUT2-OL.1",
+    "name": {
+      "pl": "Tutorial 2",
+      "en": "Tutorial 2"
+    }
+  },
+  "WMI.IM.AC-SM": {
+    "id": "WMI.IM.AC-SM",
+    "name": {
+      "pl": "Additive Combinatorics",
+      "en": "Additive Combinatorics"
+    }
+  },
+  "WMI.IM.EDS-SM": {
+    "id": "WMI.IM.EDS-SM",
+    "name": {
+      "pl": "Entropy in Dynamical Systems",
+      "en": "Entropy in Dynamical Systems"
+    }
+  },
+  "WMI.IM.IET-SM": {
+    "id": "WMI.IM.IET-SM",
+    "name": {
+      "pl": "Introduction to Ergodic Theory",
+      "en": "Introduction to Ergodic Theory"
+    }
+  },
+  "WMI.SDSP-CCTDATD": {
+    "id": "WMI.SDSP-CCTDATD",
+    "name": {
+      "pl": "Combinatorial connections between topological data analysis and topological dynamics",
+      "en": "Combinatorial connections between topological data analysis and topological dynamics"
+    }
+  },
+  "WMI.SDSP-KONW1-IT": {
+    "id": "WMI.SDSP-KONW1-IT",
+    "name": {
+      "pl": "Konwersatorium dla doktorantów 1 SD IT",
+      "en": "IT Doctoral School Seminar 1"
+    }
+  },
+  "WMI.SDSP-KONW2-IT": {
+    "id": "WMI.SDSP-KONW2-IT",
+    "name": {
+      "pl": "Konwersatorium dla doktorantów 2 SD IT",
+      "en": "IT Doctoral School Seminar 2"
+    }
+  },
+  "WMI.TCS.COM.S": {
+    "id": "WMI.TCS.COM.S",
+    "name": {
+      "pl": "Combinatorics",
+      "en": "Combinatorics"
+    }
+  },
+  "WMI.TCS.IT.S": {
+    "id": "WMI.TCS.IT.S",
+    "name": {
+      "pl": "Seminarium Informatyka Teoretyczna",
+      "en": "Theoretical Computer Science Seminar"
+    }
+  },
+  "WMI.TCS.PRA.S": {
+    "id": "WMI.TCS.PRA.S",
+    "name": {
+      "pl": "Probabilistic Algorithms",
+      "en": "Probabilistic Algorithms"
+    }
+  },
+  "WMI.TCS.WBN2.OM": {
+    "id": "WMI.TCS.WBN2.OM",
+    "name": {
+      "pl": "Wprowadzenie do badań naukowych 2",
+      "en": "Introduction to research 2"
+    }
+  },
+  "WBT-BINF1.3": {
+    "id": "WBT-BINF1.3",
+    "name": {
+      "pl": "Programowanie 1",
+      "en": "Programming 1"
+    }
+  },
+  "WBT-BINF2-3.2": {
+    "id": "WBT-BINF2-3.2",
+    "name": {
+      "pl": "Nauczanie maszynowe",
+      "en": "Machine Learning"
+    }
+  },
+  "WFAIS.IF-A201.2": {
+    "id": "WFAIS.IF-A201.2",
+    "name": {
+      "pl": "Analiza matematyczna II",
+      "en": "Mathematical Analysis II"
+    }
+  },
+  "WFAIS.IF-M002.1": {
+    "id": "WFAIS.IF-M002.1",
+    "name": {
+      "pl": "Analiza matematyczna II MS",
+      "en": "Mathematical Analysis II  Short Course (SC)"
+    }
+  },
+  "WFAIS.SDSP-IT002.02": {
+    "id": "WFAIS.SDSP-IT002.02",
+    "name": {
+      "pl": "Seminarium Zakładu Uczenia Maszynowego II",
+      "en": "Machine Learning Seminar II"
+    }
+  },
+  "WMI-DM.SEM.AF.l": {
+    "id": "WMI-DM.SEM.AF.l",
+    "name": {
+      "pl": "Seminarium: Analiza funkcjonalna",
+      "en": "Functional Analysis: Seminar"
+    }
+  },
+  "WMI-DM.SEM.CIK.l": {
+    "id": "WMI-DM.SEM.CIK.l",
+    "name": {
+      "pl": "Seminarium: Chaos i informacja kwantowa",
+      "en": "Chaos and Quantum Information: Seminar"
+    }
+  },
+  "WMI-DM.SEM.TRA.l": {
+    "id": "WMI-DM.SEM.TRA.l",
+    "name": {
+      "pl": "Seminarium: Topologia różniczkowa i algebraiczna",
+      "en": "Differential and  Algebraic Topology: Seminar"
+    }
+  },
+  "WMI.II-ASD-OL": {
+    "id": "WMI.II-ASD-OL",
+    "name": {
+      "pl": "Algorytmy i struktury danych",
+      "en": "Algorithms and Data Structures"
+    }
+  },
+  "WMI.II-BDBD-S": {
+    "id": "WMI.II-BDBD-S",
+    "name": {
+      "pl": "Bazy danych big data",
+      "en": "Big data databases"
+    }
+  },
+  "WMI.II-IS-S": {
+    "id": "WMI.II-IS-S",
+    "name": {
+      "pl": "Informatyka śledcza",
+      "en": "Computer Farensics"
+    }
+  },
+  "WMI.II-MLiOS-2SO": {
+    "id": "WMI.II-MLiOS-2SO",
+    "name": {
+      "pl": "Machine learning in iOS",
+      "en": "Machine learning in iOS"
+    }
+  },
+  "WMI.II-MP-MK": {
+    "id": "WMI.II-MP-MK",
+    "name": {
+      "pl": "Metody programowania",
+      "en": "Programming Methods"
+    }
+  },
+  "WMI.II-MPSZI1-SI": {
+    "id": "WMI.II-MPSZI1-SI",
+    "name": {
+      "pl": "Matematyczne podstawy sztucznej inteligencji 1",
+      "en": "Mathematical foundations of artificial intelligence 1"
+    }
+  },
+  "WMI.II-POiD-S": {
+    "id": "WMI.II-POiD-S",
+    "name": {
+      "pl": "Przetwarzanie obrazów i danych",
+      "en": "Image and Data Processing"
+    }
+  },
+  "WMI.II-PP-MK": {
+    "id": "WMI.II-PP-MK",
+    "name": {
+      "pl": "Projekt programistyczny",
+      "en": "Programming Project"
+    }
+  },
+  "WMI.II-PSI-2SI": {
+    "id": "WMI.II-PSI-2SI",
+    "name": {
+      "pl": "Podstawy sztucznej inteligencji",
+      "en": "Foundations of AI"
+    }
+  },
+  "WMI.II-SBDSQL-2SOI": {
+    "id": "WMI.II-SBDSQL-2SOI",
+    "name": {
+      "pl": "Systemy baz danych NoSQL",
+      "en": "Databases NoSQL"
+    }
+  },
+  "WMI.II-SK-OL": {
+    "id": "WMI.II-SK-OL",
+    "name": {
+      "pl": "Sieci komputerowe",
+      "en": "Computer Networks"
+    }
+  },
+  "WMI.II-SMAI-S": {
+    "id": "WMI.II-SMAI-S",
+    "name": {
+      "pl": "Metody AI",
+      "en": "Methods of AI Seminar"
+    }
+  },
+  "WMI.II-SZIO-S": {
+    "id": "WMI.II-SZIO-S",
+    "name": {
+      "pl": "Seminarium Zakładu Inżynierii Oprogramowania",
+      "en": "Software Engineering Seminar"
+    }
+  },
+  "WMI.II-TS-S": {
+    "id": "WMI.II-TS-S",
+    "name": {
+      "pl": "Tea Seminar",
+      "en": "Tea Seminar"
+    }
+  },
+  "WMI.II-WdT-1MK": {
+    "id": "WMI.II-WdT-1MK",
+    "name": {
+      "pl": "Wprowadzenie do topologii",
+      "en": "Introduction to Topology"
+    }
+  },
+  "WMI.IM-HM2-OM": {
+    "id": "WMI.IM-HM2-OM",
+    "name": {
+      "pl": "Historia matematyki 2",
+      "en": "History of Mathematics 2"
+    }
+  },
+  "WMI.IM-MM-OM.1s": {
+    "id": "WMI.IM-MM-OM.1s",
+    "name": {
+      "pl": "Modelowanie matematyczne",
+      "en": "Mathematical Modeling"
+    }
+  },
+  "WMI.IM-MRK-SM": {
+    "id": "WMI.IM-MRK-SM",
+    "name": {
+      "pl": "Modelowanie ryzyka kredytowego",
+      "en": "Credit Risk Modelling"
+    }
+  },
+  "WMI.IM-RP-OL.2\"T\"": {
+    "id": "WMI.IM-RP-OL.2\"T\"",
+    "name": {
+      "pl": "Rachunek prawdopodobieństwa \"T\"",
+      "en": "Probability Theory \"T\""
+    }
+  },
+  "WMI.IM-RP2-OL.2": {
+    "id": "WMI.IM-RP2-OL.2",
+    "name": {
+      "pl": "Rachunek prawdopodobieństwa 2",
+      "en": "Probability Theory 2"
+    }
+  },
+  "WMI.IM-SEM.MAI.I": {
+    "id": "WMI.IM-SEM.MAI.I",
+    "name": {
+      "pl": "MathAI",
+      "en": "MathAI"
+    }
+  },
+  "WMI.IM-ZASF-SM.f": {
+    "id": "WMI.IM-ZASF-SM.f",
+    "name": {
+      "pl": "Zastosowania analizy stochastycznej w finansach",
+      "en": "Application of Stochastic Analysis in Finance"
+    }
+  },
+  "WMI.IM.AP-OM": {
+    "id": "WMI.IM.AP-OM",
+    "name": {
+      "pl": "Analiza portfelowa",
+      "en": "Portfolio analysis"
+    }
+  },
+  "WMI.IM.TM-SM": {
+    "id": "WMI.IM.TM-SM",
+    "name": {
+      "pl": "Teaching Mathematics",
+      "en": "Teaching Mathematics"
+    }
+  },
+  "WMI.SDSP-GA": {
+    "id": "WMI.SDSP-GA",
+    "name": {
+      "pl": "Global Analysis",
+      "en": "Global Analysis"
+    }
+  },
+  "WMI.SDSP-GM3DO.I": {
+    "id": "WMI.SDSP-GM3DO.I",
+    "name": {
+      "pl": "Generative models for 3D objects",
+      "en": "Generative models for 3D objects"
+    }
+  },
+  "WMI.SDSP-ITV": {
+    "id": "WMI.SDSP-ITV",
+    "name": {
+      "pl": "Introduction to toric varieties",
+      "en": "Introduction to toric varieties"
+    }
+  },
+  "WMI.SDSP-OT": {
+    "id": "WMI.SDSP-OT",
+    "name": {
+      "pl": "Obstruction Theory",
+      "en": "Obstruction Theory"
+    }
+  },
+  "WMI.TCS.AGE.S": {
+    "id": "WMI.TCS.AGE.S",
+    "name": {
+      "pl": "Algorytmy Geometryczne",
+      "en": "Geometric Algorithms"
+    }
+  },
+  "WMI.TCS.ALZO.S": {
+    "id": "WMI.TCS.ALZO.S",
+    "name": {
+      "pl": "Algebra, Logika i Złożoność Obliczeniowa",
+      "en": "Algebra, Logic and Computational Complexity"
+    }
+  },
+  "WMI.TCS.ASD2.OL": {
+    "id": "WMI.TCS.ASD2.OL",
+    "name": {
+      "pl": "Algorytmy i Struktury Danych 2",
+      "en": "Algorithms and Data Structures 2"
+    }
+  },
+  "WMI.TCS.FKL.S": {
+    "id": "WMI.TCS.FKL.S",
+    "name": {
+      "pl": "Hypergraph Theory and Applications",
+      "en": "Hypergraph Theory and Applications"
+    }
+  },
+  "WMI.TCS.OD.S": {
+    "id": "WMI.TCS.OD.S",
+    "name": {
+      "pl": "Optymalizacja Dyskretna",
+      "en": "Discrete Optimization"
+    }
+  },
+  "WMI.TCS.PP2.OL": {
+    "id": "WMI.TCS.PP2.OL",
+    "name": {
+      "pl": "Projekt Programistyczny 2",
+      "en": "Programming Project 2"
+    }
+  },
+  "WMI.TCS.SNS.S": {
+    "id": "WMI.TCS.SNS.S",
+    "name": {
+      "pl": "Proofs from the Book: In the Spirit of Erdős",
+      "en": "Proofs from the Book: In the Spirit of Erdős"
+    }
+  },
+  "WZ.IEZ-EKz/II1/RPraw": {
+    "id": "WZ.IEZ-EKz/II1/RPraw",
+    "name": {
+      "pl": "Rachunek prawdopodobieństwa",
+      "en": "Calculus of probability"
+    }
+  }
+}
