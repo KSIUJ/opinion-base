@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-from app.schemas.active_subjects import ActiveSubjectOut, ActiveSubjectOutBasic
+from app.schemas.active_subjects import ActiveSubjectFromSubjectOut
 from app.schemas.small import DepartmentOut, SemesterOut
 
 
@@ -19,7 +19,7 @@ class SubjectsResponseBasic(BaseModel):
 
 class SubjectOut(SubjectOutBasic):
     opinions: list[str] = Field(default_factory=list)
-    lecturers_info: list[ActiveSubjectOutBasic] = Field(default_factory=list)
+    lecturers_info: list[ActiveSubjectFromSubjectOut] = Field(default_factory=list)
     groups_count: int = 0
     groups: list[str] = Field(default_factory=list)
 

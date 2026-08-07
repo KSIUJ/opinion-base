@@ -20,6 +20,12 @@ class ActiveSubjectOut(ActiveSubjectOutBasic):
     opinions: list[str] = Field(default_factory=list)
 
 
+class ActiveSubjectFromSubjectOut(BaseModel):
+    lecturer_name: str | None = None
+    lecturer_surname: str | None = None
+    role: LecturerRoleOut | None = None
+
+
 class ActiveSubjectsResponseBasic(BaseModel):
     subjects: list[ActiveSubjectOutBasic]
 

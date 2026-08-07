@@ -3,7 +3,8 @@ from sqlalchemy.orm import Session
 from app.models import Subject
 from app.repositories.subjects_repository import SubjectsRepository
 from app.schemas.subjects import SubjectOut, SubjectOutBasic
-from app.schemas.small import DepartmentOut, SemesterOut
+from app.schemas.small import DepartmentOut, SemesterOut, LecturerRoleOut
+from app.schemas.active_subjects import ActiveSubjectFromSubjectOut
 
 
 class SubjectsService:
@@ -28,6 +29,15 @@ class SubjectsService:
             opinions=[relation.opinion.content for relation in subject.opinion_relations],
             groups_count=len(subject.group_relations),
             groups=[relation.subject_group.name for relation in subject.group_relations],
+        
+            lecturers_info=[ActiveSubjectFromSubjectOut(
+                lecturer_name=activeSubject.lecturer.name,
+                lecturer_surname=activeSubject.lecturer.surname,
+                role=LecturerRoleOut(
+                   id=activeSubject.role.id,
+                   name=activeSubject.role.name,
+                )
+            ) for activeSubject in subject.active_subjects],
 
         )
 
