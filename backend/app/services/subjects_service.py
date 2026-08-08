@@ -82,11 +82,7 @@ class SubjectsService:
             lecturer_id=lecturer_id,
             lecturer_name=lecturer_name,
             lecturer_surname=lecturer_surname,
+            min_opinions=min_opinions,
         )
 
-        response = [SubjectsService._serialize_subject(subject) for subject in subjects]
-        if min_opinions is not None:
-            response = [
-                subject for subject in response if subject.opinions_count >= min_opinions
-            ]
-        return response
+        return [SubjectsService._serialize_subject(subject) for subject in subjects]

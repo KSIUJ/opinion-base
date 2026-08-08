@@ -1,7 +1,7 @@
-from sqlalchemy import Select, and_, select
+from sqlalchemy import Select, and_, func, select
 from sqlalchemy.orm import Session, joinedload, selectinload
 
-from app.models import ActiveSubject, Lecturer, Subject, SubjectOpinionRelation, SubjectSubjectGroupRelation, ActiveSubject
+from app.models import ActiveSubject, Lecturer, Subject, SubjectOpinionRelation, SubjectSubjectGroupRelation
 
 
 class SubjectsRepository:
@@ -51,6 +51,7 @@ class SubjectsRepository:
         lecturer_id: int | None = None,
         lecturer_name: str | None = None,
         lecturer_surname: str | None = None,
+        min_opinions: int | None = None,
     ) -> Select:
 
         if subject_id is not None:
@@ -74,6 +75,14 @@ class SubjectsRepository:
                 )
             )
 
+        if min_opinions is not None:
+            opinions_count_subquery = (
+                select(func.count(SubjectOpinionRelation.id))
+                .where(SubjectOpinionRelation.subject_id == Subject.id)
+                .scalar_subquery()
+            )
+            query = query.where(opinions_count_subquery >= min_opinions)
+
         return query
 
         
@@ -85,6 +94,7 @@ class SubjectsRepository:
         lecturer_id: int | None = None,
         lecturer_name: str | None = None,
         lecturer_surname: str | None = None,
+        min_opinions: int | None = None,
     ) -> list[Subject]:
         query = SubjectsRepository.filter_query(
                     subject_id=subject_id,
@@ -92,6 +102,7 @@ class SubjectsRepository:
                     lecturer_id=lecturer_id,
                     lecturer_name=lecturer_name,
                     lecturer_surname=lecturer_surname,
+                    min_opinions=min_opinions,
                     query=SubjectsRepository.build_query()
                     )
                  
