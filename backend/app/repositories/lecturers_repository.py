@@ -1,7 +1,7 @@
 from sqlalchemy import select
 from sqlalchemy.orm import Session, selectinload
 
-from app.models import Lecturer, Subject
+from app.models import ActiveSubject, Lecturer, Subject
 
 
 class LecturersRepository:
@@ -12,6 +12,31 @@ class LecturersRepository:
             .options(selectinload(Lecturer.subjects))
             .order_by(Lecturer.id)
         )
+        return db.execute(query).unique().scalars().all()
+
+    @staticmethod
+    def search_lecturers(
+        db: Session,
+        surname: str | None = None,
+        subject: str | None = None,
+    ) -> list[Lecturer]:
+        query = (
+            select(Lecturer)
+            .options(
+                selectinload(Lecturer.department),
+                selectinload(Lecturer.active_subjects),
+            )
+            .order_by(Lecturer.surname, Lecturer.name)
+        )
+        if surname:
+            query = query.where(Lecturer.surname.ilike(f"%{surname}%"))
+        if subject:
+            query = (
+                query.join(Lecturer.active_subjects)
+                .join(ActiveSubject.subject)
+                .where(Subject.name.ilike(f"%{subject}%"))
+            )
+            query = query.distinct()
         return db.execute(query).unique().scalars().all()
 
     @staticmethod

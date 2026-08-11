@@ -27,6 +27,32 @@ class LecturersService:
         return LecturerListResponse(lecturers=items)
 
     @staticmethod
+    def search_lecturers(
+        db: Session,
+        surname: str | None = None,
+        subject: str | None = None,
+    ) -> LecturerListResponse:
+        lecturers = LecturersRepository.search_lecturers(
+            db, surname=surname, subject=subject
+        )
+        items = [
+            LecturerListItem(
+                id=lecturer.id,
+                name=lecturer.name,
+                surname=lecturer.surname,
+                subject_count=len(
+                    {
+                        active.subject_id
+                        for active in lecturer.active_subjects
+                        if active.subject_id is not None
+                    }
+                ),
+            )
+            for lecturer in lecturers
+        ]
+        return LecturerListResponse(lecturers=items)
+
+    @staticmethod
     def get_lecturer(db: Session, lecturer_id: int) -> LecturerOut | None:
         lecturer = LecturersRepository.get_lecturer(db, lecturer_id)
         if lecturer is None:
