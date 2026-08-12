@@ -1,30 +1,23 @@
-To sekcja to opis jak załadować tabele i dane do bazy danych. Osobiście używam połączenia Windows 11 + Docker i podtym były testowane poniższe komendy. Wątpie, by użycie dockera pod Linuxem było istotnie inne, ale jeśli coś nie będzie działać to dajcie znać. Jeśli nie używacie dockera, to nie powinno być to istotnie trudniejsze, musicie wczytać odpowiednie pliki sql do posgresa (na przykładach będę używał psql, tak jak było to robione na Inżynieri Danych na TCS-e).
+Automation (Docker):
 
+Wszystko startuje z katalogu głównego repo (tam gdzie jest docker-compose.yml):
 
-Postawienie dockera: (Musisz być w katalogu w którym znajduję się plik docker-compose.yml, obecnie ./database)
-docker compose up
+  docker compose up -d --build
 
-Żyby postawić bazę danych:
-(Windows + PowerShell):
-cmd /c "docker exec -i ksi_opinion_base psql -U ksi_opinion_base -d ksi_opinion_base < create.sql"
-cmd /c "docker exec -i ksi_opinion_base psql -U ksi_opinion_base -d ksi_opinion_base < input.sql"
+To automatycznie:
+  1) postgres  - tworzy schemat (create.sql), ładuje dane przykładowe (input.sql)
+     i naprawia sekwencje (sequences.sql) przez /docker-entrypoint-initdb.d
+  2) data_loader - wczytuje dane USOS z backend/app/services/*.json do bazy
+     (pomija jeśli już załadowane - idempotentne)
+  3) fast_api  - startuje API na http://localhost:8000/docs (Swagger UI)
 
-(Linux):
-sudo docker exec -i ksi_opinion_base psql -U ksi_opinion_base < create.sql
-sudo docker exec -i ksi_opinion_base psql -U ksi_opinion_base < input.sql
+Reset do stanu wyjściowego (schema + seed + USOS od nowa):
 
-(Bez Dockera):
-psql < create.sql
-psql < input.sql
+  docker compose down -v
+  docker compose up -d --build
 
-Żeby wyczyścić bazę danych:
-(Windows + PowerShell):
-cmd /c "docker exec -i ksi_opinion_base psql -U ksi_opinion_base -d ksi_opinion_base < clear.sql"
-(Linux):
-sudo docker exec -i ksi_opinion_base psql -U ksi_opinion_base < clear.sql
-(Bez Dockera):
-psql < clear.sql
+Ręczne zapytania do bazy:
 
+  docker exec -it ksi_opinion_base psql -U ksi_opinion_base -d ksi_opinion_base
 
-Zeby dostać się do miejsca, gdzie można wykonywać zapytania na bazie danych:
-docker exec -it ksi_opinion_base psql -U ksi_opinion_base -d ksi_opinion_base
+(Wcześniejsze ręczne kroki z psql < create.sql itd. nie są już potrzebne.)

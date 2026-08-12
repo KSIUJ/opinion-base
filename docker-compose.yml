@@ -1,27 +1,56 @@
-
 services:
   postgres:
-    image: postgres:17
+    image: postgres:18
     container_name: ksi_opinion_base
     environment:
       POSTGRES_USER: ksi_opinion_base
       POSTGRES_PASSWORD: ksi_opinion_base
       POSTGRES_DB: ksi_opinion_base
     ports:
-      - "5434:5432"  # mapowanie portów, host 5433 -> kontener 5432
+      - "5434:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql
+      - ./database/create.sql:/docker-entrypoint-initdb.d/01_create.sql:ro
+      - ./database/input.sql:/docker-entrypoint-initdb.d/02_input.sql:ro
+      - ./database/sequences.sql:/docker-entrypoint-initdb.d/03_sequences.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ksi_opinion_base -d ksi_opinion_base"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
     restart: unless-stopped
 
-  fast_api: 
-    build: ./backend 
-    container_name: fast_api_app 
-    ports: 
-    - "8000:8000" 
-    depends_on: 
-    - postgres 
+  data_loader:
+    build: ./backend
+    command: python app/services/load_usos_data.py
+    environment:
+      DB_HOST: postgres
+      DB_PORT: "5432"
+      DB_USER: ksi_opinion_base
+      DB_PASSWORD: ksi_opinion_base
+      DB_NAME: ksi_opinion_base
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
+  fast_api:
+    build: ./backend
+    container_name: fast_api_app
+    ports:
+      - "8000:8000"
+    environment:
+      DB_HOST: postgres
+      DB_PORT: "5432"
+      DB_USER: ksi_opinion_base
+      DB_PASSWORD: ksi_opinion_base
+      DB_NAME: ksi_opinion_base
+      USOS_CONSUMER_KEY: ${USOS_CONSUMER_KEY:-}
+      USOS_CONSUMER_SECRET: ${USOS_CONSUMER_SECRET:-}
+    depends_on:
+      data_loader:
+        condition: service_completed_successfully
     restart: unless-stopped
 
 volumes:
   pgdata:
-  

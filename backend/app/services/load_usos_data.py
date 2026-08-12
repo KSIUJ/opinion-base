@@ -6,6 +6,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 import json
 
 from dotenv import load_dotenv
+from sqlalchemy import func, select
 
 from app.db import SessionLocal
 from app.models import ActiveSubject, Lecturer, Subject
@@ -35,6 +36,17 @@ def main() -> None:
 
     db = SessionLocal()
     try:
+        seed_lecturer_count = 2  # sample rows from database/input.sql
+        already_loaded = db.execute(
+            select(func.count()).select_from(Lecturer)
+        ).scalar_one()
+        if already_loaded > seed_lecturer_count:
+            print(
+                f"skipping: USOS data already loaded "
+                f"({already_loaded} lecturers present; reload after a fresh reset)"
+            )
+            return
+
         lecturer_ids: dict[str, int] = {}
         for person in staff:
             lecturer = Lecturer(
