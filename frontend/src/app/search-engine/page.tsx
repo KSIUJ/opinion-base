@@ -3,22 +3,70 @@
 import Link from "next/link";
 
 import Search from './components/Search/Search';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { subjects } from "./a/a";
-import { teachers } from "./a/a";
+type Subject = {
+    subject_id: number;
+    subject_name: string;
+    department: unknown;
+    semester: unknown;
+    is_obligatory: boolean;
+    opinions_count: number;
+};
+
+type SubjectsResponse = {
+    subjects: Subject[];
+};
 
 export default function Home() {
     const [searchValue, setSearchValue] = useState('');
     const [searchType, setSearchType] =
         useState<'przedmioty' | 'prowadzacy'>('przedmioty');
 
+    const [subjects, setSubjects] = useState<Subject[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
     const handleSearch = (value: string) => {
         console.log(searchType, value);
         setSearchValue(value);
     };
 
-    const results = searchType === 'przedmioty' ? subjects : teachers;
+        useEffect(() => {
+        const fetchSubjects = async () => {
+            try {
+                setLoading(true);
+                setError(null);
+
+                const response = await fetch(
+                    'http://localhost:8000/subjects/all'
+                );
+
+                if (!response.ok) {
+                    throw new Error(
+                        `HTTP ${response.status}`
+                    );
+                }
+
+                const data: SubjectsResponse = await response.json();
+
+                setSubjects(data.subjects);
+            } catch (error) {
+                console.error(
+                    'Błąd podczas pobierania przedmiotów:',
+                    error
+                );
+
+                setError(
+                    'Nie udało się pobrać przedmiotów.'
+                );
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchSubjects();
+    }, []);
 
     return (
         <main className = "flex min-h-screen flex-col items-center justify-between p-24">
@@ -58,24 +106,42 @@ export default function Home() {
                     searchType = {searchType}
                 />
 
-                <h2 className = {'text-2xl mt-20 mx-2 underline'}>
-                        Wyszukiwano:
+                <h2 className = "text-2xl mt-20 mx-2 underline">
+                    Wyszukiwano:
                 </h2>
 
-                {results.map((item) => (
-                    <Link
-                        key = {item.slug}
-                        href = {
-                            searchType === 'przedmioty'
-                                ? `/search-engine/subject/${item.slug}`
-                                : `/search-engine/teacher/${item.slug}`
-                        }
-                    >
-                        <div>
-                            {item.name}
-                        </div>
-                    </Link>
-                ))}
+                {loading && (
+                    <p className = "mt-4">
+                        Ładowanie...
+                    </p>
+                )}
+
+                {error && (
+                    <p className = "mt-4 text-red-500">
+                        {error}
+                    </p>
+                )}
+
+                {!loading && !error && searchType === 'przedmioty' && (
+                    <div className = "flex flex-col gap-2 mt-4">
+                        {subjects.map((subject) => (
+                            <Link
+                                key = {subject.subject_id}
+                                href = {`/search-engine/subject/${subject.subject_id}`}
+                                className = "hover:underline"
+                            >
+                                {subject.subject_name}
+                            </Link>
+                        ))}
+                    </div>
+                )}
+
+                {searchType === 'prowadzacy' && (
+                    <p className="mt-4">
+                        Wyszukiwanie prowadzących nie jest jeszcze
+                        podłączone do backendu.
+                    </p>
+                )}
 
             </div>
 
