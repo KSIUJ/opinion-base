@@ -24,7 +24,7 @@ export default function Home() {
         useState<'przedmioty' | 'prowadzacy'>('przedmioty');
 
     const [subjects, setSubjects] = useState<Subject[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
     const handleSearch = (value: string) => {
@@ -32,41 +32,38 @@ export default function Home() {
         setSearchValue(value);
     };
 
-        useEffect(() => {
-        const fetchSubjects = async () => {
-            try {
-                setLoading(true);
-                setError(null);
+    const fetchSubjects = async () => {
+        try {
+            setLoading(true);
+            setError(null);
 
-                const response = await fetch(
-                    'http://localhost:8000/subjects/all'
+            const response = await fetch(
+                'http://localhost:8000/subjects/all'
+            );
+
+            if (!response.ok) {
+                throw new Error(
+                    `HTTP ${response.status}`
                 );
-
-                if (!response.ok) {
-                    throw new Error(
-                        `HTTP ${response.status}`
-                    );
-                }
-
-                const data: SubjectsResponse = await response.json();
-
-                setSubjects(data.subjects);
-            } catch (error) {
-                console.error(
-                    'Błąd podczas pobierania przedmiotów:',
-                    error
-                );
-
-                setError(
-                    'Nie udało się pobrać przedmiotów.'
-                );
-            } finally {
-                setLoading(false);
             }
-        };
 
-        fetchSubjects();
-    }, []);
+            const data: SubjectsResponse = await response.json();
+
+            setSubjects(data.subjects);
+        } catch (error) {
+            console.error(
+                'Błąd podczas pobierania przedmiotów:',
+                error
+            );
+
+            setError(
+                'Nie udało się pobrać przedmiotów.'
+            );
+        } finally {
+            setLoading(false);
+        }
+    };
+
 
     return (
         <main className = "flex min-h-screen flex-col items-center justify-between p-24">
@@ -106,10 +103,19 @@ export default function Home() {
                     searchType = {searchType}
                 />
 
-                <h2 className = "text-2xl mt-20 mx-2 underline">
-                    Wyszukiwano:
-                </h2>
+                <button
+                    onClick={fetchSubjects}
+                    disabled={loading}
+                    className="mt-4 px-6 py-2 rounded-lg bg-red-600 text-white disabled:opacity-50"
+                >
+                    {loading ? 'Szukam...' : 'Szukaj'}
+                </button>
 
+                {loading &&(
+                    <h2 className = "text-2xl mt-20 mx-2 underline">
+                        Wyszukiwano:
+                    </h2>
+                )}
                 {loading && (
                     <p className = "mt-4">
                         Ładowanie...
