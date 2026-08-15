@@ -4,28 +4,19 @@ import Link from "next/link";
 
 import Search from './components/Search/Search';
 import { useEffect, useState } from 'react';
+import { SubjectBasic, SubjectsBasicResponse } from '@/types/subject';
+import { Subject, SubjectsResponse } from '@/types/subject';
 
-type Subject = {
-    subject_id: number;
-    subject_name: string;
-    department: unknown;
-    semester: unknown;
-    is_obligatory: boolean;
-    opinions_count: number;
-};
-
-type SubjectsResponse = {
-    subjects: Subject[];
-};
 
 export default function Home() {
     const [searchValue, setSearchValue] = useState('');
     const [searchType, setSearchType] =
         useState<'przedmioty' | 'prowadzacy'>('przedmioty');
 
-    const [subjects, setSubjects] = useState<Subject[]>([]);
+    const [subjects, setSubjects] = useState<SubjectBasic[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [hasSearched, setHasSearched] = useState(false);
 
     const handleSearch = (value: string) => {
         console.log(searchType, value);
@@ -47,9 +38,10 @@ export default function Home() {
                 );
             }
 
-            const data: SubjectsResponse = await response.json();
+            const data: SubjectsBasicResponse = await response.json();
 
             setSubjects(data.subjects);
+            setHasSearched(true);
         } catch (error) {
             console.error(
                 'Błąd podczas pobierania przedmiotów:',
@@ -111,9 +103,9 @@ export default function Home() {
                     {loading ? 'Szukam...' : 'Szukaj'}
                 </button>
 
-                {loading &&(
+                {hasSearched &&(
                     <h2 className = "text-2xl mt-20 mx-2 underline">
-                        Wyszukiwano:
+                        Znaleziono:
                     </h2>
                 )}
                 {loading && (
