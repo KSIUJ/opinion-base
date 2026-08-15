@@ -4,69 +4,58 @@ import Link from "next/link";
 
 import Search from './components/Search/Search';
 import { useEffect, useState } from 'react';
+import { SubjectBasic, SubjectsBasicResponse } from '@/types/subject';
+import { Subject, SubjectsResponse } from '@/types/subject';
 
-type Subject = {
-    subject_id: number;
-    subject_name: string;
-    department: unknown;
-    semester: unknown;
-    is_obligatory: boolean;
-    opinions_count: number;
-};
-
-type SubjectsResponse = {
-    subjects: Subject[];
-};
 
 export default function Home() {
     const [searchValue, setSearchValue] = useState('');
     const [searchType, setSearchType] =
         useState<'przedmioty' | 'prowadzacy'>('przedmioty');
 
-    const [subjects, setSubjects] = useState<Subject[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [subjects, setSubjects] = useState<SubjectBasic[]>([]);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [hasSearched, setHasSearched] = useState(false);
 
     const handleSearch = (value: string) => {
         console.log(searchType, value);
         setSearchValue(value);
     };
 
-        useEffect(() => {
-        const fetchSubjects = async () => {
-            try {
-                setLoading(true);
-                setError(null);
+    const fetchSubjects = async () => {
+        try {
+            setLoading(true);
+            setError(null);
 
-                const response = await fetch(
-                    'http://localhost:8000/subjects/all'
+            const response = await fetch(
+                'http://localhost:8000/subjects/all'
+            );
+
+            if (!response.ok) {
+                throw new Error(
+                    `HTTP ${response.status}`
                 );
-
-                if (!response.ok) {
-                    throw new Error(
-                        `HTTP ${response.status}`
-                    );
-                }
-
-                const data: SubjectsResponse = await response.json();
-
-                setSubjects(data.subjects);
-            } catch (error) {
-                console.error(
-                    'Błąd podczas pobierania przedmiotów:',
-                    error
-                );
-
-                setError(
-                    'Nie udało się pobrać przedmiotów.'
-                );
-            } finally {
-                setLoading(false);
             }
-        };
 
-        fetchSubjects();
-    }, []);
+            const data: SubjectsBasicResponse = await response.json();
+
+            setSubjects(data.subjects);
+            setHasSearched(true);
+        } catch (error) {
+            console.error(
+                'Błąd podczas pobierania przedmiotów:',
+                error
+            );
+
+            setError(
+                'Nie udało się pobrać przedmiotów.'
+            );
+        } finally {
+            setLoading(false);
+        }
+    };
+
 
     return (
         <main className = "flex min-h-screen flex-col items-center justify-between p-24">
@@ -106,10 +95,19 @@ export default function Home() {
                     searchType = {searchType}
                 />
 
-                <h2 className = "text-2xl mt-20 mx-2 underline">
-                    Wyszukiwano:
-                </h2>
+                <button
+                    onClick={fetchSubjects}
+                    disabled={loading}
+                    className="mt-4 px-6 py-2 rounded-lg bg-red-600 text-white disabled:opacity-50"
+                >
+                    {loading ? 'Szukam...' : 'Szukaj'}
+                </button>
 
+                {hasSearched &&(
+                    <h2 className = "text-2xl mt-20 mx-2 underline">
+                        Znaleziono:
+                    </h2>
+                )}
                 {loading && (
                     <p className = "mt-4">
                         Ładowanie...
