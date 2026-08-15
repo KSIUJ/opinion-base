@@ -1,0 +1,1 @@
+1. In search should, we update status only on enter, or at any point.

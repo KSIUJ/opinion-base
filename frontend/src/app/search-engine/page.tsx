@@ -3,6 +3,7 @@
 import Link from "next/link";
 
 import Search from './components/Search/Search';
+import Dropdown from './components/Dropdown/Dropdown';
 import { useEffect, useState } from 'react';
 import { SubjectBasic, SubjectsBasicResponse } from '@/types/subject';
 import { Subject, SubjectsResponse } from '@/types/subject';
@@ -10,6 +11,10 @@ import { Subject, SubjectsResponse } from '@/types/subject';
 
 export default function Home() {
     const [searchValue, setSearchValue] = useState('');
+    const [departmentOption, setDepartmentOption] = useState<string>('');
+    const [semesterOption, setSemesterOption] = useState<string>('');
+
+
     const [searchType, setSearchType] =
         useState<'przedmioty' | 'prowadzacy'>('przedmioty');
 
@@ -28,8 +33,14 @@ export default function Home() {
             setLoading(true);
             setError(null);
 
+            const response_para = new URLSearchParams({
+                subject_name: searchValue,
+                department_name: departmentOption,
+                semester_name: semesterOption,
+            });
+
             const response = await fetch(
-                `http://localhost:8000/subjects/?subject_name=${encodeURIComponent(searchValue)}`
+                `http://localhost:8000/subjects/?${response_para.toString()}`
             );
 
             if (!response.ok) {
@@ -93,6 +104,18 @@ export default function Home() {
                 <Search
                     onSearch = {handleSearch}
                     searchType = {searchType}
+                />
+
+                <Dropdown
+                    options={[ 'TCS', 'Informatyka', 'Matematyka']}
+                    onSelect={(value) => setDepartmentOption(value)}
+                    placeholder="Wybierz Kierunek..."
+                />
+
+                <Dropdown
+                    options={[ '1', '2', '3']}
+                    onSelect={(value) => setSemesterOption(value)}
+                    placeholder="Wybierz Numer Semestru..."
                 />
 
                 <button
