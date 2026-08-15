@@ -13,7 +13,7 @@ export default function Home() {
     const [searchType, setSearchType] =
         useState<'przedmioty' | 'prowadzacy'>('przedmioty');
 
-    const [subjects, setSubjects] = useState<SubjectBasic[]>([]);
+    const [subjects, setSubjects] = useState<Subject[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [hasSearched, setHasSearched] = useState(false);
@@ -29,7 +29,7 @@ export default function Home() {
             setError(null);
 
             const response = await fetch(
-                'http://localhost:8000/subjects/all'
+                `http://localhost:8000/subjects/?subject_name=${encodeURIComponent(searchValue)}`
             );
 
             if (!response.ok) {
@@ -38,7 +38,7 @@ export default function Home() {
                 );
             }
 
-            const data: SubjectsBasicResponse = await response.json();
+            const data: SubjectsResponse = await response.json();
 
             setSubjects(data.subjects);
             setHasSearched(true);
