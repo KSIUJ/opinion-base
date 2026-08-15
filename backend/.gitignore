@@ -1,5 +1,16 @@
 # Python
 
+# Dangerous
+.env
+
+#.env values
+# DB_USER=ksi_opinion_base
+# DB_PASSWORD=ksi_opinion_base
+# DB_HOST=postgres
+# DB_PORT=5432
+# DB_NAME=ksi_opinion_base
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
