@@ -4,6 +4,8 @@ import Link from "next/link";
 
 import Search from './components/Search/Search';
 import Dropdown from './components/Dropdown/Dropdown';
+import Tristate from './components/Tristate/Tristate';
+
 import { useEffect, useState } from 'react';
 import { SubjectBasic, SubjectsBasicResponse } from '@/types/subject';
 import { Subject, SubjectsResponse } from '@/types/subject';
@@ -13,6 +15,8 @@ export default function Home() {
     const [searchValue, setSearchValue] = useState('');
     const [departmentOption, setDepartmentOption] = useState<string>('');
     const [semesterOption, setSemesterOption] = useState<string>('');
+    const [isObligatory, setIsObligatory] = useState<Boolean | null>(null);
+    const [isWinter, setIsWinter] = useState<Boolean | null>(null);
 
 
     const [searchType, setSearchType] =
@@ -33,11 +37,27 @@ export default function Home() {
             setLoading(true);
             setError(null);
 
-            const response_para = new URLSearchParams({
-                subject_name: searchValue,
-                department_name: departmentOption,
-                semester_name: semesterOption,
-            });
+            const response_para = new URLSearchParams();
+
+            if(searchValue !== ''){
+                response_para.append('subject_name', searchValue);
+            }
+            
+            if(departmentOption !== ''){
+                response_para.append('department_name', departmentOption);
+            }
+
+            if(semesterOption !== ''){
+                response_para.append('semester_name', semesterOption);
+            }
+
+            if(isObligatory !== null){
+                response_para.append('is_obligatory', String(isObligatory));
+            }
+
+            if(isWinter !== null){
+                response_para.append('is_winter', String(isWinter));
+            }
 
             const response = await fetch(
                 `http://localhost:8000/subjects/?${response_para.toString()}`
@@ -66,6 +86,7 @@ export default function Home() {
             setLoading(false);
         }
     };
+
 
 
     return (
@@ -116,6 +137,25 @@ export default function Home() {
                     options={[ '1', '2', '3']}
                     onSelect={(value) => setSemesterOption(value)}
                     placeholder="Wybierz Numer Semestru..."
+                />
+
+                <Tristate
+                    onSelect={(value) => setIsObligatory(value)}
+                    placeholder="Obowiązkowość"
+                    stringTrue="Obowiązkowy"
+                    stringFalse="Fakultet"
+                    stringNull="Dowolnie"
+                    name="isObligatory"    
+                />
+                              
+                              
+                <Tristate
+                    onSelect={(value) => setIsWinter(value)}
+                    placeholder="Okres Roku"
+                    stringTrue="Zimowy"
+                    stringFalse="Letni"
+                    stringNull="Dowolny"
+                    name="isWinter"    
                 />
 
                 <button
