@@ -133,30 +133,30 @@ export default function Home() {
                     placeholder="Wybierz Kierunek..."
                 />
 
-                <Dropdown
+                {searchType === 'przedmioty' && (<Dropdown
                     options={[ '1', '2', '3']}
                     onSelect={(value) => setSemesterOption(value)}
                     placeholder="Wybierz Numer Semestru..."
-                />
+                />)}
 
-                <Tristate
+                {searchType === 'przedmioty' && (<Tristate
                     onSelect={(value) => setIsObligatory(value)}
                     placeholder="Obowiązkowość"
                     stringTrue="Obowiązkowy"
                     stringFalse="Fakultet"
                     stringNull="Dowolnie"
                     name="isObligatory"    
-                />
+                />)}
                               
                               
-                <Tristate
+                {searchType === 'przedmioty' && (<Tristate
                     onSelect={(value) => setIsWinter(value)}
                     placeholder="Okres Roku"
                     stringTrue="Zimowy"
                     stringFalse="Letni"
                     stringNull="Dowolny"
                     name="isWinter"    
-                />
+                />)}
 
                 <button
                     onClick={fetchSubjects}
