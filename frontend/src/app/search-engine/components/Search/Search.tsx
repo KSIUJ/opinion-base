@@ -25,7 +25,7 @@ export default function Search ({ onSearch, searchType }: SearchProps) {
     };
 
     return (
-        <div>
+        <div className="py-1" >
             <input
                 type = "search"
                 value = {value}

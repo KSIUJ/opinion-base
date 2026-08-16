@@ -87,6 +87,7 @@ export default function Home() {
         }
     };
 
+    const fetchLecturers = async () => {}
 
 
     return (
@@ -159,7 +160,7 @@ export default function Home() {
                 />)}
 
                 <button
-                    onClick={fetchSubjects}
+                    onClick={searchType === 'przedmioty' ? fetchSubjects : fetchLecturers}
                     disabled={loading}
                     className="mt-4 px-6 py-2 rounded-lg bg-red-600 text-white disabled:opacity-50"
                 >
@@ -193,6 +194,7 @@ export default function Home() {
                             >
                                 {subject.subject_name}
                             </Link>
+
                         ))}
                     </div>
                 )}
