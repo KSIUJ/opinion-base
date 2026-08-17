@@ -1,7 +1,14 @@
 from sqlalchemy import select
 from sqlalchemy.orm import Session, selectinload
 
-from app.models import Lecturer, Subject
+from app.models import (
+    ActiveSubject,
+    Lecturer,
+    LecturerOpinionRelation,
+    Opinion,
+    Subject,
+    SubjectOpinionRelation,
+)
 
 
 class LecturersRepository:
@@ -15,12 +22,44 @@ class LecturersRepository:
         return db.execute(query).unique().scalars().all()
 
     @staticmethod
+    def search_lecturers(
+        db: Session,
+        surname: str | None = None,
+        subject: str | None = None,
+    ) -> list[Lecturer]:
+        query = (
+            select(Lecturer)
+            .options(
+                selectinload(Lecturer.department),
+                selectinload(Lecturer.active_subjects),
+            )
+            .order_by(Lecturer.surname, Lecturer.name)
+        )
+        if surname:
+            query = query.where(Lecturer.surname.ilike(f"%{surname}%"))
+        if subject:
+            query = (
+                query.join(Lecturer.active_subjects)
+                .join(ActiveSubject.subject)
+                .where(Subject.name.ilike(f"%{subject}%"))
+            )
+            query = query.distinct()
+        return db.execute(query).unique().scalars().all()
+
+    @staticmethod
     def get_lecturer(db: Session, lecturer_id: int) -> Lecturer | None:
         query = (
             select(Lecturer)
             .where(Lecturer.id == lecturer_id)
             .options(
-                selectinload(Lecturer.subjects).selectinload(Subject.opinions),
+                selectinload(Lecturer.department),
+                selectinload(Lecturer.active_subjects).selectinload(
+                    ActiveSubject.subject
+                ),
+                selectinload(Lecturer.opinion_relations)
+                .selectinload(LecturerOpinionRelation.opinion)
+                .selectinload(Opinion.subject_relations)
+                .selectinload(SubjectOpinionRelation.subject),
             )
         )
         return db.execute(query).unique().scalars().one_or_none()

@@ -17,27 +17,27 @@ class SubjectsService:
             department=DepartmentOut(
                 id=subject.department.id,
                 name=subject.department.name,
-                ),
+            ) if subject.department else None,
             semester=SemesterOut(
                 id=subject.semester.id,
                 name=subject.semester.name,
                 is_winter=subject.semester.is_winter,
-                ),
+            ) if subject.semester else None,
             is_obligatory=subject.is_obligatory,
             opinions_count=len(subject.opinion_relations),
 
-            opinions=[relation.opinion.content for relation in subject.opinion_relations],
+            opinions=[relation.opinion.content for relation in subject.opinion_relations if relation.opinion],
             groups_count=len(subject.group_relations),
-            groups=[relation.subject_group.name for relation in subject.group_relations],
-        
+            groups=[relation.subject_group.name for relation in subject.group_relations if relation.subject_group],
+
             lecturers_info=[ActiveSubjectFromSubjectOut(
                 lecturer_name=activeSubject.lecturer.name,
                 lecturer_surname=activeSubject.lecturer.surname,
                 role=LecturerRoleOut(
-                   id=activeSubject.role.id,
-                   name=activeSubject.role.name,
-                )
-            ) for activeSubject in subject.active_subjects],
+                    id=activeSubject.role.id,
+                    name=activeSubject.role.name,
+                ) if activeSubject.role else None,
+            ) for activeSubject in subject.active_subjects if activeSubject.lecturer],
 
         )
 
@@ -49,12 +49,12 @@ class SubjectsService:
             department=DepartmentOut(
                 id=subject.department.id,
                 name=subject.department.name,
-                ),
+            ) if subject.department else None,
             semester=SemesterOut(
                 id=subject.semester.id,
                 name=subject.semester.name,
                 is_winter=subject.semester.is_winter,
-                ),
+            ) if subject.semester else None,
             is_obligatory=subject.is_obligatory,
             opinions_count=len(subject.opinion_relations),
         )
