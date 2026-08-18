@@ -91,11 +91,11 @@ export default function Home() {
 
 
     return (
-        <main className = "flex min-h-screen flex-col items-center justify-between p-24">
+        <main className = "flex min-h-screen flex-col items-center justify-between p-4">
 
             <div className = "z-10 w-full max-w-5xl font-mono text-sm flex flex-col items-center">
             
-                <h1 className = {'text-5xl my-10'}>
+                <h1 className = {'text-5xl my-7'}>
                     Wyszukuj po:
                 </h1>
 
@@ -162,13 +162,13 @@ export default function Home() {
                 <button
                     onClick={searchType === 'przedmioty' ? fetchSubjects : fetchLecturers}
                     disabled={loading}
-                    className="mt-4 px-6 py-2 rounded-lg bg-red-600 text-white disabled:opacity-50"
+                    className="mt-7 px-6 py-2 rounded-lg bg-red-600 text-white disabled:opacity-50"
                 >
                     {loading ? 'Szukam...' : 'Szukaj'}
                 </button>
 
                 {hasSearched &&(
-                    <h2 className = "text-2xl mt-20 mx-2 underline">
+                    <h2 className = "text-2xl mt-7 mx-2 underline">
                         Znaleziono:
                     </h2>
                 )}

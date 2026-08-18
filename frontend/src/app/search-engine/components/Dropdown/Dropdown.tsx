@@ -23,7 +23,7 @@ export default function Dropdown({ options, onSelect, placeholder = 'Wybierz...'
     };
 
     return (
-        <div className="py-1 relative w-full max-w-xs">
+        <div className="pt-1 relative w-full max-w-xs">
             <button
                 type="button"
                 onClick={() => setIsOpen((prev) => !prev)}
