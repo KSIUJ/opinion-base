@@ -21,8 +21,10 @@ else
   psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -f /app/database/create.sql
   echo "Loading seed data..."
   psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -f /app/database/input.sql
-  echo "Resetting id sequences after explicit seed inserts..."
-  psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -tc "
+fi
+
+echo "Resetting id sequences (idempotent)..."
+psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -tc "
 SELECT setval(pg_get_serial_sequence('department', 'id'), COALESCE(max(id), 1), max(id) IS NOT NULL) FROM department;
 SELECT setval(pg_get_serial_sequence('semester', 'id'), COALESCE(max(id), 1), max(id) IS NOT NULL) FROM semester;
 SELECT setval(pg_get_serial_sequence('lecturers_roles', 'id'), COALESCE(max(id), 1), max(id) IS NOT NULL) FROM lecturers_roles;
@@ -36,7 +38,6 @@ SELECT setval(pg_get_serial_sequence('subject_subject_group_relation', 'id'), CO
 SELECT setval(pg_get_serial_sequence('subjects_opinion_relation', 'id'), COALESCE(max(id), 1), max(id) IS NOT NULL) FROM subjects_opinion_relation;
 SELECT setval(pg_get_serial_sequence('lecturers_opinion_relation', 'id'), COALESCE(max(id), 1), max(id) IS NOT NULL) FROM lecturers_opinion_relation;
 "
-fi
 
 echo "Loading USOS data from JSON files..."
 python /app/database/load_usos_data.py
