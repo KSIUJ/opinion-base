@@ -184,17 +184,46 @@ export default function Home() {
                     </p>
                 )}
 
-                {!loading && !error && searchType === 'przedmioty' && (
+                {!loading && !error && searchType === 'przedmioty' && (                   
                     <div className = "flex flex-col gap-2 mt-4">
                         {subjects.map((subject) => (
-                            <Link
-                                key = {subject.subject_id}
-                                href = {`/search-engine/subject/${subject.subject_id}`}
-                                className = "hover:underline"
+                            <div
+                                key={subject.subject_id}
+                                className="flex items-center gap-2"
                             >
-                                {subject.subject_name}
-                            </Link>
+                                <Link
+                                    href={`/search-engine/subject/${subject.subject_id}`}
+                                    className="hover:underline"
+                                >
+                                    {subject.subject_name}
+                                </Link>
+                                
+                                <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-100 text-gray-600 border border-gray-300">
+                                    {subject.department.name}
+                                </span>
+                                
+                                <span className="text-xs px-2 py-0.5 rounded-full bg-green-100 text-gray-600 border border-gray-300">
+                                    Sem {subject.semester.name}
+                                </span>
 
+                                {!subject.is_obligatory && (
+                                    <span className="text-xs px-2 py-0.5 rounded-full bg-purple-100 text-gray-600 border border-gray-300">
+                                        Fakultet
+                                    </span>
+                                )}
+
+                                {subject.semester.is_winter && (
+                                    <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-gray-600 border border-gray-300">
+                                        Zimowy
+                                    </span>
+                                )}
+
+                                {!subject.semester.is_winter && (
+                                    <span className="text-xs px-2 py-0.5 rounded-full bg-orange-100 text-gray-600 border border-gray-300">
+                                        Letni
+                                    </span>
+                                )}
+                            </div>
                         ))}
                     </div>
                 )}
