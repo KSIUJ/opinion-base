@@ -87,14 +87,15 @@ export default function Home() {
         }
     };
 
+    const fetchLecturers = async () => {}
 
 
     return (
-        <main className = "flex min-h-screen flex-col items-center justify-between p-24">
+        <main className = "flex min-h-screen flex-col items-center justify-between p-4">
 
             <div className = "z-10 w-full max-w-5xl font-mono text-sm flex flex-col items-center">
             
-                <h1 className = {'text-5xl my-10'}>
+                <h1 className = {'text-5xl my-7'}>
                     Wyszukuj po:
                 </h1>
 
@@ -133,41 +134,41 @@ export default function Home() {
                     placeholder="Wybierz Kierunek..."
                 />
 
-                <Dropdown
+                {searchType === 'przedmioty' && (<Dropdown
                     options={[ '1', '2', '3']}
                     onSelect={(value) => setSemesterOption(value)}
                     placeholder="Wybierz Numer Semestru..."
-                />
+                />)}
 
-                <Tristate
+                {searchType === 'przedmioty' && (<Tristate
                     onSelect={(value) => setIsObligatory(value)}
                     placeholder="Obowiązkowość"
                     stringTrue="Obowiązkowy"
                     stringFalse="Fakultet"
                     stringNull="Dowolnie"
                     name="isObligatory"    
-                />
+                />)}
                               
                               
-                <Tristate
+                {searchType === 'przedmioty' && (<Tristate
                     onSelect={(value) => setIsWinter(value)}
                     placeholder="Okres Roku"
                     stringTrue="Zimowy"
                     stringFalse="Letni"
                     stringNull="Dowolny"
                     name="isWinter"    
-                />
+                />)}
 
                 <button
-                    onClick={fetchSubjects}
+                    onClick={searchType === 'przedmioty' ? fetchSubjects : fetchLecturers}
                     disabled={loading}
-                    className="mt-4 px-6 py-2 rounded-lg bg-red-600 text-white disabled:opacity-50"
+                    className="mt-7 px-6 py-2 rounded-lg bg-red-600 text-white disabled:opacity-50"
                 >
                     {loading ? 'Szukam...' : 'Szukaj'}
                 </button>
 
                 {hasSearched &&(
-                    <h2 className = "text-2xl mt-20 mx-2 underline">
+                    <h2 className = "text-2xl mt-7 mx-2 underline">
                         Znaleziono:
                     </h2>
                 )}
@@ -183,16 +184,46 @@ export default function Home() {
                     </p>
                 )}
 
-                {!loading && !error && searchType === 'przedmioty' && (
+                {!loading && !error && searchType === 'przedmioty' && (                   
                     <div className = "flex flex-col gap-2 mt-4">
                         {subjects.map((subject) => (
-                            <Link
-                                key = {subject.subject_id}
-                                href = {`/search-engine/subject/${subject.subject_id}`}
-                                className = "hover:underline"
+                            <div
+                                key={subject.subject_id}
+                                className="flex items-center gap-2"
                             >
-                                {subject.subject_name}
-                            </Link>
+                                <Link
+                                    href={`/search-engine/subject/${subject.subject_id}`}
+                                    className="hover:underline"
+                                >
+                                    {subject.subject_name}
+                                </Link>
+                                
+                                <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-100 text-gray-600 border border-gray-300">
+                                    {subject.department.name}
+                                </span>
+                                
+                                <span className="text-xs px-2 py-0.5 rounded-full bg-green-100 text-gray-600 border border-gray-300">
+                                    Sem {subject.semester.name}
+                                </span>
+
+                                {!subject.is_obligatory && (
+                                    <span className="text-xs px-2 py-0.5 rounded-full bg-purple-100 text-gray-600 border border-gray-300">
+                                        Fakultet
+                                    </span>
+                                )}
+
+                                {subject.semester.is_winter && (
+                                    <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-gray-600 border border-gray-300">
+                                        Zimowy
+                                    </span>
+                                )}
+
+                                {!subject.semester.is_winter && (
+                                    <span className="text-xs px-2 py-0.5 rounded-full bg-orange-100 text-gray-600 border border-gray-300">
+                                        Letni
+                                    </span>
+                                )}
+                            </div>
                         ))}
                     </div>
                 )}
