@@ -54,3 +54,5 @@ def get_lecturer(
     if lecturer is None:
         raise HTTPException(status_code=404, detail="Lecturer not found")
 
+    return lecturer
+

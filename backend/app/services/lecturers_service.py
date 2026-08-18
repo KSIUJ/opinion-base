@@ -20,7 +20,13 @@ class LecturersService:
                 id=lecturer.id,
                 name=lecturer.name,
                 surname=lecturer.surname,
-                subject_count=len(lecturer.subjects),
+                subject_count=len(
+                    {
+                        active.subject_id
+                        for active in lecturer.active_subjects
+                        if active.subject_id is not None
+                    }
+                ),
             )
             for lecturer in lecturers
         ]

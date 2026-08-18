@@ -1,7 +1,7 @@
 from sqlalchemy import Select, and_, func, select
 from sqlalchemy.orm import Session, joinedload, selectinload
 
-from app.models import ActiveSubject, Lecturer, Subject, SubjectOpinionRelation, SubjectSubjectGroupRelation
+from app.models import ActiveSubject, Lecturer, Semester, Subject, SubjectOpinionRelation, SubjectSubjectGroupRelation
 
 
 class SubjectsRepository:
@@ -48,6 +48,7 @@ class SubjectsRepository:
         query: Select,
         subject_id: int | None = None,
         subject_name: str | None = None,
+        semester_name: str | None = None,
         lecturer_id: int | None = None,
         lecturer_name: str | None = None,
         lecturer_surname: str | None = None,
@@ -58,6 +59,10 @@ class SubjectsRepository:
             query = query.where(Subject.id == subject_id)
         if subject_name:
             query = query.where(Subject.name.ilike(f"%{subject_name}%"))
+        if semester_name:
+            query = query.where(
+                Subject.semester.has(Semester.name.ilike(f"%{semester_name}%"))
+            )
         if lecturer_id is not None:
             query = query.where(
                 Subject.active_subjects.any(ActiveSubject.lecturer_id == lecturer_id)
@@ -91,6 +96,7 @@ class SubjectsRepository:
         db: Session,
         subject_id: int | None = None,
         subject_name: str | None = None,
+        semester_name: str | None = None,
         lecturer_id: int | None = None,
         lecturer_name: str | None = None,
         lecturer_surname: str | None = None,
@@ -99,6 +105,7 @@ class SubjectsRepository:
         query = SubjectsRepository.filter_query(
                     subject_id=subject_id,
                     subject_name=subject_name,
+                    semester_name=semester_name,
                     lecturer_id=lecturer_id,
                     lecturer_name=lecturer_name,
                     lecturer_surname=lecturer_surname,

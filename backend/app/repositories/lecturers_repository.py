@@ -16,7 +16,7 @@ class LecturersRepository:
     def list_lecturers(db: Session) -> list[Lecturer]:
         query = (
             select(Lecturer)
-            .options(selectinload(Lecturer.subjects))
+            .options(selectinload(Lecturer.active_subjects))
             .order_by(Lecturer.id)
         )
         return db.execute(query).unique().scalars().all()
