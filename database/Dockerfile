@@ -24,6 +24,7 @@ ENV DB_NAME=ksi_opinion_base
 
 WORKDIR /app/database
 
-RUN chmod +x entrypoint.sh
+# Strip any Windows CRLF line endings so the shebang works on every host
+RUN sed -i 's/\r$//' entrypoint.sh && chmod +x entrypoint.sh
 
 ENTRYPOINT ["/app/database/entrypoint.sh"]

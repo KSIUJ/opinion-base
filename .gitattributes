@@ -1,0 +1,3 @@
+# Force Unix (LF) line endings for shell scripts so Docker entrypoints
+# don't break with "no such file or directory" on Windows checkouts.
+*.sh text eol=lf
