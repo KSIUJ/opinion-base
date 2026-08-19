@@ -10,6 +10,8 @@ dependencies = [
     "python-dotenv",
     "sqlalchemy",
     "requests-oauthlib>=2.0.0",
+    "pytest>=9.1.1",
+    "pytest-mock>=3.15.1",
 ]
 
 [tool.fastapi]

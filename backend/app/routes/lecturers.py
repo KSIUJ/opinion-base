@@ -21,6 +21,23 @@ def list_lecturers(db: Session = Depends(get_db)) -> LecturerListResponse:
         ) from exc
 
 
+@router.get("/search", response_model=LecturerListResponse)
+def search_lecturers(
+    surname: str | None = None,
+    subject: str | None = None,
+    db: Session = Depends(get_db),
+) -> LecturerListResponse:
+    try:
+        return LecturersService.search_lecturers(
+            db, surname=surname, subject=subject
+        )
+    except OperationalError as exc:
+        raise HTTPException(
+            status_code=503,
+            detail=f"Database connection failed: {exc}",
+        ) from exc
+
+
 @router.get("/{lecturer_id}", response_model=LecturerOut)
 def get_lecturer(
     lecturer_id: int,
@@ -36,4 +53,6 @@ def get_lecturer(
 
     if lecturer is None:
         raise HTTPException(status_code=404, detail="Lecturer not found")
+
+    return lecturer
 
