@@ -19,13 +19,13 @@ export default function Search ({ onSearch, searchType }: SearchProps) {
     }
 
     const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === 'Enter') {
-            onSearch(value);
-        }
+        // if (event.key === 'Enter') { 
+            onSearch(value); // issue 1
+        // }
     };
 
     return (
-        <div>
+        <div className="py-1" >
             <input
                 type = "search"
                 value = {value}

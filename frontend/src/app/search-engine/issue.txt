@@ -1,0 +1,9 @@
+1. In search should, we update status only on enter, or at any point.
+
+2. In subject/[slug]/page.tsx the button doesn't let user add an opinion
+    - implement adding opinion and showing it on the page
+    - to discuss with backend team how this data should be delivered to backend and then to database?
+
+3. Still waiting for 'prowadzący' part of backend, after its done implement template page analogical to the subject template page
+
+4. not an issue but keep in mind that filtering functionality is gonna be implement in backend not in frontend, front will only display the output of backend (Krzysiek is this correct?)
