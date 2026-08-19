@@ -1,4 +1,5 @@
 import { Subject, SubjectsResponse } from '@/types/subject';
+import AddOpinion from '../../components/AddOpinion/AddOpinion';
 
 interface Props {
     params: Promise<{
@@ -120,11 +121,9 @@ export default async function SubjectPage({ params }: Props) {
                 Opinie o przedmiocie
             </h2>
 
-            <button
-                className="mt-4 px-6 py-2 rounded-lg bg-pink-600 text-white disabled:opacity-50"
-            >
-                dodaj opinie
-            </button>
+            <AddOpinion
+                subjectId = {subject.subject_id}
+            />
 
             <section className = "mt-10">
                 {subject.opinions.length > 0 ? (
