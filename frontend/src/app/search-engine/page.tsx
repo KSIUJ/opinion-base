@@ -37,7 +37,6 @@ export default function Home() {
             setLoading(true);
             setError(null);
 
-<<<<<<< HEAD
             const response_para = new URLSearchParams();
 
             if(searchValue !== ''){
@@ -74,21 +73,6 @@ export default function Home() {
 
             setSubjects(data.subjects);
             setHasSearched(true);
-=======
-            const response = await fetch(
-                'http://localhost:8000/subjects/all'
-            );
-
-            if (!response.ok) {
-                throw new Error(
-                    `HTTP ${response.status}`
-                );
-            }
-
-            const data: SubjectsResponse = await response.json();
-
-            setSubjects(data.subjects);
->>>>>>> e509620 (Szukaj button)
         } catch (error) {
             console.error(
                 'Błąd podczas pobierania przedmiotów:',
@@ -103,11 +87,8 @@ export default function Home() {
         }
     };
 
-<<<<<<< HEAD
     const fetchLecturers = async () => {}
 
-=======
->>>>>>> e509620 (Szukaj button)
 
     return (
         <main className = "flex min-h-screen flex-col items-center justify-between p-4">
@@ -147,7 +128,6 @@ export default function Home() {
                     searchType = {searchType}
                 />
 
-<<<<<<< HEAD
                 <Dropdown
                     options={[ 'TCS', 'Informatyka', 'Matematyka']}
                     onSelect={(value) => setDepartmentOption(value)}
@@ -190,19 +170,6 @@ export default function Home() {
                 {hasSearched &&(
                     <h2 className = "text-2xl mt-7 mx-2 underline">
                         Znaleziono:
-=======
-                <button
-                    onClick={fetchSubjects}
-                    disabled={loading}
-                    className="mt-4 px-6 py-2 rounded-lg bg-red-600 text-white disabled:opacity-50"
-                >
-                    {loading ? 'Szukam...' : 'Szukaj'}
-                </button>
-
-                {loading &&(
-                    <h2 className = "text-2xl mt-20 mx-2 underline">
-                        Wyszukiwano:
->>>>>>> e509620 (Szukaj button)
                     </h2>
                 )}
                 {loading && (
