@@ -18,3 +18,8 @@ export type LecturerRole = {
     name: string
 }
 
+export type Opinion = {
+    id: number
+    subject_name: string
+    content: string
+}

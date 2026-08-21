@@ -33,105 +33,147 @@ export default async function SubjectPage({ params }: Props) {
 
     return (
         <main className = "max-w-4xl mx-auto p-8">
-            <h1 className = "text-4xl font-bold mb-6">
+            <h1 className = "text-4xl sm:text-5xl font-bold tracking-tight">
                 {subject.subject_name}
             </h1>
 
-            <div className = "space-y-3">
-                <p>
-                    <strong>Kierunek: </strong>
-                    {subject.department.name}
-                </p>
+            <section className = "mt-8">
+                <h2 className = "text-2xl font-semibold mb-4">
+                    Podstawowe informacje
+                </h2>
 
-                <p>
-                    <strong>Semestr: </strong>
-                    {subject.semester.name}
-                </p>
+                <div className="border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm bg-white dark:bg-gray-800">
+                    <div className = "grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
+                        <div>
+                            <p className = "text-sm text-gray-500">
+                                Kierunek
+                            </p>
+                            <p className = "font-medium mt-1">
+                                {subject.department.name}
+                            </p>
+                        </div>
 
-                <p>
-                    <strong>Okres: </strong>
-                    {subject.semester.is_winter
-                        ? 'Zimowy'
-                        : 'Letni'}
-                </p>
+                        <div>
+                            <p className = "text-sm text-gray-500">
+                                Semestr
+                            </p>
+                            <p className = "font-medium mt-1">
+                                {subject.semester.name}
+                            </p>
+                        </div>
 
-                <p>
-                    <strong>Obowiązkowy: </strong>
-                    {subject.is_obligatory ? 'Tak' : 'Nie'}
-                </p>
+                        <div>
+                            <p className = "text-sm text-gray-500">
+                                Okres
+                            </p>
+                            <p className = "font-medium mt-1">
+                                {subject.semester.is_winter
+                                    ? 'Zimowy'
+                                    : 'Letni'}
+                            </p>
+                        </div>
 
-                <p>
-                    <strong>Liczba opinii: </strong>
-                    {subject.opinions_count}
-                </p>
+                        <div>
+                            <p className = "text-sm text-gray-500">
+                                Obowiązkowy
+                            </p>
+                            <p className = "font-medium mt-1">
+                                {subject.is_obligatory ? 'Tak' : 'Nie'}
+                            </p>
+                        </div>
 
-                <p>
-                    <strong>Liczba grup: </strong>
-                    {subject.groups_count}
-                </p>
-            </div>
+                        <div>
+                            <p className = "text-sm text-gray-500">
+                                Liczba opinii
+                            </p>
+                            <p className = "font-medium mt-1">
+                                {subject.opinions_count}
+                            </p>
+                        </div>
 
-            <section className = "mt-10">
-                <h2 className = "text-3xl font-bold mb-4">
+                        <div>
+                            <p className = "text-sm text-gray-500">
+                                Liczba grup
+                            </p>
+                            <p className = "font-medium mt-1">
+                                {subject.groups_count}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className = "mt-12">
+                <h2 className = "text-2xl font-semibold mb-4">
                     Prowadzący
                 </h2>
 
                 {subject.lecturers_info.length > 0 ? (
-                    <div className = "space-y-4">
-                        {subject.lecturers_info.map(
-                            (lecturer, index) => (
-                                <div key = {index}>
-                                    <p>
-                                        <strong>
-                                            {lecturer.lecturer_name}{' '}
-                                            {lecturer.lecturer_surname}
-                                        </strong>
-                                    </p>
+                    <div className = "grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {subject.lecturers_info.map((lecturer, index) => (
+                            <div
+                                key = {index}
+                                className = "border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm bg-white dark:bg-gray-800"
+                            >
+                                <p className = "font-semibold text-lg">
+                                    {lecturer.lecturer_name}{' '}
+                                    {lecturer.lecturer_surname}
+                                </p>
 
-                                    <p>
-                                        <strong>Rola: </strong>
-                                        {lecturer.role.name}
-                                    </p>
-                                </div>
-                            )
-                        )}
+                                <p className = "text-sm text-gray-500 mt-1">
+                                    {lecturer.role.name}
+                                </p>
+                            </div>
+                        ))}
                     </div>
                 ) : (
-                    <p>Brak informacji o prowadzących.</p>
+                    <p className = "text-gray-500">
+                        Brak informacji o prowadzących.
+                    </p>
                 )}
             </section>
 
-            <section className = "mt-10">
-                <h2 className = "text-3xl font-bold mb-4">
+            <section className = "mt-12">
+                <h2 className = "text-2xl font-semibold mb-4">
                     Grupy
                 </h2>
 
                 {subject.groups.length > 0 ? (
-                    <ul className = "list-disc pl-6">
-                        {subject.groups.map((group, index) => (
-                            <li key = {index}>{group}</li>
-                        ))}
-                    </ul>
+                    <div className = "grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className = "flex flex-wrap gap-2">
+                            {subject.groups.map((group, index) => (
+                                <span
+                                    key = {index}
+                                    className = "border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm bg-white dark:bg-gray-800"
+                                >
+                                    {group}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
                 ) : (
-                    <p>Brak grup.</p>
+                    <p className = "text-gray-500">
+                        Brak grup.
+                    </p>
                 )}
             </section>
-
-            <h2 className = "text-3xl font-bold mb-4">
-                Opinie o przedmiocie
-            </h2>
 
             <AddOpinion
                 subjectId = {subject.subject_id}
             />
 
+
             <section className = "mt-10">
+                <h2 className = "text-2xl font-semibold mb-4">
+                    Opinie o przedmiocie
+                </h2>
+
                 {subject.opinions.length > 0 ? (
                     <div className = "space-y-4">
                         {subject.opinions.map((opinion, index) => (
                             <div
                                 key = {index}
-                                className = "border rounded-lg p-4"
+                                className = "border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm bg-white dark:bg-gray-800"
                             >
                                 {opinion}
                             </div>

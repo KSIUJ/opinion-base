@@ -27,16 +27,17 @@ export default function Dropdown({ options, onSelect, placeholder = 'Wybierz...'
             <button
                 type="button"
                 onClick={() => setIsOpen((prev) => !prev)}
-                className="w-full px-4 py-2 border border-gray-400 rounded-md text-left bg-white text-gray-900"
+                className="w-full px-4 py-2 border border-gray-400 rounded-md text-center bg-white text-gray-900 dark:border-zinc-600 dark:text-gray-100 dark:placeholder:text-gray-400 dark:bg-zinc-900 dark:focus:border-zinc-400"
             >
-                {selected ?? placeholder}
+                {selected ?? <span className='text-gray-400 italicr'>{placeholder}</span> }
             </button>
+            {/* className={`dark:border-zinc-600 dark:text-gray-100 dark:placeholder:text-gray-400 dark:bg-zinc-900 dark:focus:border-zinc-400`} */}
 
             {isOpen && (
-                <ul className="absolute z-10 w-full mt-1 border border-gray-300 rounded-md bg-white shadow-md max-h-60 overflow-auto">
+                <ul className="absolute z-10 w-full mt-1 border border-gray-300 rounded-md bg-white shadow-md max-h-60 overflow-auto dark:border-zinc-600 dark:text-gray-100 dark:placeholder:text-gray-400 dark:bg-zinc-900 dark:focus:border-zinc-400">
                         <li
                             onClick={() => handleSelect(null)}
-                            className="px-4 py-2 cursor-pointer hover:bg-gray-100 text-gray-500 italic"
+                            className="px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-700 text-gray-400 italic"
                         >
                             {placeholder}
                         </li>
@@ -51,7 +52,7 @@ export default function Dropdown({ options, onSelect, placeholder = 'Wybierz...'
                         <li
                             key={option}
                             onClick={() => handleSelect(option)}
-                            className="px-4 py-2 cursor-pointer hover:bg-gray-100"
+                            className="px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-700"
                         >
                             {option}
                         </li>
