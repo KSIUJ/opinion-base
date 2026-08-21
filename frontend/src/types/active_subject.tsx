@@ -6,3 +6,9 @@ export type ActiveSubjectFromSubject = {
     lecturer_surname: string
     role: LecturerRole
 }
+
+export type ActiveSubjectFromLecturer = {
+    id: number
+    name: string
+    opinions_count: number
+}
