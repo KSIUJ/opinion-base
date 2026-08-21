@@ -9,6 +9,7 @@ import Tristate from './components/Tristate/Tristate';
 import { useEffect, useState } from 'react';
 import { SubjectBasic, SubjectsBasicResponse } from '@/types/subject';
 import { Subject, SubjectsResponse } from '@/types/subject';
+import { LecturerBasic, LecturerBasicResponse } from "@/types/lecturer";
 
 
 export default function Home() {
@@ -23,6 +24,8 @@ export default function Home() {
         useState<'przedmioty' | 'prowadzacy'>('przedmioty');
 
     const [subjects, setSubjects] = useState<Subject[]>([]);
+    const [lecturers, setlecturers] = useState<LecturerBasic[]>([]);
+
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [hasSearched, setHasSearched] = useState(false);
@@ -87,7 +90,59 @@ export default function Home() {
         }
     };
 
-    const fetchLecturers = async () => {}
+    const fetchLecturers = async () => {
+        try {
+            setLoading(true);
+            setError(null);
+
+            const response_para = new URLSearchParams();
+
+            if(searchValue !== ''){
+                response_para.append('surname', searchValue);
+            }
+            
+            if(departmentOption !== ''){
+                response_para.append('department_name', departmentOption);
+            }
+
+            const response = await fetch(
+                `http://localhost:8000/lecturers/search?${response_para.toString()}`
+                // `http://localhost:8000/lecturers?${response_para.toString()}`
+            );
+
+            if (!response.ok) {
+                throw new Error(
+                    `HTTP ${response.status}`
+                );
+            }
+
+            const data: LecturerBasicResponse = await response.json();
+
+            setlecturers(data.lecturers);
+            setHasSearched(true);
+        } catch (error) {
+            console.error(
+                'Błąd podczas pobierania przedmiotów:',
+                error
+            );
+
+            setError(
+                'Nie udało się pobrać przedmiotów.'
+            );
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    const openSubject = () => {
+        setSearchType('przedmioty')
+        setHasSearched(false);
+    };
+
+    const openLecturers = () => {
+        setSearchType('prowadzacy')
+        setHasSearched(false);
+    };
 
 
     return (
@@ -101,7 +156,7 @@ export default function Home() {
 
                 <div className="flex gap-4 mb-6">
                     <button
-                        onClick={() => setSearchType('przedmioty')}
+                        onClick={() => openSubject()}
                         className={`px-4 py-2 rounded-lg ${
                             searchType === 'przedmioty'
                                 ? 'bg-green-600 text-white'
@@ -112,12 +167,12 @@ export default function Home() {
                     </button>
 
                     <button
-                            onClick={() => setSearchType('prowadzacy')}
-                            className={`px-4 py-2 rounded-lg ${
-                                searchType === 'prowadzacy'
-                                    ? 'bg-green-600 text-white'
-                                    : 'bg-gray-200'
-                            }`}
+                        onClick={() => openLecturers()}
+                        className={`px-4 py-2 rounded-lg ${
+                            searchType === 'prowadzacy'
+                                ? 'bg-green-600 text-white'
+                                : 'bg-gray-200'
+                        }`}
                         >
                             Prowadzacy
                         </button>
@@ -184,7 +239,7 @@ export default function Home() {
                     </p>
                 )}
 
-                {!loading && !error && searchType === 'przedmioty' && (                   
+                {!loading && !error && hasSearched && searchType === 'przedmioty' && (                   
                     <div className = "flex flex-col gap-2 mt-4">
                         {subjects.map((subject) => (
                             <div
@@ -228,13 +283,27 @@ export default function Home() {
                     </div>
                 )}
 
-                {searchType === 'prowadzacy' && (
-                    <p className="mt-4">
-                        Wyszukiwanie prowadzących nie jest jeszcze
-                        podłączone do backendu.
-                    </p>
+                {!loading && !error && hasSearched && searchType === 'prowadzacy' && (                   
+                    <div className = "flex flex-col gap-2 mt-4">
+                        {lecturers.map((lecturer) => (
+                            <div
+                                key={lecturer.id}
+                                className="flex items-center gap-2"
+                            >
+                                <Link
+                                    href={`/search-engine/teacher/${lecturer.id}`}
+                                    className="hover:underline"
+                                >
+                                    {lecturer.name} {lecturer.surname}
+                                </Link>
+                                
+                                {/* <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-100 text-gray-600 border border-gray-300">
+                                    {lecturer.department.name}
+                                </span> */}
+                            </div>
+                        ))}
+                    </div>
                 )}
-
             </div>
 
         </main>
