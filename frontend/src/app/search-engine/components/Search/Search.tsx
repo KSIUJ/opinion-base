@@ -25,7 +25,7 @@ export default function Search ({ onSearch, searchType }: SearchProps) {
     };
 
     return (
-        <div className="py-1" >
+        <div className="relative py-1 w-70" >
             <input
                 type = "search"
                 value = {value}
@@ -37,7 +37,7 @@ export default function Search ({ onSearch, searchType }: SearchProps) {
                         : 'Wpisz nazwisko prowadzącego...'
                 }
 
-                className = {`w-full px-4 pr-10 py-2 border border-gray-400 rounded-md text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-gray-500`}
+                className = {`w-full px-4 pr-6 py-2 border border-gray-400 rounded-md text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-gray-500`}
             />
             <button 
                 type = "submit" 
