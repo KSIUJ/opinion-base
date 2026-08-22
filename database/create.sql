@@ -48,6 +48,10 @@ CREATE TABLE time (
     id serial PRIMARY KEY
 );
 
+insert into time(id) values(
+    1,
+);
+
 --Active Subject
 CREATE TABLE active_subjects (
   id serial PRIMARY KEY,

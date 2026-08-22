@@ -5,6 +5,11 @@ from sqlalchemy.orm import Session
 from app.dependencies.db import get_db
 from app.schemas.subjects import SubjectsResponse
 from app.schemas.subjects import SubjectsResponseBasic
+from app.schemas.opinions import OpinionCreate
+from app.services.opinions_service import (
+    OpinionServiceError,
+    OpinionsService,
+)
 from app.services.subjects_service import SubjectsService
 
 router = APIRouter()
@@ -63,4 +68,21 @@ def display_info(
             status_code=503,
             detail=f"Database connection failed: {exc}",
         ) from exc
+
+@router.post("/{subject_id}/add_opinion")
+def write_opinion(
+    subject_id: int,
+    opinion_data: OpinionCreate,
+    db: Session = Depends(get_db),
+) -> None:
+    try:
+        OpinionsService.write_opinion(
+            target_id=subject_id,
+            target_type="subject",
+            content=opinion_data.content,
+            db=db,
+        )
+    except OpinionServiceError as exc:
+        raise HTTPException(status_code=exc.status_code, detail=str(exc)) from exc
+
 
