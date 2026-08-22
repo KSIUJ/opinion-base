@@ -1,2 +1,4 @@
-Bez konteneryzacji uruchamia sie skryptem run.sh
-Porty są w backend/.env i tam wystarczy je zmieniać.
+API Opinii (endpointy subjects/{subject_id}/addopinion i analogiczny z lecturers):
+zwraca nulla jak uda się dodać opinię, else dostajesz HTTPError i wiadomosc czemu nie udalo sie dodanie
+opinie mają między 1 a 2000 znaków 
+poza tym to error powinien wynikac z bledu technicznego, nie umiem innego przewidzieć

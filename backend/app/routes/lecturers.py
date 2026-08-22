@@ -4,6 +4,11 @@ from sqlalchemy.orm import Session
 
 from app.db import SessionLocal
 from app.schemas.lecturers import LecturerListResponse, LecturerOut
+from app.schemas.opinions import OpinionCreate
+from app.services.opinions_service import (
+    OpinionServiceError,
+    OpinionsService,
+)
 from app.services.lecturers_service import LecturersService
 from app.dependencies.db import get_db
 
@@ -56,3 +61,18 @@ def get_lecturer(
 
     return lecturer
 
+@router.post("/{lecturer_id}/add_opinion")
+def write_opinion(
+    lecturer_id: int,
+    opinion_data: OpinionCreate,
+    db: Session = Depends(get_db),
+) -> None:
+    try:
+        OpinionsService.write_opinion(
+            target_id=lecturer_id,
+            target_type="lecturer",
+            content=opinion_data.content,
+            db=db,
+        )
+    except OpinionServiceError as exc:
+        raise HTTPException(status_code=exc.status_code, detail=str(exc)) from exc

@@ -8,7 +8,6 @@ from app.schemas.active_subjects import ActiveSubjectFromSubjectOut
 
 
 class SubjectsService:
-    'TODO: add lecturers'
     @staticmethod
     def _serialize_subject(subject: Subject) -> SubjectOut:
         return SubjectOut(
