@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
-:root {
+/* Why this existed? It is exacly the same as in globals.css (?) */
+/* :root {
     --background: #ffffff;
     --foreground: #171717;
 }
@@ -17,7 +18,7 @@
         --background: #0a0a0a;
         --foreground: #ededed;
     }
-}
+} */
 
 body {
     background: var(--background);
@@ -28,7 +29,7 @@ body {
 .przedmioty-button {
     position: relative;
     background-color: green;
-    border: 4px solid greedn;
+    border: 4px solid green;
     border-radius: 8px;
     color: white;
     text-align: center;

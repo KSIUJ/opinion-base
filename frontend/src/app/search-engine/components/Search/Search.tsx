@@ -37,7 +37,8 @@ export default function Search ({ onSearch, searchType }: SearchProps) {
                         : 'Wpisz nazwisko prowadzącego...'
                 }
 
-                className = {`w-full px-4 pr-6 py-2 border border-gray-400 rounded-md text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-gray-500`}
+                // className = {`w-full px-4 pr-6 py-2 border border-gray-400 rounded-md text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-gray-500`}
+                className={`w-full px-4 pr-6 py-2 border border-gray-400 dark:border-zinc-600 rounded-md text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 bg-white dark:bg-zinc-900 focus:outline-none focus:border-gray-500 dark:focus:border-zinc-400`}
             />
             <button 
                 type = "submit" 

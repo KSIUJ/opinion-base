@@ -160,7 +160,7 @@ export default function Home() {
                         className={`px-4 py-2 rounded-lg ${
                             searchType === 'przedmioty'
                                 ? 'bg-green-600 text-white'
-                                : 'bg-gray-200'
+                                : 'bg-gray-200 text-gray-700 dark:bg-zinc-800 dark:text-gray-200'
                         }`}
                     >
                         Przedmioty
@@ -171,7 +171,7 @@ export default function Home() {
                         className={`px-4 py-2 rounded-lg ${
                             searchType === 'prowadzacy'
                                 ? 'bg-green-600 text-white'
-                                : 'bg-gray-200'
+                                : 'bg-gray-200 text-gray-700 dark:bg-zinc-800 dark:text-gray-200'
                         }`}
                         >
                             Prowadzacy
