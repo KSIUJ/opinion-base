@@ -30,11 +30,9 @@ export default function Home() {
 
         <br />
 
-        <div className = "login-button">
-          <Link href = "/search-engine">
-            Zaloguj
-          </Link>
-        </div>
+        <Link href = "/search-engine" className = "login-button">
+          Zaloguj
+        </Link>
 
       </main>
 
