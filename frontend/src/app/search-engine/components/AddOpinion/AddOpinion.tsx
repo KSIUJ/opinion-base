@@ -30,7 +30,7 @@ export default function AddOpinion({
 
         try {
             const response = await fetch(
-                'http://localhost:8000/subjects/{subjects_id}', //gdzie można wysyłać zapytania do backendu? czy też będzie można do subjects?
+                `http://localhost:8000/subjects/${subjectId}/add_opinion`, 
                 {
                     method: 'POST',
                     headers: {
