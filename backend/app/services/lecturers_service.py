@@ -37,9 +37,11 @@ class LecturersService:
         db: Session,
         surname: str | None = None,
         subject: str | None = None,
+        sort_by: str | None = None,
+        order: str = "asc",
     ) -> LecturerListResponse:
         lecturers = LecturersRepository.search_lecturers(
-            db, surname=surname, subject=subject
+            db, surname=surname, subject=subject, sort_by=sort_by, order=order
         )
         items = [
             LecturerListItem(

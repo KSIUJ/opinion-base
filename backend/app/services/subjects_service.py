@@ -16,12 +16,12 @@ class SubjectsService:
             department=DepartmentOut(
                 id=subject.department.id,
                 name=subject.department.name,
-            ) if subject.department else None,
+            ) if subject.department else DepartmentOut(id=-1, name="Nieznany"),
             semester=SemesterOut(
                 id=subject.semester.id,
                 name=subject.semester.name,
                 is_winter=subject.semester.is_winter,
-            ) if subject.semester else None,
+            ) if subject.semester else SemesterOut(id=-1, name="Nieznany", is_winter=False),
             is_obligatory=subject.is_obligatory,
             opinions_count=len(subject.opinion_relations),
 
@@ -35,7 +35,7 @@ class SubjectsService:
                 role=LecturerRoleOut(
                     id=activeSubject.role.id,
                     name=activeSubject.role.name,
-                ) if activeSubject.role else None,
+                ) if activeSubject.role else LecturerRoleOut(id=-1, name="Nieznana"),
             ) for activeSubject in subject.active_subjects if activeSubject.lecturer],
 
         )
@@ -48,12 +48,12 @@ class SubjectsService:
             department=DepartmentOut(
                 id=subject.department.id,
                 name=subject.department.name,
-            ) if subject.department else None,
+            ) if subject.department else DepartmentOut(id=-1, name="Nieznany"),
             semester=SemesterOut(
                 id=subject.semester.id,
                 name=subject.semester.name,
                 is_winter=subject.semester.is_winter,
-            ) if subject.semester else None,
+            ) if subject.semester else SemesterOut(id=-1, name="Nieznany", is_winter=False),
             is_obligatory=subject.is_obligatory,
             opinions_count=len(subject.opinion_relations),
         )
@@ -73,6 +73,8 @@ class SubjectsService:
         lecturer_name: str | None = None,
         lecturer_surname: str | None = None,
         min_opinions: int | None = None,
+        sort_by: str | None = None,
+        order: str = "asc",
     ) -> list[SubjectOut]:
 
         subjects = SubjectsRepository.list_subjects(
@@ -84,6 +86,8 @@ class SubjectsService:
             lecturer_name=lecturer_name,
             lecturer_surname=lecturer_surname,
             min_opinions=min_opinions,
+            sort_by=sort_by,
+            order=order,
         )
 
         return [SubjectsService._serialize_subject(subject) for subject in subjects]

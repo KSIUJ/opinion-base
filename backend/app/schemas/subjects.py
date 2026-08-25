@@ -7,8 +7,8 @@ from app.schemas.small import DepartmentOut, SemesterOut
 class SubjectOutBasic(BaseModel):
     subject_id: int
     subject_name: str
-    department: DepartmentOut | None = None
-    semester: SemesterOut | None = None
+    department: DepartmentOut
+    semester: SemesterOut
     is_obligatory: bool
     opinions_count: int
 

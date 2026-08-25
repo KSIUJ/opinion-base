@@ -38,6 +38,8 @@ def search_subjects(
     name: str | None = None,
     semester_name: str | None = None,
     lecturer_surname: str | None = None,
+    sort_by: str | None = None,
+    order: str = "asc",
     db: Session = Depends(get_db),
 ) -> SubjectsResponse:
     try:
@@ -46,6 +48,8 @@ def search_subjects(
             subject_name=name,
             semester_name=semester_name,
             lecturer_surname=lecturer_surname,
+            sort_by=sort_by,
+            order=order,
         )
         return SubjectsResponse(subjects=subjects)
     except OperationalError as exc:
