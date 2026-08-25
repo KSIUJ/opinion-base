@@ -7,7 +7,15 @@ export default function Home() {
 
       <main className = "app-center">
         <Image
-          className = "dark:invert"
+          className = "theme-logo-light"
+          src = "/images/ksiLogo.png"
+          alt = "ksi logo"
+          width = {300}
+          height = {300}
+          priority
+        />
+        <Image
+          className = "theme-logo-dark"
           src = "/images/ksiLogo_transparent.png"
           alt = "ksi logo"
           width = {300}
