@@ -19,7 +19,3 @@ app.add_middleware(
 app.include_router(subjects_router, prefix="/subjects", tags=["subjects"])
 app.include_router(lecturers_router, prefix="/lecturers", tags=["lecturers"])
 app.include_router(general_router, prefix="/general", tags=["general"])
-
-@app.get("/")
-def root():
-    return "Tutaj pojawi sie menu glowne"
