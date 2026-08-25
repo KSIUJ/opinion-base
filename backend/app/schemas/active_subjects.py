@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-from app.schemas.small import LecturerRoleOut, TimeOut
+from app.schemas.general import LecturerRoleOut, TimeOut
 
 
 class ActiveSubjectOutBasic(BaseModel):

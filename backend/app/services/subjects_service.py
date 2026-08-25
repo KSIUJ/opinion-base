@@ -2,9 +2,9 @@ from sqlalchemy.orm import Session
 
 from app.models import Subject
 from app.repositories.subjects_repository import SubjectsRepository
-from app.schemas.subjects import SubjectOut, SubjectOutBasic
-from app.schemas.small import DepartmentOut, SemesterOut, LecturerRoleOut
 from app.schemas.active_subjects import ActiveSubjectFromSubjectOut
+from app.schemas.general import DepartmentOut, SemesterOut, LecturerRoleOut
+from app.schemas.subjects import SubjectOut, SubjectOutBasic
 
 
 class SubjectsService:
