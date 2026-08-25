@@ -6,6 +6,10 @@ class DepartmentOut(BaseModel):
     name: str
 
 
+class DepartmentResponse(BaseModel):
+    names: list[str]
+
+
 class TimeOut(BaseModel):
     id: int
 
@@ -14,6 +18,10 @@ class SemesterOut(BaseModel):
     id: int
     name: str
     is_winter: bool
+
+
+class SemesterResponse(BaseModel):
+    names: list[str]
 
 
 class LecturerRoleOut(BaseModel):

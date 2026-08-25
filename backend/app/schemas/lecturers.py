@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 
 from app.schemas.active_subjects import ActiveSubjectOutBasic
-from app.schemas.small import DepartmentOut, LecturerRoleOut
+from app.schemas.general import DepartmentOut, LecturerRoleOut
 
 
 class LecturerOutBasic(BaseModel):
