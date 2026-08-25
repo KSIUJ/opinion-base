@@ -23,7 +23,7 @@ class ActiveSubjectOut(ActiveSubjectOutBasic):
 class ActiveSubjectFromSubjectOut(BaseModel):
     lecturer_name: str | None = None
     lecturer_surname: str | None = None
-    role: LecturerRoleOut | None = None
+    role: LecturerRoleOut
 
 
 class ActiveSubjectsResponseBasic(BaseModel):

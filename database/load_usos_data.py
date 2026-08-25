@@ -48,7 +48,7 @@ def main() -> None:
         lecturer_ids: dict[str, int] = {}
         for person in staff:
             lecturer = Lecturer(
-                name=person.get("first_name"),
+                name=person.get("first_name") or "[brak imienia]",
                 surname=person.get("last_name") or "[unknown]",
                 department_id=None,
             )
