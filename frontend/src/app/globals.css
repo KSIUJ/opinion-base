@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -13,7 +22,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --background: #1e1e1e;
     --foreground: #ededed;
   }
@@ -25,11 +34,94 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.theme-logo-light {
+  display: block;
+}
+
+.theme-logo-dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-logo-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-logo-dark {
+  display: block;
+  filter: invert(1);
+}
+
+.theme-toggle {
+  align-self: flex-end;
+  margin: 1rem;
+  border: 1px solid #9ca3af;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #f3f4f6;
+  color: #111827;
+  cursor: pointer;
+}
+
+:root[data-theme="dark"] .theme-toggle {
+  border-color: #52525b;
+  background-color: #27272a;
+  color: #f4f4f5;
+}
+
+.mode-selector {
+  background-color: #ffffff;
+  color: #171717;
+}
+
+:root[data-theme="dark"] .mode-selector {
+  background-color: #27272a;
+  color: #ededed;
+}
+
+.search-field {
+  background-color: #ffffff;
+  color: #171717;
+}
+
+:root[data-theme="dark"] .search-field {
+  background-color: #18181b;
+  color: #ededed;
+}
+
+.filter-control,
+.filter-menu {
+  border-color: #9ca3af;
+  background-color: #ffffff;
+  color: #171717;
+}
+
+.filter-option:hover {
+  background-color: #f3f4f6;
+}
+
+:root[data-theme="dark"] .filter-control,
+:root[data-theme="dark"] .filter-menu {
+  border-color: #52525b;
+  background-color: #18181b;
+  color: #ededed;
+}
+
+:root[data-theme="dark"] .filter-option:hover {
+  background-color: #3f3f46;
+}
+
 input[type = "text"] {
     border: 3px solid #555;
     border-radius: 5px;
     padding: 5px;
     width: 100%;
+    background-color: #ffffff;
+    color: #171717;
+}
+
+:root[data-theme="dark"] input[type = "text"] {
+    background-color: #18181b;
+    color: #ededed;
 }
 
 .login-button {
