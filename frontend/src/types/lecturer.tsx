@@ -14,6 +14,8 @@ export type LecturerBasic = {
     name: string
     surname: string
     subject_count: number 
+    subjects: ActiveSubjectFromLecturer[]
+    opinions: Opinion[]
 }
 
 export type LecturerBasicResponse = {
