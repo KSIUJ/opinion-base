@@ -26,14 +26,21 @@ class LecturersRepository:
         db: Session,
         surname: str | None = None,
         subject: str | None = None,
+        sort_by: str | None = None,
+        order: str = "asc",
     ) -> list[Lecturer]:
+        sort_fields = {"name": Lecturer.name, "surname": Lecturer.surname}
+        column = sort_fields.get(sort_by or "surname", Lecturer.surname)
         query = (
             select(Lecturer)
             .options(
                 selectinload(Lecturer.department),
                 selectinload(Lecturer.active_subjects),
             )
-            .order_by(Lecturer.surname, Lecturer.name)
+            .order_by(
+                column.desc() if order == "desc" else column.asc(),
+                Lecturer.name.asc(),
+            )
         )
         if surname:
             query = query.where(Lecturer.surname.ilike(f"%{surname}%"))

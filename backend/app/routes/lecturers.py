@@ -30,11 +30,13 @@ def list_lecturers(db: Session = Depends(get_db)) -> LecturerListResponse:
 def search_lecturers(
     surname: str | None = None,
     subject: str | None = None,
+    sort_by: str | None = None,
+    order: str = "asc",
     db: Session = Depends(get_db),
 ) -> LecturerListResponse:
     try:
         return LecturersService.search_lecturers(
-            db, surname=surname, subject=subject
+            db, surname=surname, subject=subject, sort_by=sort_by, order=order
         )
     except OperationalError as exc:
         raise HTTPException(

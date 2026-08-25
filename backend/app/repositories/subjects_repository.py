@@ -101,6 +101,8 @@ class SubjectsRepository:
         lecturer_name: str | None = None,
         lecturer_surname: str | None = None,
         min_opinions: int | None = None,
+        sort_by: str | None = None,
+        order: str = "asc",
     ) -> list[Subject]:
         query = SubjectsRepository.filter_query(
                     subject_id=subject_id,
@@ -112,5 +114,11 @@ class SubjectsRepository:
                     min_opinions=min_opinions,
                     query=SubjectsRepository.build_query()
                     )
-                 
+
+        sort_fields = {"name": Subject.name, "semester": Semester.name}
+        column = sort_fields.get(sort_by or "name", Subject.name)
+        if sort_by == "semester":
+            query = query.outerjoin(Subject.semester)
+        query = query.order_by(column.desc() if order == "desc" else column.asc())
+
         return db.execute(query).unique().scalars().all()

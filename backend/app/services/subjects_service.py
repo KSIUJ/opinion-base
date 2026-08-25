@@ -73,6 +73,8 @@ class SubjectsService:
         lecturer_name: str | None = None,
         lecturer_surname: str | None = None,
         min_opinions: int | None = None,
+        sort_by: str | None = None,
+        order: str = "asc",
     ) -> list[SubjectOut]:
 
         subjects = SubjectsRepository.list_subjects(
@@ -84,6 +86,8 @@ class SubjectsService:
             lecturer_name=lecturer_name,
             lecturer_surname=lecturer_surname,
             min_opinions=min_opinions,
+            sort_by=sort_by,
+            order=order,
         )
 
         return [SubjectsService._serialize_subject(subject) for subject in subjects]
