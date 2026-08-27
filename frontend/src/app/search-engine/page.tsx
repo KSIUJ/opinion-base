@@ -30,6 +30,9 @@ export default function Home() {
     const [error, setError] = useState<string | null>(null);
     const [hasSearched, setHasSearched] = useState(false);
 
+    const [departments, setDepartments] = useState<string[]>([]);
+    const [semesters, setSemesters] = useState<string[]>([]);
+
     const handleSearch = (value: string) => {
         console.log(searchType, value);
         setSearchValue(value);
@@ -145,6 +148,40 @@ export default function Home() {
     };
 
 
+    useEffect(() => {
+        const fetchDepartments = async () => {
+            try {
+                const response = await fetch(`http://localhost:8000/general/departments/list`);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch departments: ${response.status}`);
+                }
+                const data: { names: string[] } = await response.json();
+                setDepartments(data.names);
+            } catch (error) {
+                console.error('Error fetching departments:', error);
+            }
+        };
+
+        fetchDepartments();
+
+        const fetchSemesters = async () => {
+            try {
+                const response = await fetch(`http://localhost:8000/general/semesters/list`);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch departments: ${response.status}`);
+                }
+                const data: { names: string[] } = await response.json();
+                setSemesters(data.names);
+            } catch (error) {
+                console.error('Error fetching departments:', error);
+            }
+        };
+
+        fetchSemesters();
+
+    }, []);
+
+
     return (
         <main className = "flex flex-wrap items-center justify-center gap-4 my-7">
 
@@ -191,13 +228,13 @@ export default function Home() {
 
                 <div className = "grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-xl text-justify">
                     <Dropdown
-                        options = {[ 'TCS', 'Informatyka', 'Matematyka']}
+                        options = {departments}
                         onSelect = {(value) => setDepartmentOption(value)}
                         placeholder = "kierunek"
                     />
 
                     {searchType === 'przedmioty' && (<Dropdown
-                        options = {[ '1', '2', '3']}
+                        options = {semesters}
                         onSelect = {(value) => setSemesterOption(value)}
                         placeholder = "semestr"
                     />)}
