@@ -27,9 +27,9 @@ export default function Dropdown({ options, onSelect, placeholder = 'Wybierz...'
             <button
                 type="button"
                 onClick={() => setIsOpen((prev) => !prev)}
-                className="w-full px-4 py-2 border border-gray-400 rounded-md text-left bg-white text-gray-900 dark:border-zinc-600 dark:text-gray-100 dark:placeholder:text-gray-400 dark:bg-zinc-900 dark:focus:border-zinc-400"
+                className="w-full px-4 py-2 border border-gray-400 rounded-md text-center bg-white text-gray-900 dark:border-zinc-600 dark:text-gray-100 dark:placeholder:text-gray-400 dark:bg-zinc-900 dark:focus:border-zinc-400"
             >
-                {selected ?? <span className='text-gray-400 italic'>{placeholder}</span> }
+                {selected ?? <span className='text-gray-400 italicr'>{placeholder}</span> }
             </button>
             {/* className={`dark:border-zinc-600 dark:text-gray-100 dark:placeholder:text-gray-400 dark:bg-zinc-900 dark:focus:border-zinc-400`} */}
 

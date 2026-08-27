@@ -146,165 +146,197 @@ export default function Home() {
 
 
     return (
-        <main className = "flex min-h-screen flex-col items-center justify-between p-4">
+        <main className = "flex flex-wrap items-center justify-center gap-4 my-7">
 
-            <div className = "z-10 w-full max-w-5xl font-mono text-sm flex flex-col items-center">
-            
-                <h1 className = {'text-5xl my-7'}>
-                    Wyszukuj po:
-                </h1>
+            <h1 className = "text-5xl text-green-600">
+                ZaopiniUJ:
+            </h1>
 
-                <div className="flex gap-4 mb-6">
-                    <button
-                        onClick={() => openSubject()}
-                        className={`px-4 py-2 rounded-lg ${
-                            searchType === 'przedmioty'
-                                ? 'bg-green-600 text-white'
-                                : 'bg-gray-200 text-gray-700 dark:bg-zinc-800 dark:text-gray-200'
-                        }`}
-                    >
-                        Przedmioty
-                    </button>
+            <button
+                onClick = {() => openSubject()}
+                className = {`px-4 py-2 rounded-lg ${
+                    searchType === 'przedmioty'
+                        ? 'bg-green-600 text-white'
+                        : 'bg-gray-200 text-gray-700 dark:bg-zinc-800 dark:text-gray-200'
+                }`}
+            >
+                Przedmioty
+            </button>
 
-                    <button
-                        onClick={() => openLecturers()}
-                        className={`px-4 py-2 rounded-lg ${
-                            searchType === 'prowadzacy'
-                                ? 'bg-green-600 text-white'
-                                : 'bg-gray-200 text-gray-700 dark:bg-zinc-800 dark:text-gray-200'
-                        }`}
-                        >
-                            Prowadzacy
-                        </button>
-                </div>
-
-                <Search
-                    onSearch = {handleSearch}
-                    searchType = {searchType}
-                />
-
-                <Dropdown
-                    options={[ 'TCS', 'Informatyka', 'Matematyka']}
-                    onSelect={(value) => setDepartmentOption(value)}
-                    placeholder="Wybierz Kierunek..."
-                />
-
-                {searchType === 'przedmioty' && (<Dropdown
-                    options={[ '1', '2', '3']}
-                    onSelect={(value) => setSemesterOption(value)}
-                    placeholder="Wybierz Numer Semestru..."
-                />)}
-
-                {searchType === 'przedmioty' && (<Tristate
-                    onSelect={(value) => setIsObligatory(value)}
-                    placeholder="Obowiązkowość"
-                    stringTrue="Obowiązkowy"
-                    stringFalse="Fakultet"
-                    stringNull="Dowolnie"
-                    name="isObligatory"    
-                />)}
-                              
-                              
-                {searchType === 'przedmioty' && (<Tristate
-                    onSelect={(value) => setIsWinter(value)}
-                    placeholder="Okres Roku"
-                    stringTrue="Zimowy"
-                    stringFalse="Letni"
-                    stringNull="Dowolny"
-                    name="isWinter"    
-                />)}
-
-                <button
-                    onClick={searchType === 'przedmioty' ? fetchSubjects : fetchLecturers}
-                    disabled={loading}
-                    className="mt-7 px-6 py-2 rounded-lg bg-red-600 text-white disabled:opacity-50"
+            <button
+                onClick = {() => openLecturers()}
+                className = {`px-4 py-2 rounded-lg ${
+                    searchType === 'prowadzacy'
+                        ? 'bg-green-600 text-white'
+                        : 'bg-gray-200 text-gray-700 dark:bg-zinc-800 dark:text-gray-200'
+                }`}
                 >
-                    {loading ? 'Szukam...' : 'Szukaj'}
+                    Prowadzących
                 </button>
 
-                {hasSearched &&(
-                    <h2 className = "text-2xl mt-7 mx-2 underline">
-                        Znaleziono:
-                    </h2>
-                )}
-                {loading && (
-                    <p className = "mt-4">
-                        Ładowanie...
-                    </p>
-                )}
+                <div className = "flex items-center justify-center gap-3 w-full mt-6">
+                    <Search
+                        onSearch = {handleSearch}
+                        searchType = {searchType}
+                    />
 
-                {error && (
-                    <p className = "mt-4 text-red-500">
-                        {error}
-                    </p>
-                )}
+                    <button
+                        onClick = {searchType === 'przedmioty' ? fetchSubjects : fetchLecturers}
+                        disabled = {loading}
+                        className = "px-6 py-2 rounded-lg bg-red-600 text-white disabled:opacity-50"
+                    >
+                        {loading ? 'Szukam...' : 'Szukaj'}
+                    </button>
+                </div>
 
-                {!loading && !error && hasSearched && searchType === 'przedmioty' && (                   
-                    <div className = "flex flex-col gap-2 mt-4">
-                        {subjects.map((subject) => (
-                            <div
-                                key={subject.subject_id}
-                                className="flex items-center gap-2"
-                            >
-                                <Link
-                                    href={`/search-engine/subject/${subject.subject_id}`}
-                                    className="hover:underline"
+                <div className = "grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-xl text-justify">
+                    <Dropdown
+                        options = {[ 'TCS', 'Informatyka', 'Matematyka']}
+                        onSelect = {(value) => setDepartmentOption(value)}
+                        placeholder = "kierunek"
+                    />
+
+                    {searchType === 'przedmioty' && (<Dropdown
+                        options = {[ '1', '2', '3']}
+                        onSelect = {(value) => setSemesterOption(value)}
+                        placeholder = "semestr"
+                    />)}
+
+                    {/* {searchType === 'przedmioty' && (<Tristate */}
+                    {/*     onSelect = {(value) => setIsObligatory(value)} */}
+                    {/*     placeholder = "Obowiązkowość" */}
+                    {/*     stringTrue = "Obowiązkowy" */}
+                    {/*     stringFalse = "Fakultet" */}
+                    {/*     stringNull = "Dowolnie" */}
+                    {/*     name = "isObligatory"     */}
+                    {/* />)} */}
+
+                    <Dropdown
+                        options = {['Obowiązkowy', 'Fakultet', 'Dowolnie']}
+                        onSelect = {(value) => {
+                            setIsObligatory(
+                                value === 'Obowiązkowy'
+                                    ? true
+                                    : value === 'Fakultet'
+                                        ? false
+                                        : null
+                            );
+                        }}
+                        placeholder = "typ"
+                    />                    
+                                  
+                    {/* {searchType === 'przedmioty' && (<Tristate */}
+                    {/*     onSelect = {(value) => setIsWinter(value)} */}
+                    {/*     placeholder = "Okres Roku" */}
+                    {/*     stringTrue = "Zimowy" */}
+                    {/*     stringFalse = "Letni" */}
+                    {/*     stringNull = "Dowolny" */}
+                    {/*     name = "isWinter"     */}
+                    {/* />)} */}
+
+                    <Dropdown
+                        options = {['Zimowy', 'Letni', 'Dowolny']}
+                        onSelect = {(value) => {
+                            setIsWinter(
+                                value === 'Zimowy'
+                                    ? true
+                                    : value === 'Letni'
+                                        ? false
+                                        : null
+                            );
+                        }}
+                        placeholder = "pora roku"
+                    />
+
+                </div>
+
+
+                <div className = "flex flex-wrap items-center justify-center gap-4 my-7 w-full">
+                    {hasSearched &&(
+                        <h2 className = "text-2xl mt-7 mx-2">
+                            Znaleziono:
+                        </h2>
+                    )}
+                    {loading && (
+                        <p className = "mt-4">
+                            Ładowanie...
+                        </p>
+                    )}
+
+                    {error && (
+                        <p className = "mt-4 text-red-500">
+                            {error}
+                        </p>
+                    )}
+                </div>
+
+                <div className = "flex flex-wrap items-center justify-center gap-4 my-7 w-full">
+                    {!loading && !error && hasSearched && searchType === 'przedmioty' && (                   
+                        <div className = "flex flex-col gap-2 mt-4">
+                            {subjects.map((subject) => (
+                                <div
+                                    key={subject.subject_id}
+                                    className="flex items-center gap-2"
                                 >
-                                    {subject.subject_name}
-                                </Link>
-                                
-                                <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-100 text-gray-600 border border-gray-300">
-                                    {subject.department.name}
-                                </span>
-                                
-                                <span className="text-xs px-2 py-0.5 rounded-full bg-green-100 text-gray-600 border border-gray-300">
-                                    Sem {subject.semester.name}
-                                </span>
-
-                                {!subject.is_obligatory && (
-                                    <span className="text-xs px-2 py-0.5 rounded-full bg-purple-100 text-gray-600 border border-gray-300">
-                                        Fakultet
+                                    <Link
+                                        href={`/search-engine/subject/${subject.subject_id}`}
+                                        className="hover:underline"
+                                    >
+                                        {subject.subject_name}
+                                    </Link>
+                                    
+                                    <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-100 text-gray-600 border border-gray-300">
+                                        {subject.department.name}
                                     </span>
-                                )}
-
-                                {subject.semester.is_winter && (
-                                    <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-gray-600 border border-gray-300">
-                                        Zimowy
+                                    
+                                    <span className="text-xs px-2 py-0.5 rounded-full bg-green-100 text-gray-600 border border-gray-300">
+                                        Sem {subject.semester.name}
                                     </span>
-                                )}
 
-                                {!subject.semester.is_winter && (
-                                    <span className="text-xs px-2 py-0.5 rounded-full bg-orange-100 text-gray-600 border border-gray-300">
-                                        Letni
-                                    </span>
-                                )}
-                            </div>
-                        ))}
-                    </div>
-                )}
+                                    {!subject.is_obligatory && (
+                                        <span className="text-xs px-2 py-0.5 rounded-full bg-purple-100 text-gray-600 border border-gray-300">
+                                            Fakultet
+                                        </span>
+                                    )}
 
-                {!loading && !error && hasSearched && searchType === 'prowadzacy' && (                   
-                    <div className = "flex flex-col gap-2 mt-4">
-                        {lecturers.map((lecturer) => (
-                            <div
-                                key={lecturer.id}
-                                className="flex items-center gap-2"
-                            >
-                                <Link
-                                    href={`/search-engine/teacher/${lecturer.id}`}
-                                    className="hover:underline"
+                                    {subject.semester.is_winter && (
+                                        <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-gray-600 border border-gray-300">
+                                            Zimowy
+                                        </span>
+                                    )}
+
+                                    {!subject.semester.is_winter && (
+                                        <span className="text-xs px-2 py-0.5 rounded-full bg-orange-100 text-gray-600 border border-gray-300">
+                                            Letni
+                                        </span>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
+                    {!loading && !error && hasSearched && searchType === 'prowadzacy' && (                   
+                        <div className = "flex flex-col gap-2 mt-4">
+                            {lecturers.map((lecturer) => (
+                                <div
+                                    key={lecturer.id}
+                                    className="flex items-center gap-2"
                                 >
-                                    {lecturer.name} {lecturer.surname}
-                                </Link>
-                                
-                                {/* <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-100 text-gray-600 border border-gray-300">
-                                    {lecturer.department.name}
-                                </span> */}
-                            </div>
-                        ))}
-                    </div>
-                )}
-            </div>
+                                    <Link
+                                        href={`/search-engine/teacher/${lecturer.id}`}
+                                        className="hover:underline"
+                                    >
+                                        {lecturer.name} {lecturer.surname}
+                                    </Link>
+                                    
+                                    {/* <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-100 text-gray-600 border border-gray-300">
+                                        {lecturer.department.name}
+                                    </span> */}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
 
         </main>
     );

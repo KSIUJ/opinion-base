@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className = "logo">
+    <div className = "m-auto">
 
       <main className = "app-center">
         <Image
@@ -15,9 +15,11 @@ export default function Home() {
           priority
         />
 
-        <div className = "welcome-text">
+        <br />
+
+        <div className = "flex justify-center items-center text-3xl antialiased not-italic font-mono">
           <h1 className = "site-title">
-            KSI opinion base
+            KSI OpiniUJ
           </h1>
         </div>
 

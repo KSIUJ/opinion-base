@@ -25,7 +25,7 @@ export default function Search ({ onSearch, searchType }: SearchProps) {
     };
 
     return (
-        <div className="relative py-1 w-70" >
+        <div className = "relative w-full max-w-xl py-1" >
             <input
                 type = "search"
                 value = {value}
@@ -38,14 +38,14 @@ export default function Search ({ onSearch, searchType }: SearchProps) {
                 }
 
                 // className = {`w-full px-4 pr-6 py-2 border border-gray-400 rounded-md text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-gray-500`}
-                className={`w-full px-4 pr-6 py-2 border border-gray-400 dark:border-zinc-600 rounded-md text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 bg-white dark:bg-zinc-900 focus:outline-none focus:border-gray-500 dark:focus:border-zinc-400`}
+                className = {`w-full px-4 pr-6 py-2 border border-gray-400 dark:border-zinc-600 rounded-md text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 bg-white dark:bg-zinc-900 focus:outline-none focus:border-gray-500 dark:focus:border-zinc-400`}
             />
             <button 
                 type = "submit" 
-                className = "absolute right-3 top-1/2 -translate-y-1/2"
+                className = "absolute right-4 top-1/2 -translate-y-1/2"
             >
                 <svg
-                    className = "h-4 w-4 fill-current text-gray-500"
+                    className = "h-5 w-5 fill-current text-gray-500"
                     xmlns = "http://www.w3.org/2000/svg"
                     viewBox = "0 0 20 20"
                 >
