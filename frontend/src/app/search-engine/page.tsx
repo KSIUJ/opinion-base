@@ -285,13 +285,22 @@ export default function Home() {
                                         {subject.subject_name}
                                     </Link>
                                     
-                                    <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-100 text-gray-600 border border-gray-300">
-                                        {subject.department.name}
-                                    </span>
-                                    
-                                    <span className="text-xs px-2 py-0.5 rounded-full bg-green-100 text-gray-600 border border-gray-300">
-                                        Sem {subject.semester.name}
-                                    </span>
+                                    {subject.department.id !== -1 && ( 
+                                        <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-100 text-gray-600 border border-gray-300">
+                                            {subject.department.name}
+                                        </span>
+                                    )}
+
+                                    {subject.department.id === -1 && ( 
+                                        <span className="text-xs px-2 py-0.5 rounded-full bg-red-100 text-gray-600 border border-gray-300">
+                                            Nieznany Kierunek
+                                        </span>
+                                    )}
+                                    {subject.semester.id !== -1 && ( 
+                                        <span className="text-xs px-2 py-0.5 rounded-full bg-green-100 text-gray-600 border border-gray-300">
+                                            Sem {subject.semester.name}
+                                        </span>
+                                    )}
 
                                     {!subject.is_obligatory && (
                                         <span className="text-xs px-2 py-0.5 rounded-full bg-purple-100 text-gray-600 border border-gray-300">
@@ -299,13 +308,13 @@ export default function Home() {
                                         </span>
                                     )}
 
-                                    {subject.semester.is_winter && (
+                                    {subject.semester.id !== -1 && subject.semester.is_winter && (
                                         <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-gray-600 border border-gray-300">
                                             Zimowy
                                         </span>
                                     )}
 
-                                    {!subject.semester.is_winter && (
+                                    {subject.semester.id !== -1 && !subject.semester.is_winter && (
                                         <span className="text-xs px-2 py-0.5 rounded-full bg-orange-100 text-gray-600 border border-gray-300">
                                             Letni
                                         </span>
