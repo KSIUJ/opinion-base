@@ -35,13 +35,21 @@ class LecturersService:
     @staticmethod
     def search_lecturers(
         db: Session,
+        name: str | None = None,
         surname: str | None = None,
         subject: str | None = None,
+        department: str | None = None,
         sort_by: str | None = None,
         order: str = "asc",
     ) -> LecturerListResponse:
         lecturers = LecturersRepository.search_lecturers(
-            db, surname=surname, subject=subject, sort_by=sort_by, order=order
+            db,
+            name=name,
+            surname=surname,
+            subject=subject,
+            department=department,
+            sort_by=sort_by,
+            order=order,
         )
         items = [
             LecturerListItem(

@@ -37,7 +37,10 @@ def list_subjects(db: Session = Depends(get_db)) -> SubjectsResponse:
 def search_subjects(
     name: str | None = None,
     semester_name: str | None = None,
+    lecturer_id: int | None = None,
+    lecturer_name: str | None = None,
     lecturer_surname: str | None = None,
+    min_opinions: int | None = None,
     sort_by: str | None = None,
     order: str = "asc",
     db: Session = Depends(get_db),
@@ -47,7 +50,10 @@ def search_subjects(
             db=db,
             subject_name=name,
             semester_name=semester_name,
+            lecturer_id=lecturer_id,
+            lecturer_name=lecturer_name,
             lecturer_surname=lecturer_surname,
+            min_opinions=min_opinions,
             sort_by=sort_by,
             order=order,
         )

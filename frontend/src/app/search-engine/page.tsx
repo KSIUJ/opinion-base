@@ -103,9 +103,9 @@ export default function Home() {
             if(searchValue !== ''){
                 response_para.append('surname', searchValue);
             }
-            
+
             if(departmentOption !== ''){
-                response_para.append('department_name', departmentOption);
+                response_para.append('department', departmentOption);
             }
 
             const response = await fetch(
