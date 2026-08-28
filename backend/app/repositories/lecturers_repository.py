@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session, selectinload
 
 from app.models import (
     ActiveSubject,
+    Department,
     Lecturer,
     LecturerOpinionRelation,
     Opinion,
@@ -24,8 +25,10 @@ class LecturersRepository:
     @staticmethod
     def search_lecturers(
         db: Session,
+        name: str | None = None,
         surname: str | None = None,
         subject: str | None = None,
+        department: str | None = None,
         sort_by: str | None = None,
         order: str = "asc",
     ) -> list[Lecturer]:
@@ -42,6 +45,8 @@ class LecturersRepository:
                 Lecturer.name.asc(),
             )
         )
+        if name:
+            query = query.where(Lecturer.name.ilike(f"%{name}%"))
         if surname:
             query = query.where(Lecturer.surname.ilike(f"%{surname}%"))
         if subject:
@@ -51,6 +56,10 @@ class LecturersRepository:
                 .where(Subject.name.ilike(f"%{subject}%"))
             )
             query = query.distinct()
+        if department:
+            query = query.join(Lecturer.department).where(
+                Department.name.ilike(f"%{department}%")
+            )
         return db.execute(query).unique().scalars().all()
 
     @staticmethod

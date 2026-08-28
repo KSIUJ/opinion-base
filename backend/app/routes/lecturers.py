@@ -28,15 +28,23 @@ def list_lecturers(db: Session = Depends(get_db)) -> LecturerListResponse:
 
 @router.get("/search", response_model=LecturerListResponse)
 def search_lecturers(
+    name: str | None = None,
     surname: str | None = None,
     subject: str | None = None,
+    department: str | None = None,
     sort_by: str | None = None,
     order: str = "asc",
     db: Session = Depends(get_db),
 ) -> LecturerListResponse:
     try:
         return LecturersService.search_lecturers(
-            db, surname=surname, subject=subject, sort_by=sort_by, order=order
+            db,
+            name=name,
+            surname=surname,
+            subject=subject,
+            department=department,
+            sort_by=sort_by,
+            order=order,
         )
     except OperationalError as exc:
         raise HTTPException(
@@ -62,6 +70,7 @@ def get_lecturer(
         raise HTTPException(status_code=404, detail="Lecturer not found")
 
     return lecturer
+
 
 @router.post("/{lecturer_id}/add_opinion")
 def write_opinion(
