@@ -45,14 +45,17 @@ services:
         condition: service_completed_successfully
     restart: unless-stopped
 
-  # frontend:
-  #   build: ./frontend
-  #   container_name: next_frontend_app
-  #   ports:
-  #     - "3000:3000"
-  #   depends_on:
-  #     - fast_api
-  #   restart: unless-stopped
+  frontend:
+    build: ./frontend
+    container_name: next_frontend_app
+    ports:
+      - "3000:3000"
+    environment:
+      API_URL: http://fast_api:8000
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    depends_on:
+      - fast_api
+    restart: unless-stopped
 
 volumes:
   pgdata:

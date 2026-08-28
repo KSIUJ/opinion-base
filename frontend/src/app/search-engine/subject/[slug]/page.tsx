@@ -1,6 +1,8 @@
 import { Subject, SubjectsResponse } from '@/types/subject';
 import AddOpinion from '../../components/AddOpinion/AddOpinion';
 
+const API_URL = process.env.API_URL ?? 'http://localhost:8000';
+
 interface Props {
     params: Promise<{
         slug: string;
@@ -11,7 +13,7 @@ export default async function SubjectPage({ params }: Props) {
     const { slug } = await params;
 
     const response = await fetch(
-        'http://localhost:8000/subjects/',
+        `${API_URL}/subjects/`,
         {
             cache: 'no-store',
         }

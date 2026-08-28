@@ -11,6 +11,8 @@ import { SubjectBasic, SubjectsBasicResponse } from '@/types/subject';
 import { Subject, SubjectsResponse } from '@/types/subject';
 import { LecturerBasic, LecturerBasicResponse } from "@/types/lecturer";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
+
 
 export default function Home() {
     const [searchValue, setSearchValue] = useState('');
@@ -66,7 +68,7 @@ export default function Home() {
             }
 
             const response = await fetch(
-                `http://localhost:8000/subjects/search/?${response_para.toString()}`
+                `${API_URL}/subjects/search/?${response_para.toString()}`
             );
 
             if (!response.ok) {
@@ -109,7 +111,7 @@ export default function Home() {
             }
 
             const response = await fetch(
-                `http://localhost:8000/lecturers/search?${response_para.toString()}`
+                `${API_URL}/lecturers/search?${response_para.toString()}`
                 // `http://localhost:8000/lecturers?${response_para.toString()}`
             );
 
@@ -151,7 +153,7 @@ export default function Home() {
     useEffect(() => {
         const fetchDepartments = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/general/departments/list`);
+                const response = await fetch(`${API_URL}/general/departments/list`);
                 if (!response.ok) {
                     throw new Error(`Failed to fetch departments: ${response.status}`);
                 }
@@ -166,7 +168,7 @@ export default function Home() {
 
         const fetchSemesters = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/general/semesters/list`);
+                const response = await fetch(`${API_URL}/general/semesters/list`);
                 if (!response.ok) {
                     throw new Error(`Failed to fetch departments: ${response.status}`);
                 }
