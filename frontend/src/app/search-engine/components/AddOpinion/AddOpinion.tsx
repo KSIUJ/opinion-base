@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
+
 interface AddOpinionProps {
     subjectId?: number;
     lecturerId?: number;
@@ -40,14 +42,14 @@ export default function AddOpinion({
             let body = {};
 
             if (subjectId) {
-                url = `http://localhost:8000/subjects/${subjectId}/add_opinion`;
+                url = `${API_URL}/subjects/${subjectId}/add_opinion`;
 
                 body = {
                     subject_id: subjectId,
                     content: content.trim(),
                 };
             } else if (lecturerId) {
-                url = `http://localhost:8000/lecturers/${lecturerId}/add_opinion`;
+                url = `${API_URL}/lecturers/${lecturerId}/add_opinion`;
 
                 body = {
                     lecturer_id: lecturerId,
