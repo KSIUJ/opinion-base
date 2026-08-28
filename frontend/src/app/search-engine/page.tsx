@@ -46,7 +46,7 @@ export default function Home() {
             const response_para = new URLSearchParams();
 
             if(searchValue !== ''){
-                response_para.append('subject_name', searchValue);
+                response_para.append('name', searchValue);
             }
             
             if(departmentOption !== ''){
@@ -66,7 +66,7 @@ export default function Home() {
             }
 
             const response = await fetch(
-                `http://localhost:8000/subjects/?${response_para.toString()}`
+                `http://localhost:8000/subjects/search/?${response_para.toString()}`
             );
 
             if (!response.ok) {
